@@ -43,6 +43,16 @@ dependencies {
     protobuf 'com.stellarstation.api:stellarstation-api:0.0.6'
 }
 
+sourceSets {
+    main {
+        proto {
+            // A source directory must be specified for protobuf-gradle-plugin to work, but since we have
+            // no sources in this repository we just set it to an empty directory.
+            srcDirs = [file('build/proto-src')]
+        }
+    }
+}
+
 protobuf {
     protoc {
         // Download from repositories
@@ -103,7 +113,10 @@ ${protowrapPath} --protoc_command=${protocPath} \$@
     // resolution happens here so we insert our hack after it.
     generateProto.actions.addAll(1, hackProtoWrap)
 
-    tasks.generateProto.doLast {
+    generateProto.doFirst {
+        mkdir file('build/proto-src')
+    }
+    generateProto.doLast {
         copy {
             from file('build/generated/source/proto/main/go/stellarstation')
             into projectDir
