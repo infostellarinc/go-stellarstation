@@ -28,6 +28,7 @@ plugins {
 }
 
 repositories {
+    jcenter()
     mavenCentral()
 }
 
@@ -39,7 +40,7 @@ golang {
 }
 
 dependencies {
-    protobuf 'com.stellarstation.api:stellarstation-api:0.0.4'
+    protobuf 'com.stellarstation.api:stellarstation-api:0.0.6'
 }
 
 protobuf {
