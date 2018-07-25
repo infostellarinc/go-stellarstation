@@ -4,5 +4,5 @@ This repository contains the generated Go packages for gRPC stubs to the Stellar
 The definitions come from [infostellarinc/stellarstation-api](https://github.com/infostellarinc/stellarstation-api).
 
 ```go
-import stellarstation "github.com/infostellarinc/go-genproto/stellarstation/api/v1"
+import stellarstation "github.com/infostellarinc/go-stellarstation/api/v1"
 ```
