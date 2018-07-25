@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="go-genproto_main" target="1.10" />
+      <module name="go-genproto_test" target="1.10" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="GoogleJavaFormatSettings">
+    <option name="enabled" value="true" />
+  </component>
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+  <component name="InspectionProjectProfileManager">
+    <profile version="1.0">
+      <option name="myName" value="Project Default" />
+    </profile>
+    <version value="1.0" />
+  </component>
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/go-genproto.iml" filepath="$PROJECT_DIR$/go-genproto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go-genproto_main.iml" filepath="$PROJECT_DIR$/go-genproto_main.iml" group="go-genproto" />
+      <module fileurl="file://$PROJECT_DIR$/go-genproto_test.iml" filepath="$PROJECT_DIR$/go-genproto_test.iml" group="go-genproto" />
+    </modules>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_10" project-jdk-name="1.10" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
+  <component name="ThriftCompiler">
+    <compilers />
+  </component>
+</project>
