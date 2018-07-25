@@ -106,13 +106,13 @@ ${protowrapPath} --protoc_command=${protocPath} \$@
     tasks.generateProto.doLast {
         copy {
             from file('build/generated/source/proto/main/go/stellarstation')
-            into file('stellarstation')
+            into projectDir
         }
     }
 }
 
 tasks.clean.doFirst {
-    delete file('stellarstation')
+    delete file('api')
 }
 
 wrapper {
