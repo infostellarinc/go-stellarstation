@@ -31,6 +31,8 @@ cmake-build-release/
 
 # File-based project format
 *.iws
+*.ipr
+*.iml
 
 # IntelliJ
 out/
