@@ -40,7 +40,7 @@ golang {
 }
 
 dependencies {
-    protobuf 'com.stellarstation.api:stellarstation-api:0.0.6'
+    protobuf 'com.stellarstation.api:stellarstation-api:0.0.7'
 }
 
 sourceSets {
