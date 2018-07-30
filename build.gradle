@@ -61,7 +61,7 @@ protobuf {
     generateProtoTasks {
         all().each {task ->
             task.plugins {
-                gofast {
+                go {
                     option 'plugins=grpc'
                 }
             }
@@ -71,14 +71,14 @@ protobuf {
         }
     }
     plugins {
-        gofast {
-            path = file('.gogradle/project_gopath/bin/protoc-gen-gofast')
+        go {
+            path = file('.gogradle/project_gopath/bin/protoc-gen-go')
         }
     }
 }
 
 task installProtocGoPlugin(type: com.github.blindpirate.gogradle.Go) {
-    go 'get -u github.com/gogo/protobuf/protoc-gen-gofast'
+    go 'get -u github.com/golang/protobuf/protoc-gen-go'
 }
 
 task installProtoWrap(type: com.github.blindpirate.gogradle.Go) {
@@ -118,7 +118,7 @@ ${protowrapPath} --protoc_command=${protocPath} \$@
     }
     generateProto.doLast {
         copy {
-            from file('build/generated/source/proto/main/gofast/stellarstation')
+            from file('build/generated/source/proto/main/go/stellarstation')
             into projectDir
         }
     }
