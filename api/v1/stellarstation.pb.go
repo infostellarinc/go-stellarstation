@@ -57,45 +57,7 @@ func (x Framing) String() string {
 	return proto.EnumName(Framing_name, int32(x))
 }
 func (Framing) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_818bd040976dd88a, []int{0}
-}
-
-// Status of a plan.
-type Plan_Status int32
-
-const (
-	// The plan has been scheduled and will be executed at `aos_time`.
-	Plan_RESERVED Plan_Status = 0
-	// The plan is currently executing.
-	Plan_EXECUTING Plan_Status = 1
-	// The plan has executed successfully.
-	Plan_SUCCEEDED Plan_Status = 2
-	// The plan has executed but was not successful.
-	Plan_FAILED Plan_Status = 3
-	// The plan has been cancelled and will not be executed.
-	Plan_CANCELLED Plan_Status = 4
-)
-
-var Plan_Status_name = map[int32]string{
-	0: "RESERVED",
-	1: "EXECUTING",
-	2: "SUCCEEDED",
-	3: "FAILED",
-	4: "CANCELLED",
-}
-var Plan_Status_value = map[string]int32{
-	"RESERVED":  0,
-	"EXECUTING": 1,
-	"SUCCEEDED": 2,
-	"FAILED":    3,
-	"CANCELLED": 4,
-}
-
-func (x Plan_Status) String() string {
-	return proto.EnumName(Plan_Status_name, int32(x))
-}
-func (Plan_Status) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_818bd040976dd88a, []int{7, 0}
+	return fileDescriptor_stellarstation_6f240bf3576d2939, []int{0}
 }
 
 // Request for the `OpenSatelliteStream` method.
@@ -126,7 +88,7 @@ func (m *SatelliteStreamRequest) Reset()         { *m = SatelliteStreamRequest{}
 func (m *SatelliteStreamRequest) String() string { return proto.CompactTextString(m) }
 func (*SatelliteStreamRequest) ProtoMessage()    {}
 func (*SatelliteStreamRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_818bd040976dd88a, []int{0}
+	return fileDescriptor_stellarstation_6f240bf3576d2939, []int{0}
 }
 func (m *SatelliteStreamRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SatelliteStreamRequest.Unmarshal(m, b)
@@ -265,7 +227,7 @@ func (m *SendSatelliteCommandsRequest) Reset()         { *m = SendSatelliteComma
 func (m *SendSatelliteCommandsRequest) String() string { return proto.CompactTextString(m) }
 func (*SendSatelliteCommandsRequest) ProtoMessage()    {}
 func (*SendSatelliteCommandsRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_818bd040976dd88a, []int{1}
+	return fileDescriptor_stellarstation_6f240bf3576d2939, []int{1}
 }
 func (m *SendSatelliteCommandsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SendSatelliteCommandsRequest.Unmarshal(m, b)
@@ -316,7 +278,7 @@ func (m *SatelliteStreamResponse) Reset()         { *m = SatelliteStreamResponse
 func (m *SatelliteStreamResponse) String() string { return proto.CompactTextString(m) }
 func (*SatelliteStreamResponse) ProtoMessage()    {}
 func (*SatelliteStreamResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_818bd040976dd88a, []int{2}
+	return fileDescriptor_stellarstation_6f240bf3576d2939, []int{2}
 }
 func (m *SatelliteStreamResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SatelliteStreamResponse.Unmarshal(m, b)
@@ -435,7 +397,7 @@ func (m *ReceiveTelemetryResponse) Reset()         { *m = ReceiveTelemetryRespon
 func (m *ReceiveTelemetryResponse) String() string { return proto.CompactTextString(m) }
 func (*ReceiveTelemetryResponse) ProtoMessage()    {}
 func (*ReceiveTelemetryResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_818bd040976dd88a, []int{3}
+	return fileDescriptor_stellarstation_6f240bf3576d2939, []int{3}
 }
 func (m *ReceiveTelemetryResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ReceiveTelemetryResponse.Unmarshal(m, b)
@@ -490,7 +452,7 @@ func (m *Telemetry) Reset()         { *m = Telemetry{} }
 func (m *Telemetry) String() string { return proto.CompactTextString(m) }
 func (*Telemetry) ProtoMessage()    {}
 func (*Telemetry) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_818bd040976dd88a, []int{4}
+	return fileDescriptor_stellarstation_6f240bf3576d2939, []int{4}
 }
 func (m *Telemetry) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Telemetry.Unmarshal(m, b)
@@ -552,271 +514,209 @@ func (m *Telemetry) GetFrameHeader() []byte {
 	return nil
 }
 
-// Request for the `ListGroundstationPlans` method.
-type ListGroundStationPlansRequest struct {
-	// The ID of the ground station to list plans for. The ID can be found on the StellarStation
-	// Console page for the ground station.
-	GroundStationId string `protobuf:"bytes,1,opt,name=ground_station_id,json=groundStationId,proto3" json:"ground_station_id,omitempty"`
-	// The start time of the range of plans to list (inclusive). Only plans with an Acquisition of
-	// Signal (AOS) at or after this time will be returned. It is an error for the duration between
-	// `aos_after` and `aos_before` to be longer than 31 days.
-	AosAfter *timestamp.Timestamp `protobuf:"bytes,2,opt,name=aos_after,json=aosAfter,proto3" json:"aos_after,omitempty"`
-	// The end time of the range of plans to list (exclusive). Only plans with an Acquisition of
-	// Signal (AOS) before this time will be returned. It is an error for the duration between
-	// `aos_after` and `aos_before` to be longer than 31 days.
-	AosBefore            *timestamp.Timestamp `protobuf:"bytes,3,opt,name=aos_before,json=aosBefore,proto3" json:"aos_before,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
-	XXX_unrecognized     []byte               `json:"-"`
-	XXX_sizecache        int32                `json:"-"`
-}
-
-func (m *ListGroundStationPlansRequest) Reset()         { *m = ListGroundStationPlansRequest{} }
-func (m *ListGroundStationPlansRequest) String() string { return proto.CompactTextString(m) }
-func (*ListGroundStationPlansRequest) ProtoMessage()    {}
-func (*ListGroundStationPlansRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_818bd040976dd88a, []int{5}
-}
-func (m *ListGroundStationPlansRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_ListGroundStationPlansRequest.Unmarshal(m, b)
-}
-func (m *ListGroundStationPlansRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_ListGroundStationPlansRequest.Marshal(b, m, deterministic)
-}
-func (dst *ListGroundStationPlansRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListGroundStationPlansRequest.Merge(dst, src)
-}
-func (m *ListGroundStationPlansRequest) XXX_Size() int {
-	return xxx_messageInfo_ListGroundStationPlansRequest.Size(m)
-}
-func (m *ListGroundStationPlansRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListGroundStationPlansRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_ListGroundStationPlansRequest proto.InternalMessageInfo
-
-func (m *ListGroundStationPlansRequest) GetGroundStationId() string {
-	if m != nil {
-		return m.GroundStationId
-	}
-	return ""
-}
-
-func (m *ListGroundStationPlansRequest) GetAosAfter() *timestamp.Timestamp {
-	if m != nil {
-		return m.AosAfter
-	}
-	return nil
-}
-
-func (m *ListGroundStationPlansRequest) GetAosBefore() *timestamp.Timestamp {
-	if m != nil {
-		return m.AosBefore
-	}
-	return nil
-}
-
-// A response from the `ListGroundstationPlans` method.
-type ListGroundStationPlansResponse struct {
-	// The requested list of plans for the ground station.
-	Plan                 []*Plan  `protobuf:"bytes,1,rep,name=plan,proto3" json:"plan,omitempty"`
+// Request for the `ListUpcomingAvailablePasses` method.
+type ListUpcomingAvailablePassesRequest struct {
+	// The ID of the satellite to list passes for. The ID of a satellite can be found on the
+	// StellarStation Console page for the satellite.
+	SatelliteId          string   `protobuf:"bytes,1,opt,name=satellite_id,json=satelliteId,proto3" json:"satellite_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *ListGroundStationPlansResponse) Reset()         { *m = ListGroundStationPlansResponse{} }
-func (m *ListGroundStationPlansResponse) String() string { return proto.CompactTextString(m) }
-func (*ListGroundStationPlansResponse) ProtoMessage()    {}
-func (*ListGroundStationPlansResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_818bd040976dd88a, []int{6}
+func (m *ListUpcomingAvailablePassesRequest) Reset()         { *m = ListUpcomingAvailablePassesRequest{} }
+func (m *ListUpcomingAvailablePassesRequest) String() string { return proto.CompactTextString(m) }
+func (*ListUpcomingAvailablePassesRequest) ProtoMessage()    {}
+func (*ListUpcomingAvailablePassesRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_stellarstation_6f240bf3576d2939, []int{5}
 }
-func (m *ListGroundStationPlansResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_ListGroundStationPlansResponse.Unmarshal(m, b)
+func (m *ListUpcomingAvailablePassesRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListUpcomingAvailablePassesRequest.Unmarshal(m, b)
 }
-func (m *ListGroundStationPlansResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_ListGroundStationPlansResponse.Marshal(b, m, deterministic)
+func (m *ListUpcomingAvailablePassesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListUpcomingAvailablePassesRequest.Marshal(b, m, deterministic)
 }
-func (dst *ListGroundStationPlansResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListGroundStationPlansResponse.Merge(dst, src)
+func (dst *ListUpcomingAvailablePassesRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListUpcomingAvailablePassesRequest.Merge(dst, src)
 }
-func (m *ListGroundStationPlansResponse) XXX_Size() int {
-	return xxx_messageInfo_ListGroundStationPlansResponse.Size(m)
+func (m *ListUpcomingAvailablePassesRequest) XXX_Size() int {
+	return xxx_messageInfo_ListUpcomingAvailablePassesRequest.Size(m)
 }
-func (m *ListGroundStationPlansResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListGroundStationPlansResponse.DiscardUnknown(m)
+func (m *ListUpcomingAvailablePassesRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListUpcomingAvailablePassesRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_ListGroundStationPlansResponse proto.InternalMessageInfo
+var xxx_messageInfo_ListUpcomingAvailablePassesRequest proto.InternalMessageInfo
 
-func (m *ListGroundStationPlansResponse) GetPlan() []*Plan {
+func (m *ListUpcomingAvailablePassesRequest) GetSatelliteId() string {
 	if m != nil {
-		return m.Plan
-	}
-	return nil
-}
-
-// A scheduled pass. The plan will be executed on its ground station to communicate with its satellite
-// during a time range between AOS and LOS, unless explicitly cancelled.
-type Plan struct {
-	// The ID of this plan.
-	PlanId string `protobuf:"bytes,1,opt,name=plan_id,json=planId,proto3" json:"plan_id,omitempty"`
-	// The status of this plan.
-	Status Plan_Status `protobuf:"varint,2,opt,name=status,proto3,enum=stellarstation.api.v1.Plan_Status" json:"status,omitempty"`
-	// The TLE for the satellite in this plan.
-	Tle *Tle `protobuf:"bytes,3,opt,name=tle,proto3" json:"tle,omitempty"`
-	// The time of AOS between the ground station and satellite in this plan.
-	AosTime *timestamp.Timestamp `protobuf:"bytes,4,opt,name=aos_time,json=aosTime,proto3" json:"aos_time,omitempty"`
-	// The time of LOS between the ground station and satellite in this plan.
-	LosTime *timestamp.Timestamp `protobuf:"bytes,5,opt,name=los_time,json=losTime,proto3" json:"los_time,omitempty"`
-	// The center frequency, in Hz, for downlinking in this plan. 0 if downlink is not available in
-	// this plan.
-	DownlinkCenterFrequencyHz uint64 `protobuf:"varint,6,opt,name=downlink_center_frequency_hz,json=downlinkCenterFrequencyHz,proto3" json:"downlink_center_frequency_hz,omitempty"`
-	// The center frequency, in Hz, for uplinking in this plan. 0 if uplink is not available in this
-	// plan.
-	UplinkCenterFrequencyHz uint64 `protobuf:"varint,7,opt,name=uplink_center_frequency_hz,json=uplinkCenterFrequencyHz,proto3" json:"uplink_center_frequency_hz,omitempty"`
-	// The max elevation of the plan, in degrees.
-	MaxElevationDegrees float64 `protobuf:"fixed64,8,opt,name=max_elevation_degrees,json=maxElevationDegrees,proto3" json:"max_elevation_degrees,omitempty"`
-	// The time of max elevation during the plan.
-	MaxElevationTime     *timestamp.Timestamp `protobuf:"bytes,9,opt,name=max_elevation_time,json=maxElevationTime,proto3" json:"max_elevation_time,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
-	XXX_unrecognized     []byte               `json:"-"`
-	XXX_sizecache        int32                `json:"-"`
-}
-
-func (m *Plan) Reset()         { *m = Plan{} }
-func (m *Plan) String() string { return proto.CompactTextString(m) }
-func (*Plan) ProtoMessage()    {}
-func (*Plan) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_818bd040976dd88a, []int{7}
-}
-func (m *Plan) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_Plan.Unmarshal(m, b)
-}
-func (m *Plan) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_Plan.Marshal(b, m, deterministic)
-}
-func (dst *Plan) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Plan.Merge(dst, src)
-}
-func (m *Plan) XXX_Size() int {
-	return xxx_messageInfo_Plan.Size(m)
-}
-func (m *Plan) XXX_DiscardUnknown() {
-	xxx_messageInfo_Plan.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Plan proto.InternalMessageInfo
-
-func (m *Plan) GetPlanId() string {
-	if m != nil {
-		return m.PlanId
+		return m.SatelliteId
 	}
 	return ""
 }
 
-func (m *Plan) GetStatus() Plan_Status {
-	if m != nil {
-		return m.Status
-	}
-	return Plan_RESERVED
+// Response for the `ListUpcomingAvailablePasses` method.
+type ListUpcomingAvailablePassesResponse struct {
+	// The upcoming, schedulable passes for the satellite.
+	Pass                 []*Pass  `protobuf:"bytes,1,rep,name=pass,proto3" json:"pass,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *Plan) GetTle() *Tle {
+func (m *ListUpcomingAvailablePassesResponse) Reset()         { *m = ListUpcomingAvailablePassesResponse{} }
+func (m *ListUpcomingAvailablePassesResponse) String() string { return proto.CompactTextString(m) }
+func (*ListUpcomingAvailablePassesResponse) ProtoMessage()    {}
+func (*ListUpcomingAvailablePassesResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_stellarstation_6f240bf3576d2939, []int{6}
+}
+func (m *ListUpcomingAvailablePassesResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListUpcomingAvailablePassesResponse.Unmarshal(m, b)
+}
+func (m *ListUpcomingAvailablePassesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListUpcomingAvailablePassesResponse.Marshal(b, m, deterministic)
+}
+func (dst *ListUpcomingAvailablePassesResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListUpcomingAvailablePassesResponse.Merge(dst, src)
+}
+func (m *ListUpcomingAvailablePassesResponse) XXX_Size() int {
+	return xxx_messageInfo_ListUpcomingAvailablePassesResponse.Size(m)
+}
+func (m *ListUpcomingAvailablePassesResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListUpcomingAvailablePassesResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListUpcomingAvailablePassesResponse proto.InternalMessageInfo
+
+func (m *ListUpcomingAvailablePassesResponse) GetPass() []*Pass {
 	if m != nil {
-		return m.Tle
+		return m.Pass
 	}
 	return nil
 }
 
-func (m *Plan) GetAosTime() *timestamp.Timestamp {
+// A pass during which a satellite can be communicated with from a given ground station.
+type Pass struct {
+	// A unique token for this pass that can be used for scheduling it.
+	ReservationToken string `protobuf:"bytes,1,opt,name=reservation_token,json=reservationToken,proto3" json:"reservation_token,omitempty"`
+	// The time of Acquisition of Signal (AOS) between the ground station and satellite in this pass.
+	AosTime *timestamp.Timestamp `protobuf:"bytes,2,opt,name=aos_time,json=aosTime,proto3" json:"aos_time,omitempty"`
+	// The time of Loss of Signal (LOS) between the ground station and satellite in this pass.
+	LosTime *timestamp.Timestamp `protobuf:"bytes,3,opt,name=los_time,json=losTime,proto3" json:"los_time,omitempty"`
+	// The latitude, in degrees, of the ground station's location.
+	GroundStationLatitude float64 `protobuf:"fixed64,4,opt,name=ground_station_latitude,json=groundStationLatitude,proto3" json:"ground_station_latitude,omitempty"`
+	// The longitude, in degrees, of the ground station's location.
+	GroundStationLongitude float64 `protobuf:"fixed64,5,opt,name=ground_station_longitude,json=groundStationLongitude,proto3" json:"ground_station_longitude,omitempty"`
+	// The ISO 3166-1 alpha-2 2-letter country code for the ground station's location.
+	// See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+	GroundStationCountryCode string `protobuf:"bytes,6,opt,name=ground_station_country_code,json=groundStationCountryCode,proto3" json:"ground_station_country_code,omitempty"`
+	// The max elevation during the pass, in degrees.
+	MaxElevationDegrees float64 `protobuf:"fixed64,7,opt,name=max_elevation_degrees,json=maxElevationDegrees,proto3" json:"max_elevation_degrees,omitempty"`
+	// The time of the max elevation during the pass.
+	MaxElevationTime *timestamp.Timestamp `protobuf:"bytes,8,opt,name=max_elevation_time,json=maxElevationTime,proto3" json:"max_elevation_time,omitempty"`
+	// The center frequency, in Hz, for downlinking in this pass. 0 if downlink is not available in
+	// this pass.
+	DownlinkCenterFrequencyHz float64 `protobuf:"fixed64,9,opt,name=downlink_center_frequency_hz,json=downlinkCenterFrequencyHz,proto3" json:"downlink_center_frequency_hz,omitempty"`
+	// The center frequency, in Hz, for uplinking in this pass. 0 if uplink is not available in
+	// this pass.
+	UplinkCenterFrequencyHz float64  `protobuf:"fixed64,10,opt,name=uplink_center_frequency_hz,json=uplinkCenterFrequencyHz,proto3" json:"uplink_center_frequency_hz,omitempty"`
+	XXX_NoUnkeyedLiteral    struct{} `json:"-"`
+	XXX_unrecognized        []byte   `json:"-"`
+	XXX_sizecache           int32    `json:"-"`
+}
+
+func (m *Pass) Reset()         { *m = Pass{} }
+func (m *Pass) String() string { return proto.CompactTextString(m) }
+func (*Pass) ProtoMessage()    {}
+func (*Pass) Descriptor() ([]byte, []int) {
+	return fileDescriptor_stellarstation_6f240bf3576d2939, []int{7}
+}
+func (m *Pass) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Pass.Unmarshal(m, b)
+}
+func (m *Pass) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Pass.Marshal(b, m, deterministic)
+}
+func (dst *Pass) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Pass.Merge(dst, src)
+}
+func (m *Pass) XXX_Size() int {
+	return xxx_messageInfo_Pass.Size(m)
+}
+func (m *Pass) XXX_DiscardUnknown() {
+	xxx_messageInfo_Pass.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Pass proto.InternalMessageInfo
+
+func (m *Pass) GetReservationToken() string {
+	if m != nil {
+		return m.ReservationToken
+	}
+	return ""
+}
+
+func (m *Pass) GetAosTime() *timestamp.Timestamp {
 	if m != nil {
 		return m.AosTime
 	}
 	return nil
 }
 
-func (m *Plan) GetLosTime() *timestamp.Timestamp {
+func (m *Pass) GetLosTime() *timestamp.Timestamp {
 	if m != nil {
 		return m.LosTime
 	}
 	return nil
 }
 
-func (m *Plan) GetDownlinkCenterFrequencyHz() uint64 {
+func (m *Pass) GetGroundStationLatitude() float64 {
 	if m != nil {
-		return m.DownlinkCenterFrequencyHz
+		return m.GroundStationLatitude
 	}
 	return 0
 }
 
-func (m *Plan) GetUplinkCenterFrequencyHz() uint64 {
+func (m *Pass) GetGroundStationLongitude() float64 {
 	if m != nil {
-		return m.UplinkCenterFrequencyHz
+		return m.GroundStationLongitude
 	}
 	return 0
 }
 
-func (m *Plan) GetMaxElevationDegrees() float64 {
+func (m *Pass) GetGroundStationCountryCode() string {
+	if m != nil {
+		return m.GroundStationCountryCode
+	}
+	return ""
+}
+
+func (m *Pass) GetMaxElevationDegrees() float64 {
 	if m != nil {
 		return m.MaxElevationDegrees
 	}
 	return 0
 }
 
-func (m *Plan) GetMaxElevationTime() *timestamp.Timestamp {
+func (m *Pass) GetMaxElevationTime() *timestamp.Timestamp {
 	if m != nil {
 		return m.MaxElevationTime
 	}
 	return nil
 }
 
-// Unparsed TLE data for a satellite - https://en.wikipedia.org/wiki/Two-line_element_set
-type Tle struct {
-	// The first line of the TLE. Not a title line.
-	Line_1 string `protobuf:"bytes,1,opt,name=line_1,json=line1,proto3" json:"line_1,omitempty"`
-	// The second line of the TLE.
-	Line_2               string   `protobuf:"bytes,2,opt,name=line_2,json=line2,proto3" json:"line_2,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *Tle) Reset()         { *m = Tle{} }
-func (m *Tle) String() string { return proto.CompactTextString(m) }
-func (*Tle) ProtoMessage()    {}
-func (*Tle) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_818bd040976dd88a, []int{8}
-}
-func (m *Tle) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_Tle.Unmarshal(m, b)
-}
-func (m *Tle) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_Tle.Marshal(b, m, deterministic)
-}
-func (dst *Tle) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Tle.Merge(dst, src)
-}
-func (m *Tle) XXX_Size() int {
-	return xxx_messageInfo_Tle.Size(m)
-}
-func (m *Tle) XXX_DiscardUnknown() {
-	xxx_messageInfo_Tle.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Tle proto.InternalMessageInfo
-
-func (m *Tle) GetLine_1() string {
+func (m *Pass) GetDownlinkCenterFrequencyHz() float64 {
 	if m != nil {
-		return m.Line_1
+		return m.DownlinkCenterFrequencyHz
 	}
-	return ""
+	return 0
 }
 
-func (m *Tle) GetLine_2() string {
+func (m *Pass) GetUplinkCenterFrequencyHz() float64 {
 	if m != nil {
-		return m.Line_2
+		return m.UplinkCenterFrequencyHz
 	}
-	return ""
+	return 0
 }
 
 func init() {
@@ -825,12 +725,10 @@ func init() {
 	proto.RegisterType((*SatelliteStreamResponse)(nil), "stellarstation.api.v1.SatelliteStreamResponse")
 	proto.RegisterType((*ReceiveTelemetryResponse)(nil), "stellarstation.api.v1.ReceiveTelemetryResponse")
 	proto.RegisterType((*Telemetry)(nil), "stellarstation.api.v1.Telemetry")
-	proto.RegisterType((*ListGroundStationPlansRequest)(nil), "stellarstation.api.v1.ListGroundStationPlansRequest")
-	proto.RegisterType((*ListGroundStationPlansResponse)(nil), "stellarstation.api.v1.ListGroundStationPlansResponse")
-	proto.RegisterType((*Plan)(nil), "stellarstation.api.v1.Plan")
-	proto.RegisterType((*Tle)(nil), "stellarstation.api.v1.Tle")
+	proto.RegisterType((*ListUpcomingAvailablePassesRequest)(nil), "stellarstation.api.v1.ListUpcomingAvailablePassesRequest")
+	proto.RegisterType((*ListUpcomingAvailablePassesResponse)(nil), "stellarstation.api.v1.ListUpcomingAvailablePassesResponse")
+	proto.RegisterType((*Pass)(nil), "stellarstation.api.v1.Pass")
 	proto.RegisterEnum("stellarstation.api.v1.Framing", Framing_name, Framing_value)
-	proto.RegisterEnum("stellarstation.api.v1.Plan_Status", Plan_Status_name, Plan_Status_value)
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -845,12 +743,14 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type StellarStationServiceClient interface {
-	// Lists the plans for a particular ground station.
+	// Lists upcoming passes for a satellite. Passes that can be scheduled for the satellite with an
+	// Acquisition of Signal (AOS) within 14 days from now will be returned. This method does not
+	// reserve passes in any way - it is possible for a pass that is returned by this method to be
+	// unschedulable when actually trying to schedule because a conflict appeared during that time.
 	//
-	// The request will be closed with an `INVALID_ARGUMENT` status if `ground_station_id`,
-	// `aos_after`, or `aos_before` are missing, or the duration between the two times is longer than
-	// 31 days.
-	ListGroundStationPlans(ctx context.Context, in *ListGroundStationPlansRequest, opts ...grpc.CallOption) (*ListGroundStationPlansResponse, error)
+	// If the satellite is not found or the client is not authorized for it, the request will return
+	// a `NOT_FOUND` error.
+	ListUpcomingAvailablePasses(ctx context.Context, in *ListUpcomingAvailablePassesRequest, opts ...grpc.CallOption) (*ListUpcomingAvailablePassesResponse, error)
 	// Open a stream to a satellite. The returned stream is bi-directional - it can be used by the
 	// client to send commands to the satellite and data received from the satellite will be returned
 	// as it is made available. All telemetry received from the satellite on reserved passes from this
@@ -879,9 +779,9 @@ func NewStellarStationServiceClient(cc *grpc.ClientConn) StellarStationServiceCl
 	return &stellarStationServiceClient{cc}
 }
 
-func (c *stellarStationServiceClient) ListGroundStationPlans(ctx context.Context, in *ListGroundStationPlansRequest, opts ...grpc.CallOption) (*ListGroundStationPlansResponse, error) {
-	out := new(ListGroundStationPlansResponse)
-	err := c.cc.Invoke(ctx, "/stellarstation.api.v1.StellarStationService/ListGroundStationPlans", in, out, opts...)
+func (c *stellarStationServiceClient) ListUpcomingAvailablePasses(ctx context.Context, in *ListUpcomingAvailablePassesRequest, opts ...grpc.CallOption) (*ListUpcomingAvailablePassesResponse, error) {
+	out := new(ListUpcomingAvailablePassesResponse)
+	err := c.cc.Invoke(ctx, "/stellarstation.api.v1.StellarStationService/ListUpcomingAvailablePasses", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -921,12 +821,14 @@ func (x *stellarStationServiceOpenSatelliteStreamClient) Recv() (*SatelliteStrea
 
 // StellarStationServiceServer is the server API for StellarStationService service.
 type StellarStationServiceServer interface {
-	// Lists the plans for a particular ground station.
+	// Lists upcoming passes for a satellite. Passes that can be scheduled for the satellite with an
+	// Acquisition of Signal (AOS) within 14 days from now will be returned. This method does not
+	// reserve passes in any way - it is possible for a pass that is returned by this method to be
+	// unschedulable when actually trying to schedule because a conflict appeared during that time.
 	//
-	// The request will be closed with an `INVALID_ARGUMENT` status if `ground_station_id`,
-	// `aos_after`, or `aos_before` are missing, or the duration between the two times is longer than
-	// 31 days.
-	ListGroundStationPlans(context.Context, *ListGroundStationPlansRequest) (*ListGroundStationPlansResponse, error)
+	// If the satellite is not found or the client is not authorized for it, the request will return
+	// a `NOT_FOUND` error.
+	ListUpcomingAvailablePasses(context.Context, *ListUpcomingAvailablePassesRequest) (*ListUpcomingAvailablePassesResponse, error)
 	// Open a stream to a satellite. The returned stream is bi-directional - it can be used by the
 	// client to send commands to the satellite and data received from the satellite will be returned
 	// as it is made available. All telemetry received from the satellite on reserved passes from this
@@ -951,20 +853,20 @@ func RegisterStellarStationServiceServer(s *grpc.Server, srv StellarStationServi
 	s.RegisterService(&_StellarStationService_serviceDesc, srv)
 }
 
-func _StellarStationService_ListGroundStationPlans_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListGroundStationPlansRequest)
+func _StellarStationService_ListUpcomingAvailablePasses_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListUpcomingAvailablePassesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(StellarStationServiceServer).ListGroundStationPlans(ctx, in)
+		return srv.(StellarStationServiceServer).ListUpcomingAvailablePasses(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/stellarstation.api.v1.StellarStationService/ListGroundStationPlans",
+		FullMethod: "/stellarstation.api.v1.StellarStationService/ListUpcomingAvailablePasses",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StellarStationServiceServer).ListGroundStationPlans(ctx, req.(*ListGroundStationPlansRequest))
+		return srv.(StellarStationServiceServer).ListUpcomingAvailablePasses(ctx, req.(*ListUpcomingAvailablePassesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1000,8 +902,8 @@ var _StellarStationService_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*StellarStationServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "ListGroundStationPlans",
-			Handler:    _StellarStationService_ListGroundStationPlans_Handler,
+			MethodName: "ListUpcomingAvailablePasses",
+			Handler:    _StellarStationService_ListUpcomingAvailablePasses_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
@@ -1016,71 +918,66 @@ var _StellarStationService_serviceDesc = grpc.ServiceDesc{
 }
 
 func init() {
-	proto.RegisterFile("stellarstation/api/v1/stellarstation.proto", fileDescriptor_stellarstation_818bd040976dd88a)
+	proto.RegisterFile("stellarstation/api/v1/stellarstation.proto", fileDescriptor_stellarstation_6f240bf3576d2939)
 }
 
-var fileDescriptor_stellarstation_818bd040976dd88a = []byte{
-	// 992 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x96, 0xdd, 0x52, 0xdb, 0x56,
-	0x10, 0xc7, 0x91, 0xed, 0xf8, 0x63, 0x4d, 0x89, 0x7a, 0xa8, 0x83, 0xe2, 0xd0, 0xc4, 0xd1, 0x95,
-	0x87, 0x69, 0xed, 0x22, 0xca, 0x34, 0x69, 0x67, 0xda, 0xb1, 0x8d, 0x00, 0xcd, 0x10, 0x02, 0x92,
-	0xd3, 0xc9, 0xe4, 0x46, 0x73, 0xb0, 0xd6, 0x8e, 0xa6, 0xfa, 0x70, 0xa5, 0x03, 0x85, 0x4c, 0x6f,
-	0xfb, 0x10, 0x7d, 0x87, 0xde, 0xf5, 0x01, 0x7a, 0xd3, 0x87, 0xe8, 0xe3, 0x74, 0xce, 0x91, 0x64,
-	0x63, 0x40, 0x26, 0xb9, 0xf3, 0xd9, 0xdd, 0xdf, 0x9e, 0xdd, 0xd5, 0x7f, 0x25, 0xc3, 0x56, 0xcc,
-	0xd0, 0xf3, 0x68, 0x14, 0x33, 0xca, 0xdc, 0x30, 0xe8, 0xd2, 0xa9, 0xdb, 0xbd, 0xd8, 0xee, 0x2e,
-	0x5a, 0x3b, 0xd3, 0x28, 0x64, 0x21, 0x69, 0xdc, 0xb0, 0xd2, 0xa9, 0xdb, 0xb9, 0xd8, 0x6e, 0x3e,
-	0x9b, 0x84, 0xe1, 0xc4, 0xc3, 0xae, 0x08, 0x3a, 0x3b, 0x1f, 0x77, 0x99, 0xeb, 0x63, 0xcc, 0xa8,
-	0x3f, 0x4d, 0x38, 0xf5, 0xaf, 0x02, 0x3c, 0xb2, 0x28, 0x67, 0x5d, 0x86, 0x16, 0x8b, 0x90, 0xfa,
-	0x26, 0xfe, 0x7a, 0x8e, 0x31, 0x23, 0xcf, 0x61, 0x35, 0xce, 0x3c, 0xb6, 0xeb, 0x28, 0x52, 0x4b,
-	0x6a, 0xd7, 0xcc, 0xfa, 0xcc, 0x66, 0x38, 0xe4, 0x09, 0xd4, 0x62, 0xc1, 0x70, 0x7f, 0x41, 0xf8,
-	0xab, 0x89, 0xc1, 0x70, 0xc8, 0xef, 0xf0, 0x2c, 0xc6, 0xc0, 0xb1, 0xe7, 0x49, 0x46, 0xa1, 0xef,
-	0xd3, 0xc0, 0x89, 0xed, 0x28, 0xb9, 0x42, 0x29, 0xb6, 0xa4, 0x76, 0x5d, 0xdb, 0xe9, 0xdc, 0x59,
-	0x7c, 0xc7, 0xc2, 0xc0, 0x99, 0xd5, 0x36, 0x48, 0xd9, 0xb4, 0xba, 0xc3, 0x15, 0x73, 0x33, 0x5e,
-	0xe2, 0x27, 0x06, 0xc8, 0x74, 0x34, 0xc2, 0x29, 0x43, 0xc7, 0x1e, 0x47, 0xd4, 0x77, 0x83, 0x89,
-	0x52, 0x6a, 0x15, 0xdb, 0x6b, 0xda, 0xd3, 0x9c, 0xeb, 0xf6, 0x93, 0x28, 0xf3, 0x61, 0xc6, 0xa5,
-	0x86, 0x7e, 0x0d, 0x2a, 0x69, 0x56, 0xf5, 0x05, 0x6c, 0x2e, 0xab, 0x8a, 0x28, 0x50, 0x49, 0x9b,
-	0x54, 0x0a, 0xad, 0x62, 0x7b, 0xd5, 0xcc, 0x8e, 0xea, 0xdf, 0x12, 0x6c, 0xdc, 0x1a, 0x74, 0x3c,
-	0x0d, 0x83, 0x18, 0x17, 0xc7, 0x28, 0xdd, 0x18, 0x63, 0x08, 0xcd, 0x08, 0x47, 0xe8, 0x5e, 0xa0,
-	0xcd, 0xd0, 0x43, 0x1f, 0x59, 0x74, 0x65, 0x47, 0x29, 0x2a, 0x86, 0x5e, 0xd7, 0xba, 0x39, 0x2d,
-	0x99, 0x09, 0x38, 0xcc, 0xb8, 0xec, 0xc6, 0xc3, 0x15, 0x53, 0x89, 0x72, 0x7c, 0x7d, 0x80, 0x6a,
-	0xf6, 0x5b, 0x7d, 0x07, 0x4a, 0x5e, 0x0e, 0xf2, 0x23, 0xd4, 0x66, 0x05, 0x89, 0xaa, 0xeb, 0x5a,
-	0x2b, 0xa7, 0x8e, 0x39, 0x3c, 0x47, 0xd4, 0xff, 0x0a, 0x50, 0x9b, 0x39, 0xc8, 0x0b, 0xa8, 0x64,
-	0x8f, 0x89, 0xe7, 0xba, 0xff, 0x31, 0x65, 0xe1, 0x84, 0x40, 0xc9, 0xa1, 0x8c, 0x8a, 0x51, 0xac,
-	0x9a, 0xe2, 0x37, 0xd1, 0xa0, 0xe1, 0x84, 0xbf, 0x05, 0x9e, 0x1b, 0xfc, 0x62, 0x8f, 0x85, 0xda,
-	0x82, 0xd1, 0x95, 0xfd, 0xfe, 0x83, 0x50, 0x5c, 0xc9, 0x5c, 0xcf, 0x9c, 0xfb, 0x99, 0xef, 0xf0,
-	0x03, 0xb1, 0x40, 0xe1, 0xdb, 0x61, 0x8f, 0xdd, 0x28, 0x66, 0xf6, 0xd9, 0x15, 0x43, 0x3b, 0x9d,
-	0x91, 0xa3, 0x94, 0x44, 0x7b, 0xcd, 0x4e, 0xb2, 0x4e, 0x9d, 0x6c, 0x9d, 0x3a, 0xc3, 0x6c, 0x9d,
-	0xcc, 0x06, 0x67, 0xf7, 0x39, 0xda, 0xbf, 0x62, 0x98, 0x0e, 0xcd, 0x21, 0xa7, 0xb0, 0x21, 0x92,
-	0x7a, 0xf4, 0x56, 0xce, 0x07, 0xf7, 0xe6, 0xfc, 0x82, 0xa3, 0x47, 0xf4, 0x46, 0xca, 0xe7, 0xb0,
-	0xca, 0x5b, 0x47, 0xfb, 0x3d, 0x52, 0x07, 0x23, 0xa5, 0x2c, 0xfa, 0xae, 0x0b, 0xdb, 0xa1, 0x30,
-	0xa9, 0xff, 0x48, 0xf0, 0xe5, 0x91, 0x1b, 0xb3, 0x83, 0x28, 0x3c, 0x0f, 0x1c, 0x2b, 0x19, 0xe0,
-	0x89, 0x47, 0x83, 0x99, 0x50, 0xb7, 0xe0, 0xf3, 0x89, 0x70, 0xda, 0xe9, 0x78, 0xe7, 0xd2, 0x7b,
-	0x38, 0xb9, 0x4e, 0x19, 0x0e, 0xf9, 0x0e, 0x6a, 0x34, 0x8c, 0x6d, 0x3a, 0x66, 0x18, 0xa5, 0x82,
-	0x5b, 0x56, 0x75, 0x95, 0x86, 0x71, 0x8f, 0xc7, 0x92, 0x97, 0x00, 0x1c, 0x3c, 0xc3, 0x71, 0x18,
-	0x61, 0xba, 0xec, 0xcb, 0x48, 0x7e, 0x4d, 0x5f, 0x04, 0xab, 0xa7, 0xf0, 0x34, 0xaf, 0x81, 0x54,
-	0x7e, 0x5d, 0x28, 0x4d, 0x3d, 0x1a, 0x28, 0x52, 0xab, 0xd8, 0xae, 0x6b, 0x4f, 0x72, 0xd4, 0xc2,
-	0x19, 0x53, 0x04, 0xaa, 0xff, 0x96, 0xa0, 0xc4, 0x8f, 0x64, 0x03, 0x2a, 0xdc, 0x30, 0xef, 0xb8,
-	0xcc, 0x8f, 0x86, 0x43, 0xbe, 0x87, 0x32, 0xc7, 0xcf, 0x63, 0xd1, 0xe5, 0x9a, 0xa6, 0x2e, 0x49,
-	0xda, 0xb1, 0x44, 0xa4, 0x99, 0x12, 0xe4, 0x2b, 0x28, 0x32, 0x6f, 0xde, 0x64, 0xce, 0x1e, 0x78,
-	0x68, 0xf2, 0x30, 0xb2, 0x0b, 0x7c, 0x4a, 0x36, 0x7f, 0xbe, 0x1f, 0xa1, 0xad, 0x0a, 0x0d, 0x63,
-	0x7e, 0xe2, 0x98, 0x97, 0x61, 0xf7, 0xcb, 0xa7, 0xe2, 0xa5, 0xd8, 0x4f, 0xb0, 0x39, 0xdb, 0x86,
-	0x11, 0x06, 0x0c, 0xa3, 0xc5, 0xa5, 0x28, 0x8b, 0xa5, 0x78, 0x9c, 0xc5, 0x0c, 0x44, 0xc8, 0xf5,
-	0xd5, 0xf8, 0x01, 0x9a, 0xe7, 0xd3, 0x5c, 0xbc, 0x22, 0xf0, 0x8d, 0x24, 0xe2, 0x36, 0xac, 0x41,
-	0xc3, 0xa7, 0x97, 0x36, 0x7a, 0x78, 0x91, 0x28, 0xcd, 0xc1, 0x49, 0x84, 0x18, 0x2b, 0xd5, 0x96,
-	0xd4, 0x96, 0xcc, 0x75, 0x9f, 0x5e, 0xea, 0x99, 0x6f, 0x2f, 0x71, 0x91, 0x43, 0x20, 0x8b, 0x8c,
-	0x68, 0xb9, 0x76, 0x6f, 0xcb, 0xf2, 0xf5, 0x64, 0xdc, 0xac, 0xbe, 0x86, 0x72, 0xf2, 0xa4, 0xc8,
-	0x2a, 0x54, 0x4d, 0xdd, 0xd2, 0xcd, 0x9f, 0xf5, 0x3d, 0x79, 0x85, 0x7c, 0x06, 0x35, 0xfd, 0xad,
-	0x3e, 0x78, 0x33, 0x34, 0x8e, 0x0f, 0x64, 0x89, 0x1f, 0xad, 0x37, 0x83, 0x81, 0xae, 0xef, 0xe9,
-	0x7b, 0x72, 0x81, 0x00, 0x94, 0xf7, 0x7b, 0xc6, 0x91, 0xbe, 0x27, 0x17, 0xb9, 0x6b, 0xd0, 0x3b,
-	0x1e, 0xe8, 0x47, 0xfc, 0x58, 0x52, 0x77, 0xa0, 0x38, 0xf4, 0x90, 0x34, 0xa0, 0xec, 0xb9, 0x01,
-	0xda, 0xdb, 0xa9, 0x86, 0x1e, 0xf0, 0xd3, 0xf6, 0xcc, 0xac, 0xa5, 0x9f, 0x43, 0x61, 0xd6, 0xb6,
-	0x5e, 0x42, 0x25, 0x7d, 0x6f, 0xf1, 0x74, 0x7d, 0x63, 0x68, 0x0d, 0x4d, 0xbd, 0xf7, 0x4a, 0x5e,
-	0x21, 0x55, 0x28, 0xf5, 0xde, 0x6a, 0xbb, 0xb2, 0x44, 0xca, 0x50, 0x30, 0x4e, 0xe5, 0x02, 0x0f,
-	0x30, 0x5e, 0xf5, 0x0e, 0x74, 0xfb, 0xe4, 0xf8, 0x40, 0x2e, 0x6a, 0x7f, 0x16, 0xa0, 0x61, 0x25,
-	0x6a, 0x4a, 0xf7, 0xc0, 0xc2, 0xe8, 0xc2, 0x1d, 0x21, 0xf9, 0x43, 0x82, 0x47, 0x77, 0x2f, 0x09,
-	0xf9, 0x36, 0x47, 0x80, 0x4b, 0x5f, 0x0a, 0xcd, 0xdd, 0x4f, 0xa4, 0xd2, 0x4d, 0xbc, 0x84, 0xf5,
-	0xd7, 0x53, 0x0c, 0x6e, 0x7c, 0xdd, 0xc8, 0xd7, 0x79, 0x9f, 0xf5, 0x3b, 0xff, 0x6e, 0x34, 0x3b,
-	0x1f, 0x1b, 0x9e, 0xdc, 0xda, 0x96, 0xbe, 0x91, 0xfa, 0x7d, 0x78, 0x3c, 0x0a, 0xfd, 0xbb, 0xc1,
-	0xfe, 0xba, 0xb5, 0x60, 0x3e, 0xe1, 0x6a, 0x39, 0x91, 0xde, 0xad, 0x2d, 0x46, 0x9f, 0x95, 0x85,
-	0x8c, 0x76, 0xfe, 0x0f, 0x00, 0x00, 0xff, 0xff, 0xac, 0xdf, 0x59, 0xeb, 0x6e, 0x09, 0x00, 0x00,
+var fileDescriptor_stellarstation_6f240bf3576d2939 = []byte{
+	// 901 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x95, 0x51, 0x73, 0xdb, 0x44,
+	0x10, 0xc7, 0x23, 0xdb, 0x8d, 0xed, 0x75, 0x28, 0xe6, 0x82, 0x1b, 0xd5, 0xc9, 0x50, 0xd7, 0xbc,
+	0x78, 0xca, 0x60, 0x53, 0x77, 0xca, 0xa4, 0x30, 0xc0, 0xc4, 0x21, 0x89, 0x3d, 0x93, 0x42, 0x2a,
+	0x19, 0x86, 0xe9, 0x8b, 0xe6, 0x22, 0x6d, 0x5c, 0x4d, 0x25, 0x9d, 0xd0, 0x9d, 0x4d, 0xd2, 0xe1,
+	0x63, 0xf0, 0x21, 0x78, 0xe0, 0x8d, 0xef, 0xc1, 0x33, 0x1f, 0x87, 0xb9, 0xd3, 0xc9, 0x89, 0x9d,
+	0xc8, 0xee, 0xf0, 0x66, 0xed, 0x7f, 0x7f, 0x7b, 0x7b, 0x7f, 0xed, 0x5a, 0xf0, 0x84, 0x0b, 0x0c,
+	0x02, 0x9a, 0x70, 0x41, 0x85, 0xcf, 0xa2, 0x1e, 0x8d, 0xfd, 0xde, 0xec, 0x69, 0x6f, 0x31, 0xda,
+	0x8d, 0x13, 0x26, 0x18, 0x69, 0x2c, 0x45, 0x69, 0xec, 0x77, 0x67, 0x4f, 0x9b, 0x8f, 0x26, 0x8c,
+	0x4d, 0x02, 0xec, 0xa9, 0xa4, 0xf3, 0xe9, 0x45, 0x4f, 0xf8, 0x21, 0x72, 0x41, 0xc3, 0x38, 0xe5,
+	0xda, 0x7f, 0x15, 0xe0, 0x81, 0x4d, 0x25, 0xeb, 0x0b, 0xb4, 0x45, 0x82, 0x34, 0xb4, 0xf0, 0xd7,
+	0x29, 0x72, 0x41, 0x1e, 0xc3, 0x16, 0xcf, 0x14, 0xc7, 0xf7, 0x4c, 0xa3, 0x65, 0x74, 0xaa, 0x56,
+	0x6d, 0x1e, 0x1b, 0x79, 0x64, 0x17, 0xaa, 0x5c, 0x31, 0x52, 0x2f, 0x28, 0xbd, 0x92, 0x06, 0x46,
+	0x1e, 0xf9, 0x1d, 0x1e, 0x71, 0x8c, 0x3c, 0xe7, 0xba, 0x88, 0xcb, 0xc2, 0x90, 0x46, 0x1e, 0x77,
+	0x92, 0xf4, 0x08, 0xb3, 0xd8, 0x32, 0x3a, 0xb5, 0xfe, 0xb3, 0xee, 0x9d, 0xcd, 0x77, 0x6d, 0x8c,
+	0xbc, 0x79, 0x6f, 0x87, 0x9a, 0xd5, 0xdd, 0x0d, 0x37, 0xac, 0x3d, 0xbe, 0x42, 0x27, 0x23, 0xa8,
+	0x53, 0xd7, 0xc5, 0x58, 0xa0, 0xe7, 0x5c, 0x24, 0x34, 0xf4, 0xa3, 0x89, 0x59, 0x6a, 0x15, 0x3b,
+	0xf7, 0xfb, 0x9f, 0xe4, 0x1c, 0x77, 0x9c, 0x66, 0x59, 0x1f, 0x66, 0x9c, 0x0e, 0x0c, 0xaa, 0x50,
+	0xd6, 0x55, 0xdb, 0xfb, 0xb0, 0xb7, 0xaa, 0x2b, 0x62, 0x42, 0x59, 0x5f, 0xd2, 0x2c, 0xb4, 0x8a,
+	0x9d, 0x2d, 0x2b, 0x7b, 0x6c, 0xff, 0x6d, 0xc0, 0xce, 0x2d, 0xa3, 0x79, 0xcc, 0x22, 0x8e, 0x8b,
+	0x36, 0x1a, 0x4b, 0x36, 0x32, 0x68, 0x26, 0xe8, 0xa2, 0x3f, 0x43, 0x47, 0x60, 0x80, 0x21, 0x8a,
+	0xe4, 0xca, 0x49, 0x34, 0xaa, 0x4c, 0xaf, 0xf5, 0x7b, 0x39, 0x57, 0xb2, 0x52, 0x70, 0x9c, 0x71,
+	0xd9, 0x89, 0xc3, 0x0d, 0xcb, 0x4c, 0x72, 0xb4, 0x01, 0x40, 0x25, 0xfb, 0xdd, 0x7e, 0x0d, 0x66,
+	0x5e, 0x0d, 0xf2, 0x2d, 0x54, 0xe7, 0x0d, 0xa9, 0xae, 0x6b, 0xfd, 0x56, 0x4e, 0x1f, 0xd7, 0xf0,
+	0x35, 0xd2, 0xfe, 0xb7, 0x00, 0xd5, 0xb9, 0x40, 0xf6, 0xa1, 0x9c, 0xbd, 0x26, 0x59, 0x6b, 0xfd,
+	0x6b, 0xca, 0xd2, 0x09, 0x81, 0x92, 0x47, 0x05, 0x55, 0x56, 0x6c, 0x59, 0xea, 0x37, 0xe9, 0x43,
+	0xc3, 0x63, 0xbf, 0x45, 0x81, 0x1f, 0xbd, 0x75, 0x2e, 0xd4, 0xb4, 0x45, 0xee, 0x95, 0xf3, 0xe6,
+	0x9d, 0x9a, 0xb8, 0x92, 0xb5, 0x9d, 0x89, 0xc7, 0x99, 0x36, 0x7c, 0x47, 0x6c, 0x30, 0xe5, 0x76,
+	0x38, 0x17, 0x7e, 0xc2, 0x85, 0x73, 0x7e, 0x25, 0xd0, 0xd1, 0x1e, 0x79, 0x66, 0x49, 0x5d, 0xaf,
+	0xd9, 0x4d, 0xd7, 0xa9, 0x9b, 0xad, 0x53, 0x77, 0x9c, 0xad, 0x93, 0xd5, 0x90, 0xec, 0xb1, 0x44,
+	0x07, 0x57, 0x02, 0xb5, 0x69, 0x1e, 0x79, 0x05, 0x3b, 0xaa, 0x68, 0x40, 0x6f, 0xd5, 0xbc, 0xb7,
+	0xb6, 0xe6, 0xc7, 0x12, 0x3d, 0xa5, 0x4b, 0x25, 0x1f, 0xc3, 0x96, 0xbc, 0x3a, 0x3a, 0x6f, 0x90,
+	0x7a, 0x98, 0x98, 0x9b, 0xea, 0xde, 0x35, 0x15, 0x1b, 0xaa, 0x50, 0xfb, 0x04, 0xda, 0xa7, 0x3e,
+	0x17, 0x3f, 0xc5, 0x2e, 0x93, 0x16, 0x1d, 0xcc, 0xa8, 0x1f, 0xd0, 0xf3, 0x00, 0xcf, 0x28, 0xe7,
+	0xc8, 0xdf, 0x7f, 0xc1, 0xdb, 0x3f, 0xc3, 0xa7, 0x2b, 0x0b, 0xe9, 0x51, 0xe8, 0x41, 0x29, 0xa6,
+	0x9c, 0x9b, 0x46, 0xab, 0xd8, 0xa9, 0xf5, 0x77, 0x73, 0xde, 0x9c, 0x84, 0x2c, 0x95, 0xd8, 0xfe,
+	0xa7, 0x04, 0x25, 0xf9, 0x48, 0x3e, 0x83, 0x8f, 0x12, 0xe4, 0x98, 0xcc, 0x54, 0xa6, 0x23, 0xd8,
+	0x5b, 0x8c, 0x74, 0x23, 0xf5, 0x1b, 0xc2, 0x58, 0xc6, 0xc9, 0x73, 0xa8, 0x50, 0xc6, 0x1d, 0xe9,
+	0x8a, 0x1e, 0xfc, 0x55, 0xee, 0x95, 0x29, 0xe3, 0xf2, 0x49, 0x62, 0x41, 0x86, 0x15, 0xd7, 0x63,
+	0x81, 0xc6, 0xbe, 0x84, 0x9d, 0x49, 0xc2, 0xa6, 0xf2, 0x1f, 0x2c, 0xbd, 0x87, 0x13, 0x50, 0xe1,
+	0x8b, 0xa9, 0x87, 0x6a, 0x1c, 0x0c, 0xab, 0x91, 0xca, 0x76, 0xaa, 0x9e, 0x6a, 0x91, 0xec, 0x83,
+	0xb9, 0xcc, 0xb1, 0x68, 0x92, 0x82, 0xf7, 0x14, 0xf8, 0x60, 0x11, 0xcc, 0x54, 0xf2, 0x0d, 0xec,
+	0x2e, 0x91, 0x2e, 0x9b, 0x46, 0x72, 0xdf, 0x5d, 0xe6, 0xa1, 0x7a, 0xd1, 0x55, 0xcb, 0x5c, 0x80,
+	0x0f, 0xd3, 0x84, 0x43, 0xe6, 0xa1, 0x1c, 0xfa, 0x90, 0x5e, 0x3a, 0x18, 0xa0, 0x76, 0xd3, 0xc3,
+	0x49, 0x82, 0xc8, 0xcd, 0xb2, 0x3a, 0x75, 0x3b, 0xa4, 0x97, 0x47, 0x99, 0xf6, 0x7d, 0x2a, 0x91,
+	0x21, 0x90, 0x45, 0x46, 0xb9, 0x54, 0x59, 0xeb, 0x52, 0xfd, 0x66, 0x31, 0x65, 0xd7, 0x77, 0xb0,
+	0x37, 0x5f, 0x39, 0x17, 0x23, 0x81, 0xc9, 0xe2, 0xe6, 0x55, 0x55, 0x13, 0x0f, 0xb3, 0x9c, 0x43,
+	0x95, 0x72, 0x73, 0xff, 0xbe, 0x86, 0xe6, 0x34, 0xce, 0xc5, 0x41, 0xe1, 0x3b, 0x69, 0xc6, 0x2d,
+	0xf8, 0xc9, 0x0b, 0x28, 0xeb, 0x3f, 0x06, 0xf2, 0x01, 0x54, 0x07, 0xa3, 0xb1, 0x3d, 0xb6, 0x8e,
+	0x0e, 0x5e, 0xd6, 0x37, 0x48, 0x05, 0x4a, 0x07, 0xbf, 0xf4, 0x9f, 0xd7, 0x0d, 0xb2, 0x09, 0x85,
+	0xd1, 0xab, 0x7a, 0x41, 0x26, 0x8c, 0x5e, 0x1e, 0x9c, 0x1c, 0x39, 0x67, 0x3f, 0x9c, 0xd4, 0x8b,
+	0xfd, 0x3f, 0x0b, 0xd0, 0xb0, 0xd3, 0x81, 0xd5, 0xa6, 0xda, 0x98, 0xcc, 0x7c, 0x17, 0xc9, 0x1f,
+	0x06, 0xec, 0xae, 0x18, 0x7f, 0xf2, 0x22, 0x67, 0xd0, 0xd7, 0xef, 0x5e, 0xf3, 0xab, 0xff, 0x83,
+	0xea, 0x6d, 0xbb, 0x84, 0xed, 0x1f, 0x63, 0x8c, 0x96, 0xbe, 0x26, 0xe4, 0xf3, 0xbc, 0xcf, 0xe8,
+	0x9d, 0x9f, 0xf7, 0x66, 0xf7, 0x7d, 0xd3, 0xd3, 0x53, 0x3b, 0xc6, 0x17, 0xc6, 0x60, 0x00, 0x0f,
+	0x5d, 0x16, 0xde, 0x0d, 0x0e, 0xb6, 0xed, 0x85, 0xf0, 0x99, 0x1c, 0x9a, 0x33, 0xe3, 0xf5, 0xfd,
+	0xc5, 0xec, 0xf3, 0x4d, 0x35, 0x4d, 0xcf, 0xfe, 0x0b, 0x00, 0x00, 0xff, 0xff, 0xe3, 0x2d, 0xed,
+	0x54, 0xde, 0x08, 0x00, 0x00,
 }
