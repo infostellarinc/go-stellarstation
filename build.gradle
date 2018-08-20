@@ -30,6 +30,9 @@ plugins {
 repositories {
     jcenter()
     mavenCentral()
+    maven {
+        url = 'https://oss.jfrog.org/libs-snapshot'
+    }
 }
 
 apply plugin: 'java'  // Required by com.google.protobuf but we don't compile Java here.
@@ -40,7 +43,7 @@ golang {
 }
 
 dependencies {
-    protobuf 'com.stellarstation.api:stellarstation-api:0.0.8'
+    protobuf 'com.stellarstation.api:stellarstation-api:0.0.9-SNAPSHOT'
 }
 
 sourceSets {
