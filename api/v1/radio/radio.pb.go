@@ -36,6 +36,7 @@ var Modulation_name = map[int32]string{
 	1: "AFSK",
 	2: "BPSK",
 }
+
 var Modulation_value = map[string]int32{
 	"FSK":  0,
 	"AFSK": 1,
@@ -45,8 +46,9 @@ var Modulation_value = map[string]int32{
 func (x Modulation) String() string {
 	return proto.EnumName(Modulation_name, int32(x))
 }
+
 func (Modulation) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_radio_074e0e05ad883e81, []int{0}
+	return fileDescriptor_66895b3707e74834, []int{0}
 }
 
 // A radio device for RF communication. Usually, a satellite will have one or more radio devices for
@@ -72,7 +74,7 @@ func (m *RadioDeviceConfiguration) Reset()         { *m = RadioDeviceConfigurati
 func (m *RadioDeviceConfiguration) String() string { return proto.CompactTextString(m) }
 func (*RadioDeviceConfiguration) ProtoMessage()    {}
 func (*RadioDeviceConfiguration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_074e0e05ad883e81, []int{0}
+	return fileDescriptor_66895b3707e74834, []int{0}
 }
 func (m *RadioDeviceConfiguration) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RadioDeviceConfiguration.Unmarshal(m, b)
@@ -138,7 +140,7 @@ func (m *CommunicationProtocol) Reset()         { *m = CommunicationProtocol{} }
 func (m *CommunicationProtocol) String() string { return proto.CompactTextString(m) }
 func (*CommunicationProtocol) ProtoMessage()    {}
 func (*CommunicationProtocol) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_074e0e05ad883e81, []int{1}
+	return fileDescriptor_66895b3707e74834, []int{1}
 }
 func (m *CommunicationProtocol) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CommunicationProtocol.Unmarshal(m, b)
@@ -248,7 +250,7 @@ func (m *BitStream) Reset()         { *m = BitStream{} }
 func (m *BitStream) String() string { return proto.CompactTextString(m) }
 func (*BitStream) ProtoMessage()    {}
 func (*BitStream) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_074e0e05ad883e81, []int{2}
+	return fileDescriptor_66895b3707e74834, []int{2}
 }
 func (m *BitStream) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BitStream.Unmarshal(m, b)
@@ -289,7 +291,7 @@ func (m *AX25) Reset()         { *m = AX25{} }
 func (m *AX25) String() string { return proto.CompactTextString(m) }
 func (*AX25) ProtoMessage()    {}
 func (*AX25) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_074e0e05ad883e81, []int{3}
+	return fileDescriptor_66895b3707e74834, []int{3}
 }
 func (m *AX25) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AX25.Unmarshal(m, b)
@@ -353,10 +355,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("stellarstation/api/v1/radio/radio.proto", fileDescriptor_radio_074e0e05ad883e81)
+	proto.RegisterFile("stellarstation/api/v1/radio/radio.proto", fileDescriptor_66895b3707e74834)
 }
 
-var fileDescriptor_radio_074e0e05ad883e81 = []byte{
+var fileDescriptor_66895b3707e74834 = []byte{
 	// 436 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x92, 0x41, 0x6b, 0xdb, 0x4e,
 	0x10, 0xc5, 0xa3, 0x44, 0xf9, 0xdb, 0x1e, 0xf3, 0x4f, 0xdc, 0x4d, 0x0a, 0x82, 0x1e, 0xe2, 0xfa,

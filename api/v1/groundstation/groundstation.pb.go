@@ -47,7 +47,7 @@ func (m *ListPlansRequest) Reset()         { *m = ListPlansRequest{} }
 func (m *ListPlansRequest) String() string { return proto.CompactTextString(m) }
 func (*ListPlansRequest) ProtoMessage()    {}
 func (*ListPlansRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_d322a34f6a6bceac, []int{0}
+	return fileDescriptor_9bce3778e6c67798, []int{0}
 }
 func (m *ListPlansRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ListPlansRequest.Unmarshal(m, b)
@@ -101,7 +101,7 @@ func (m *ListPlansResponse) Reset()         { *m = ListPlansResponse{} }
 func (m *ListPlansResponse) String() string { return proto.CompactTextString(m) }
 func (*ListPlansResponse) ProtoMessage()    {}
 func (*ListPlansResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_d322a34f6a6bceac, []int{1}
+	return fileDescriptor_9bce3778e6c67798, []int{1}
 }
 func (m *ListPlansResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ListPlansResponse.Unmarshal(m, b)
@@ -154,7 +154,7 @@ func (m *Plan) Reset()         { *m = Plan{} }
 func (m *Plan) String() string { return proto.CompactTextString(m) }
 func (*Plan) ProtoMessage()    {}
 func (*Plan) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_d322a34f6a6bceac, []int{2}
+	return fileDescriptor_9bce3778e6c67798, []int{2}
 }
 func (m *Plan) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Plan.Unmarshal(m, b)
@@ -231,7 +231,7 @@ func (m *Tle) Reset()         { *m = Tle{} }
 func (m *Tle) String() string { return proto.CompactTextString(m) }
 func (*Tle) ProtoMessage()    {}
 func (*Tle) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_d322a34f6a6bceac, []int{3}
+	return fileDescriptor_9bce3778e6c67798, []int{3}
 }
 func (m *Tle) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Tle.Unmarshal(m, b)
@@ -355,10 +355,10 @@ var _GroundStationService_serviceDesc = grpc.ServiceDesc{
 }
 
 func init() {
-	proto.RegisterFile("stellarstation/api/v1/groundstation/groundstation.proto", fileDescriptor_groundstation_d322a34f6a6bceac)
+	proto.RegisterFile("stellarstation/api/v1/groundstation/groundstation.proto", fileDescriptor_9bce3778e6c67798)
 }
 
-var fileDescriptor_groundstation_d322a34f6a6bceac = []byte{
+var fileDescriptor_9bce3778e6c67798 = []byte{
 	// 490 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x54, 0x4d, 0x8f, 0xd3, 0x30,
 	0x10, 0x55, 0x48, 0xb7, 0x4b, 0x67, 0x0f, 0x50, 0x2f, 0x2b, 0xa2, 0x5e, 0xa8, 0xca, 0x61, 0x0b,
