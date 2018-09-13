@@ -55,8 +55,8 @@ func (m *ListPlansRequest) XXX_Unmarshal(b []byte) error {
 func (m *ListPlansRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ListPlansRequest.Marshal(b, m, deterministic)
 }
-func (dst *ListPlansRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListPlansRequest.Merge(dst, src)
+func (m *ListPlansRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListPlansRequest.Merge(m, src)
 }
 func (m *ListPlansRequest) XXX_Size() int {
 	return xxx_messageInfo_ListPlansRequest.Size(m)
@@ -109,8 +109,8 @@ func (m *ListPlansResponse) XXX_Unmarshal(b []byte) error {
 func (m *ListPlansResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ListPlansResponse.Marshal(b, m, deterministic)
 }
-func (dst *ListPlansResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListPlansResponse.Merge(dst, src)
+func (m *ListPlansResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListPlansResponse.Merge(m, src)
 }
 func (m *ListPlansResponse) XXX_Size() int {
 	return xxx_messageInfo_ListPlansResponse.Size(m)
@@ -162,8 +162,8 @@ func (m *Plan) XXX_Unmarshal(b []byte) error {
 func (m *Plan) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Plan.Marshal(b, m, deterministic)
 }
-func (dst *Plan) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Plan.Merge(dst, src)
+func (m *Plan) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Plan.Merge(m, src)
 }
 func (m *Plan) XXX_Size() int {
 	return xxx_messageInfo_Plan.Size(m)
@@ -239,8 +239,8 @@ func (m *Tle) XXX_Unmarshal(b []byte) error {
 func (m *Tle) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Tle.Marshal(b, m, deterministic)
 }
-func (dst *Tle) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Tle.Merge(dst, src)
+func (m *Tle) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Tle.Merge(m, src)
 }
 func (m *Tle) XXX_Size() int {
 	return xxx_messageInfo_Tle.Size(m)

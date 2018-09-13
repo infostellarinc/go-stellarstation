@@ -82,8 +82,8 @@ func (m *RadioDeviceConfiguration) XXX_Unmarshal(b []byte) error {
 func (m *RadioDeviceConfiguration) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RadioDeviceConfiguration.Marshal(b, m, deterministic)
 }
-func (dst *RadioDeviceConfiguration) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RadioDeviceConfiguration.Merge(dst, src)
+func (m *RadioDeviceConfiguration) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RadioDeviceConfiguration.Merge(m, src)
 }
 func (m *RadioDeviceConfiguration) XXX_Size() int {
 	return xxx_messageInfo_RadioDeviceConfiguration.Size(m)
@@ -148,8 +148,8 @@ func (m *CommunicationProtocol) XXX_Unmarshal(b []byte) error {
 func (m *CommunicationProtocol) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CommunicationProtocol.Marshal(b, m, deterministic)
 }
-func (dst *CommunicationProtocol) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CommunicationProtocol.Merge(dst, src)
+func (m *CommunicationProtocol) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CommunicationProtocol.Merge(m, src)
 }
 func (m *CommunicationProtocol) XXX_Size() int {
 	return xxx_messageInfo_CommunicationProtocol.Size(m)
@@ -258,8 +258,8 @@ func (m *BitStream) XXX_Unmarshal(b []byte) error {
 func (m *BitStream) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BitStream.Marshal(b, m, deterministic)
 }
-func (dst *BitStream) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_BitStream.Merge(dst, src)
+func (m *BitStream) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_BitStream.Merge(m, src)
 }
 func (m *BitStream) XXX_Size() int {
 	return xxx_messageInfo_BitStream.Size(m)
@@ -299,8 +299,8 @@ func (m *AX25) XXX_Unmarshal(b []byte) error {
 func (m *AX25) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AX25.Marshal(b, m, deterministic)
 }
-func (dst *AX25) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AX25.Merge(dst, src)
+func (m *AX25) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AX25.Merge(m, src)
 }
 func (m *AX25) XXX_Size() int {
 	return xxx_messageInfo_AX25.Size(m)
