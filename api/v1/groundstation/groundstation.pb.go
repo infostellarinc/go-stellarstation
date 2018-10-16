@@ -268,11 +268,342 @@ func (m *Tle) GetLine_2() string {
 	return ""
 }
 
+// A time window during which a ground station is unavailable e.g. for local maintenance.
+type UnavailabilityWindow struct {
+	// The ID of the unavailability window.
+	WindowId string `protobuf:"bytes,1,opt,name=window_id,json=windowId,proto3" json:"window_id,omitempty"`
+	// Start time of the unavailabilty window.
+	StartTime *timestamp.Timestamp `protobuf:"bytes,2,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
+	// End time of the unavailability window.
+	EndTime              *timestamp.Timestamp `protobuf:"bytes,3,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
+}
+
+func (m *UnavailabilityWindow) Reset()         { *m = UnavailabilityWindow{} }
+func (m *UnavailabilityWindow) String() string { return proto.CompactTextString(m) }
+func (*UnavailabilityWindow) ProtoMessage()    {}
+func (*UnavailabilityWindow) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9bce3778e6c67798, []int{4}
+}
+
+func (m *UnavailabilityWindow) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_UnavailabilityWindow.Unmarshal(m, b)
+}
+func (m *UnavailabilityWindow) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_UnavailabilityWindow.Marshal(b, m, deterministic)
+}
+func (m *UnavailabilityWindow) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_UnavailabilityWindow.Merge(m, src)
+}
+func (m *UnavailabilityWindow) XXX_Size() int {
+	return xxx_messageInfo_UnavailabilityWindow.Size(m)
+}
+func (m *UnavailabilityWindow) XXX_DiscardUnknown() {
+	xxx_messageInfo_UnavailabilityWindow.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_UnavailabilityWindow proto.InternalMessageInfo
+
+func (m *UnavailabilityWindow) GetWindowId() string {
+	if m != nil {
+		return m.WindowId
+	}
+	return ""
+}
+
+func (m *UnavailabilityWindow) GetStartTime() *timestamp.Timestamp {
+	if m != nil {
+		return m.StartTime
+	}
+	return nil
+}
+
+func (m *UnavailabilityWindow) GetEndTime() *timestamp.Timestamp {
+	if m != nil {
+		return m.EndTime
+	}
+	return nil
+}
+
+// A request for a list of unavailability windows for the specified ground station that
+// fall within the given time range.
+type ListUnavailabilityWindowsRequest struct {
+	// ID of the ground station for which to retrieve unavailability windows.
+	GroundStationId string `protobuf:"bytes,1,opt,name=ground_station_id,json=groundStationId,proto3" json:"ground_station_id,omitempty"`
+	// Start time.
+	StartTime *timestamp.Timestamp `protobuf:"bytes,2,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
+	// End time.
+	EndTime              *timestamp.Timestamp `protobuf:"bytes,3,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
+}
+
+func (m *ListUnavailabilityWindowsRequest) Reset()         { *m = ListUnavailabilityWindowsRequest{} }
+func (m *ListUnavailabilityWindowsRequest) String() string { return proto.CompactTextString(m) }
+func (*ListUnavailabilityWindowsRequest) ProtoMessage()    {}
+func (*ListUnavailabilityWindowsRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9bce3778e6c67798, []int{5}
+}
+
+func (m *ListUnavailabilityWindowsRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListUnavailabilityWindowsRequest.Unmarshal(m, b)
+}
+func (m *ListUnavailabilityWindowsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListUnavailabilityWindowsRequest.Marshal(b, m, deterministic)
+}
+func (m *ListUnavailabilityWindowsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListUnavailabilityWindowsRequest.Merge(m, src)
+}
+func (m *ListUnavailabilityWindowsRequest) XXX_Size() int {
+	return xxx_messageInfo_ListUnavailabilityWindowsRequest.Size(m)
+}
+func (m *ListUnavailabilityWindowsRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListUnavailabilityWindowsRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListUnavailabilityWindowsRequest proto.InternalMessageInfo
+
+func (m *ListUnavailabilityWindowsRequest) GetGroundStationId() string {
+	if m != nil {
+		return m.GroundStationId
+	}
+	return ""
+}
+
+func (m *ListUnavailabilityWindowsRequest) GetStartTime() *timestamp.Timestamp {
+	if m != nil {
+		return m.StartTime
+	}
+	return nil
+}
+
+func (m *ListUnavailabilityWindowsRequest) GetEndTime() *timestamp.Timestamp {
+	if m != nil {
+		return m.EndTime
+	}
+	return nil
+}
+
+// A response containing unavailability windows for the requested ground station.
+type ListUnavailabilityWindowsResponse struct {
+	// A list of unavailability windows, sorted in ascending order of the start time.
+	Window               []*UnavailabilityWindow `protobuf:"bytes,1,rep,name=window,proto3" json:"window,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                `json:"-"`
+	XXX_unrecognized     []byte                  `json:"-"`
+	XXX_sizecache        int32                   `json:"-"`
+}
+
+func (m *ListUnavailabilityWindowsResponse) Reset()         { *m = ListUnavailabilityWindowsResponse{} }
+func (m *ListUnavailabilityWindowsResponse) String() string { return proto.CompactTextString(m) }
+func (*ListUnavailabilityWindowsResponse) ProtoMessage()    {}
+func (*ListUnavailabilityWindowsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9bce3778e6c67798, []int{6}
+}
+
+func (m *ListUnavailabilityWindowsResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListUnavailabilityWindowsResponse.Unmarshal(m, b)
+}
+func (m *ListUnavailabilityWindowsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListUnavailabilityWindowsResponse.Marshal(b, m, deterministic)
+}
+func (m *ListUnavailabilityWindowsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListUnavailabilityWindowsResponse.Merge(m, src)
+}
+func (m *ListUnavailabilityWindowsResponse) XXX_Size() int {
+	return xxx_messageInfo_ListUnavailabilityWindowsResponse.Size(m)
+}
+func (m *ListUnavailabilityWindowsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListUnavailabilityWindowsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListUnavailabilityWindowsResponse proto.InternalMessageInfo
+
+func (m *ListUnavailabilityWindowsResponse) GetWindow() []*UnavailabilityWindow {
+	if m != nil {
+		return m.Window
+	}
+	return nil
+}
+
+// A request for adding a new unavailability window for the specified ground station.
+type AddUnavailabilityWindowRequest struct {
+	// ID of the ground station to add a new unavailability window.
+	GroundStationId string `protobuf:"bytes,1,opt,name=ground_station_id,json=groundStationId,proto3" json:"ground_station_id,omitempty"`
+	// Start time of the unavailabilty window.
+	StartTime *timestamp.Timestamp `protobuf:"bytes,2,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
+	// End time of the unavailability window.
+	EndTime              *timestamp.Timestamp `protobuf:"bytes,3,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
+}
+
+func (m *AddUnavailabilityWindowRequest) Reset()         { *m = AddUnavailabilityWindowRequest{} }
+func (m *AddUnavailabilityWindowRequest) String() string { return proto.CompactTextString(m) }
+func (*AddUnavailabilityWindowRequest) ProtoMessage()    {}
+func (*AddUnavailabilityWindowRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9bce3778e6c67798, []int{7}
+}
+
+func (m *AddUnavailabilityWindowRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_AddUnavailabilityWindowRequest.Unmarshal(m, b)
+}
+func (m *AddUnavailabilityWindowRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_AddUnavailabilityWindowRequest.Marshal(b, m, deterministic)
+}
+func (m *AddUnavailabilityWindowRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AddUnavailabilityWindowRequest.Merge(m, src)
+}
+func (m *AddUnavailabilityWindowRequest) XXX_Size() int {
+	return xxx_messageInfo_AddUnavailabilityWindowRequest.Size(m)
+}
+func (m *AddUnavailabilityWindowRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_AddUnavailabilityWindowRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_AddUnavailabilityWindowRequest proto.InternalMessageInfo
+
+func (m *AddUnavailabilityWindowRequest) GetGroundStationId() string {
+	if m != nil {
+		return m.GroundStationId
+	}
+	return ""
+}
+
+func (m *AddUnavailabilityWindowRequest) GetStartTime() *timestamp.Timestamp {
+	if m != nil {
+		return m.StartTime
+	}
+	return nil
+}
+
+func (m *AddUnavailabilityWindowRequest) GetEndTime() *timestamp.Timestamp {
+	if m != nil {
+		return m.EndTime
+	}
+	return nil
+}
+
+// A response from the 'AddUnavailabilityWindow' method.
+type AddUnavailabilityWindowResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *AddUnavailabilityWindowResponse) Reset()         { *m = AddUnavailabilityWindowResponse{} }
+func (m *AddUnavailabilityWindowResponse) String() string { return proto.CompactTextString(m) }
+func (*AddUnavailabilityWindowResponse) ProtoMessage()    {}
+func (*AddUnavailabilityWindowResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9bce3778e6c67798, []int{8}
+}
+
+func (m *AddUnavailabilityWindowResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_AddUnavailabilityWindowResponse.Unmarshal(m, b)
+}
+func (m *AddUnavailabilityWindowResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_AddUnavailabilityWindowResponse.Marshal(b, m, deterministic)
+}
+func (m *AddUnavailabilityWindowResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AddUnavailabilityWindowResponse.Merge(m, src)
+}
+func (m *AddUnavailabilityWindowResponse) XXX_Size() int {
+	return xxx_messageInfo_AddUnavailabilityWindowResponse.Size(m)
+}
+func (m *AddUnavailabilityWindowResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_AddUnavailabilityWindowResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_AddUnavailabilityWindowResponse proto.InternalMessageInfo
+
+// A request for deleting an existing unavailability window for the specified ground station.
+type DeleteUnavailabilityWindowRequest struct {
+	// ID of the unavailability window to delete.
+	WindowId             string   `protobuf:"bytes,1,opt,name=window_id,json=windowId,proto3" json:"window_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteUnavailabilityWindowRequest) Reset()         { *m = DeleteUnavailabilityWindowRequest{} }
+func (m *DeleteUnavailabilityWindowRequest) String() string { return proto.CompactTextString(m) }
+func (*DeleteUnavailabilityWindowRequest) ProtoMessage()    {}
+func (*DeleteUnavailabilityWindowRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9bce3778e6c67798, []int{9}
+}
+
+func (m *DeleteUnavailabilityWindowRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeleteUnavailabilityWindowRequest.Unmarshal(m, b)
+}
+func (m *DeleteUnavailabilityWindowRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeleteUnavailabilityWindowRequest.Marshal(b, m, deterministic)
+}
+func (m *DeleteUnavailabilityWindowRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteUnavailabilityWindowRequest.Merge(m, src)
+}
+func (m *DeleteUnavailabilityWindowRequest) XXX_Size() int {
+	return xxx_messageInfo_DeleteUnavailabilityWindowRequest.Size(m)
+}
+func (m *DeleteUnavailabilityWindowRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteUnavailabilityWindowRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeleteUnavailabilityWindowRequest proto.InternalMessageInfo
+
+func (m *DeleteUnavailabilityWindowRequest) GetWindowId() string {
+	if m != nil {
+		return m.WindowId
+	}
+	return ""
+}
+
+// A response to the request for deleting an existing unavailability window.
+type DeleteUnavailabilityWindowResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteUnavailabilityWindowResponse) Reset()         { *m = DeleteUnavailabilityWindowResponse{} }
+func (m *DeleteUnavailabilityWindowResponse) String() string { return proto.CompactTextString(m) }
+func (*DeleteUnavailabilityWindowResponse) ProtoMessage()    {}
+func (*DeleteUnavailabilityWindowResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9bce3778e6c67798, []int{10}
+}
+
+func (m *DeleteUnavailabilityWindowResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeleteUnavailabilityWindowResponse.Unmarshal(m, b)
+}
+func (m *DeleteUnavailabilityWindowResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeleteUnavailabilityWindowResponse.Marshal(b, m, deterministic)
+}
+func (m *DeleteUnavailabilityWindowResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteUnavailabilityWindowResponse.Merge(m, src)
+}
+func (m *DeleteUnavailabilityWindowResponse) XXX_Size() int {
+	return xxx_messageInfo_DeleteUnavailabilityWindowResponse.Size(m)
+}
+func (m *DeleteUnavailabilityWindowResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteUnavailabilityWindowResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeleteUnavailabilityWindowResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*ListPlansRequest)(nil), "stellarstation.api.v1.groundstation.ListPlansRequest")
 	proto.RegisterType((*ListPlansResponse)(nil), "stellarstation.api.v1.groundstation.ListPlansResponse")
 	proto.RegisterType((*Plan)(nil), "stellarstation.api.v1.groundstation.Plan")
 	proto.RegisterType((*Tle)(nil), "stellarstation.api.v1.groundstation.Tle")
+	proto.RegisterType((*UnavailabilityWindow)(nil), "stellarstation.api.v1.groundstation.UnavailabilityWindow")
+	proto.RegisterType((*ListUnavailabilityWindowsRequest)(nil), "stellarstation.api.v1.groundstation.ListUnavailabilityWindowsRequest")
+	proto.RegisterType((*ListUnavailabilityWindowsResponse)(nil), "stellarstation.api.v1.groundstation.ListUnavailabilityWindowsResponse")
+	proto.RegisterType((*AddUnavailabilityWindowRequest)(nil), "stellarstation.api.v1.groundstation.AddUnavailabilityWindowRequest")
+	proto.RegisterType((*AddUnavailabilityWindowResponse)(nil), "stellarstation.api.v1.groundstation.AddUnavailabilityWindowResponse")
+	proto.RegisterType((*DeleteUnavailabilityWindowRequest)(nil), "stellarstation.api.v1.groundstation.DeleteUnavailabilityWindowRequest")
+	proto.RegisterType((*DeleteUnavailabilityWindowResponse)(nil), "stellarstation.api.v1.groundstation.DeleteUnavailabilityWindowResponse")
 }
 
 func init() {
@@ -280,38 +611,51 @@ func init() {
 }
 
 var fileDescriptor_9bce3778e6c67798 = []byte{
-	// 490 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x54, 0x4d, 0x8f, 0xd3, 0x30,
-	0x10, 0x55, 0x48, 0xb7, 0x4b, 0x67, 0x0f, 0x50, 0x2f, 0x2b, 0xa2, 0x5e, 0xa8, 0xca, 0x61, 0x0b,
-	0x12, 0x8e, 0x9a, 0x55, 0x59, 0x81, 0x84, 0x04, 0x05, 0x09, 0xad, 0xc4, 0xa1, 0xca, 0xf6, 0xc4,
-	0x25, 0x72, 0x1b, 0x27, 0x58, 0xb8, 0x76, 0x88, 0x9d, 0x22, 0x71, 0xe3, 0x2f, 0x70, 0xe5, 0x5f,
-	0xf0, 0x0b, 0x91, 0xed, 0x64, 0x69, 0xf8, 0xd0, 0x06, 0xed, 0xc5, 0xd2, 0x8c, 0xdf, 0x7b, 0xf3,
-	0x26, 0x33, 0x31, 0x9c, 0x2b, 0x4d, 0x39, 0x27, 0xa5, 0xd2, 0x44, 0x33, 0x29, 0x42, 0x52, 0xb0,
-	0x70, 0x37, 0x0b, 0xf3, 0x52, 0x56, 0x22, 0x6d, 0x92, 0xad, 0x08, 0x17, 0xa5, 0xd4, 0x12, 0x3d,
-	0x6c, 0x13, 0x31, 0x29, 0x18, 0xde, 0xcd, 0x70, 0x0b, 0x3a, 0x7a, 0x90, 0x4b, 0x99, 0x73, 0x1a,
-	0x5a, 0xca, 0xba, 0xca, 0x42, 0xcd, 0xb6, 0x54, 0x69, 0xb2, 0x2d, 0x9c, 0xca, 0xe8, 0xf4, 0xef,
-	0xe5, 0x4b, 0x92, 0x32, 0xe9, 0x4e, 0x07, 0x9c, 0xfc, 0xf0, 0xe0, 0xee, 0x3b, 0xa6, 0xf4, 0x92,
-	0x13, 0xa1, 0x62, 0xfa, 0xa9, 0xa2, 0x4a, 0xa3, 0xc7, 0x30, 0x74, 0xf5, 0x92, 0x9a, 0x9f, 0xb0,
-	0x34, 0xf0, 0xc6, 0xde, 0x74, 0x10, 0xdf, 0x71, 0x17, 0x97, 0x2e, 0x7f, 0x91, 0xa2, 0x73, 0x18,
-	0x10, 0xa9, 0x12, 0x92, 0x69, 0x5a, 0x06, 0xb7, 0xc6, 0xde, 0xf4, 0x28, 0x1a, 0x61, 0x67, 0x0f,
-	0x37, 0xf6, 0xf0, 0xaa, 0xb1, 0x17, 0xdf, 0x26, 0x52, 0xbd, 0x32, 0x58, 0xf4, 0x0c, 0xc0, 0x10,
-	0xd7, 0x34, 0x93, 0x25, 0x0d, 0xfc, 0x6b, 0x99, 0xa6, 0xcc, 0xc2, 0x82, 0x27, 0x31, 0x0c, 0xf7,
-	0x3c, 0xab, 0x42, 0x0a, 0x45, 0xd1, 0x0b, 0xe8, 0x15, 0x9c, 0x88, 0xc0, 0x1b, 0xfb, 0xd3, 0xa3,
-	0xe8, 0x11, 0xee, 0xf0, 0x1d, 0xb1, 0x51, 0x88, 0x2d, 0x6d, 0xf2, 0xdd, 0x87, 0x9e, 0x09, 0xd1,
-	0x7d, 0x38, 0x34, 0x89, 0x5f, 0x2d, 0xf7, 0x4d, 0x78, 0x91, 0xa2, 0xe7, 0xe0, 0x6b, 0x4e, 0xeb,
-	0x1e, 0xa7, 0x9d, 0xf4, 0x57, 0x9c, 0xc6, 0x86, 0x84, 0xe6, 0x60, 0x1a, 0x4f, 0xcc, 0x98, 0x3a,
-	0xb4, 0x7a, 0x48, 0xa4, 0x32, 0x91, 0xa1, 0xf1, 0x86, 0xd6, 0xbb, 0x9e, 0xc6, 0x6b, 0x1a, 0x83,
-	0x93, 0x54, 0x7e, 0x16, 0x9c, 0x89, 0x8f, 0x89, 0x1d, 0x76, 0x92, 0xd2, 0x1d, 0xdb, 0xd0, 0xe0,
-	0xc0, 0x6a, 0xcc, 0xff, 0xe1, 0xdd, 0xed, 0x45, 0x6c, 0xce, 0x37, 0x16, 0xff, 0x5a, 0x8a, 0x8c,
-	0xe5, 0x55, 0x69, 0x51, 0xf1, 0x71, 0xa3, 0xb9, 0x87, 0x40, 0x14, 0x8e, 0xab, 0xe2, 0xcf, 0x42,
-	0xfd, 0x9b, 0x14, 0x1a, 0x3a, 0xc5, 0xbd, 0xfb, 0xc9, 0x19, 0xf8, 0x2b, 0x4e, 0xd1, 0x09, 0xf4,
-	0x39, 0x13, 0x34, 0x99, 0xd5, 0xa3, 0x39, 0x30, 0xd1, 0xec, 0x2a, 0x1d, 0xd9, 0xe1, 0xd4, 0xe9,
-	0x28, 0xfa, 0xe6, 0xc1, 0xbd, 0xb7, 0xfb, 0xeb, 0x7a, 0x49, 0x4b, 0x6b, 0xfa, 0x0b, 0x0c, 0xae,
-	0xf6, 0x07, 0xcd, 0x3b, 0x4d, 0xf2, 0xf7, 0x7f, 0x64, 0xf4, 0xf4, 0x7f, 0x69, 0x6e, 0x4d, 0x17,
-	0x5f, 0x3d, 0x38, 0xdd, 0xc8, 0x6d, 0x17, 0xf6, 0x02, 0xb5, 0xdc, 0x2f, 0xcd, 0xc4, 0x97, 0xde,
-	0xfb, 0x97, 0x39, 0xd3, 0x1f, 0xaa, 0x35, 0xde, 0xc8, 0x6d, 0xc8, 0x44, 0x26, 0x6b, 0x25, 0x26,
-	0x36, 0x61, 0x2e, 0x9f, 0x74, 0x78, 0x77, 0xd6, 0x7d, 0xbb, 0x3c, 0x67, 0x3f, 0x03, 0x00, 0x00,
-	0xff, 0xff, 0x25, 0x66, 0x9a, 0x31, 0xa5, 0x04, 0x00, 0x00,
+	// 690 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x56, 0x4f, 0x6b, 0x13, 0x41,
+	0x14, 0x67, 0x4c, 0x9b, 0x36, 0xaf, 0x07, 0xed, 0xb4, 0xa5, 0x71, 0x05, 0x9b, 0xae, 0x42, 0xa3,
+	0xe0, 0x86, 0xa4, 0xd4, 0x52, 0x41, 0xe8, 0x3f, 0x5b, 0x0a, 0x1e, 0xea, 0xb6, 0x22, 0x78, 0x59,
+	0x26, 0x99, 0x49, 0x1c, 0x9c, 0xcc, 0xac, 0xbb, 0x93, 0x14, 0xbd, 0xf9, 0x25, 0xbc, 0x78, 0xd5,
+	0x8b, 0xe0, 0xc5, 0x0f, 0x20, 0x7e, 0x34, 0x99, 0x9d, 0x4d, 0x9b, 0x68, 0xfe, 0xac, 0x06, 0x04,
+	0x2f, 0x4b, 0xdf, 0xdb, 0xf7, 0xfb, 0xbd, 0xdf, 0xfb, 0xd7, 0x0d, 0x6c, 0xc7, 0x9a, 0x09, 0x41,
+	0xa2, 0x58, 0x13, 0xcd, 0x95, 0xac, 0x90, 0x90, 0x57, 0xba, 0xd5, 0x4a, 0x2b, 0x52, 0x1d, 0x49,
+	0x7b, 0xce, 0x01, 0xcb, 0x0b, 0x23, 0xa5, 0x15, 0xbe, 0x33, 0x08, 0xf4, 0x48, 0xc8, 0xbd, 0x6e,
+	0xd5, 0x1b, 0x08, 0x75, 0xd6, 0x5a, 0x4a, 0xb5, 0x04, 0xab, 0x24, 0x90, 0x7a, 0xa7, 0x59, 0xd1,
+	0xbc, 0xcd, 0x62, 0x4d, 0xda, 0xa1, 0x65, 0x71, 0x36, 0x86, 0xa7, 0x8f, 0x08, 0xe5, 0xca, 0x3e,
+	0x6d, 0xa0, 0xfb, 0x0d, 0xc1, 0x8d, 0xa7, 0x3c, 0xd6, 0xa7, 0x82, 0xc8, 0xd8, 0x67, 0x6f, 0x3a,
+	0x2c, 0xd6, 0xf8, 0x3e, 0x2c, 0xda, 0x7c, 0x41, 0x8a, 0x0f, 0x38, 0x2d, 0xa2, 0x12, 0x2a, 0x17,
+	0xfc, 0xeb, 0xf6, 0xc5, 0x99, 0xf5, 0x9f, 0x50, 0xbc, 0x0d, 0x05, 0xa2, 0xe2, 0x80, 0x34, 0x35,
+	0x8b, 0x8a, 0xd7, 0x4a, 0xa8, 0xbc, 0x50, 0x73, 0x3c, 0x2b, 0xcf, 0xeb, 0xc9, 0xf3, 0xce, 0x7b,
+	0xf2, 0xfc, 0x79, 0xa2, 0xe2, 0x3d, 0x13, 0x8b, 0x77, 0x00, 0x0c, 0xb0, 0xce, 0x9a, 0x2a, 0x62,
+	0xc5, 0xdc, 0x44, 0xa4, 0x49, 0xb3, 0x9f, 0x04, 0xbb, 0x3e, 0x2c, 0xf6, 0x69, 0x8e, 0x43, 0x25,
+	0x63, 0x86, 0x1f, 0xc3, 0x4c, 0x28, 0x88, 0x2c, 0xa2, 0x52, 0xae, 0xbc, 0x50, 0xbb, 0xe7, 0x65,
+	0xe8, 0xa3, 0x67, 0x18, 0xfc, 0x04, 0xe6, 0x7e, 0xcc, 0xc1, 0x8c, 0x31, 0xf1, 0x2a, 0xcc, 0x19,
+	0xc7, 0x55, 0xc9, 0x79, 0x63, 0x9e, 0x50, 0xfc, 0x08, 0x72, 0x5a, 0xb0, 0xb4, 0xc6, 0x72, 0x26,
+	0xfe, 0x73, 0xc1, 0x7c, 0x03, 0xc2, 0x5b, 0x60, 0x0a, 0x0f, 0xcc, 0x98, 0x32, 0x94, 0x3a, 0x47,
+	0x54, 0x6c, 0x2c, 0x03, 0x13, 0x3d, 0xd8, 0xcc, 0x64, 0x98, 0x48, 0x61, 0x1c, 0x56, 0xa8, 0xba,
+	0x90, 0x82, 0xcb, 0xd7, 0x41, 0x32, 0xec, 0x80, 0xb2, 0x2e, 0x6f, 0xb0, 0xe2, 0x6c, 0xc2, 0xb1,
+	0x35, 0x42, 0xbb, 0xdd, 0x0b, 0xdf, 0x3c, 0x0f, 0x93, 0xf8, 0x03, 0x25, 0x9b, 0xbc, 0xd5, 0x89,
+	0x92, 0x28, 0x7f, 0xa9, 0xc7, 0xd9, 0x17, 0x81, 0x19, 0x2c, 0x75, 0xc2, 0xdf, 0x13, 0xe5, 0xa7,
+	0x49, 0xb4, 0x68, 0x19, 0xfb, 0xde, 0xbb, 0x9b, 0x90, 0x3b, 0x17, 0x0c, 0xaf, 0x40, 0x5e, 0x70,
+	0xc9, 0x82, 0x6a, 0x3a, 0x9a, 0x59, 0x63, 0x55, 0x2f, 0xdd, 0xb5, 0x64, 0x38, 0xa9, 0xbb, 0xe6,
+	0x7e, 0x46, 0xb0, 0xfc, 0x5c, 0x92, 0x2e, 0xe1, 0x82, 0xd4, 0xb9, 0xe0, 0xfa, 0xed, 0x0b, 0x2e,
+	0xa9, 0xba, 0xc0, 0xb7, 0xa0, 0x70, 0x91, 0xfc, 0x75, 0x35, 0xe4, 0x79, 0xeb, 0x38, 0xa1, 0x66,
+	0x2f, 0x63, 0x4d, 0x22, 0x6d, 0xbb, 0x3e, 0x79, 0xa3, 0x0b, 0x49, 0x74, 0x6f, 0x5c, 0x4c, 0xd2,
+	0xcc, 0x53, 0x66, 0x92, 0x1a, 0xcb, 0xfd, 0x81, 0xa0, 0x64, 0xf6, 0x79, 0x98, 0xd6, 0xbf, 0xba,
+	0xc9, 0x7f, 0x5f, 0x42, 0x17, 0xd6, 0xc7, 0x54, 0x90, 0x5e, 0xe8, 0x33, 0xc8, 0xdb, 0x2e, 0xa7,
+	0x37, 0xba, 0x93, 0xe9, 0x86, 0x86, 0x71, 0xfa, 0x29, 0x91, 0xfb, 0x1d, 0xc1, 0xed, 0x3d, 0x4a,
+	0x87, 0xc6, 0xfc, 0x17, 0x8d, 0x5b, 0x87, 0xb5, 0x91, 0xfa, 0x6d, 0xdb, 0xdc, 0x5d, 0x58, 0x3f,
+	0x64, 0x82, 0x69, 0x36, 0xae, 0xca, 0x71, 0x2b, 0xed, 0xde, 0x05, 0x77, 0x1c, 0x83, 0xcd, 0x53,
+	0xfb, 0x30, 0x0b, 0xcb, 0xc7, 0xfd, 0x0d, 0x39, 0x63, 0x51, 0x72, 0xe3, 0x9f, 0x10, 0xac, 0x8e,
+	0x10, 0x89, 0x0f, 0x32, 0xcd, 0x70, 0xfc, 0x88, 0x9c, 0xc3, 0xe9, 0x48, 0xd2, 0xf5, 0xfa, 0x8a,
+	0xc0, 0x19, 0x5d, 0x26, 0x3e, 0xca, 0x94, 0x64, 0x62, 0xa7, 0x9d, 0xe3, 0xa9, 0x79, 0x52, 0xbd,
+	0xef, 0xa0, 0x70, 0xf9, 0x15, 0xc3, 0x5b, 0x99, 0x58, 0x7f, 0xfd, 0x52, 0x3b, 0x0f, 0xff, 0x14,
+	0x96, 0xe6, 0xfe, 0x82, 0xe0, 0xe6, 0xc8, 0x83, 0xc5, 0x4f, 0x32, 0xb3, 0x8e, 0xfb, 0x97, 0xe5,
+	0x1c, 0x4d, 0x4b, 0x63, 0xc5, 0xee, 0xbf, 0x47, 0xb0, 0xd1, 0x50, 0xed, 0x2c, 0x6c, 0xfb, 0x78,
+	0x60, 0x83, 0x4f, 0xcd, 0xe5, 0x9d, 0xa2, 0x97, 0xbb, 0x2d, 0xae, 0x5f, 0x75, 0xea, 0x5e, 0x43,
+	0xb5, 0x2b, 0x5c, 0x36, 0x55, 0xca, 0xc4, 0x65, 0xa3, 0xd2, 0x52, 0x0f, 0x32, 0xfc, 0x54, 0xab,
+	0xe7, 0x93, 0x23, 0xde, 0xfc, 0x19, 0x00, 0x00, 0xff, 0xff, 0x22, 0x51, 0x58, 0xab, 0xd8, 0x09,
+	0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -326,12 +670,31 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type GroundStationServiceClient interface {
+	// Adds a new unavailability window to the requested ground station.
+	//
+	// Existing plans that overlap the unavailability window will be canceled. However, there
+	// are cases when the plan cannot be canceled. When this happens, the request will be closed
+	// with a 'FAILED_PRECONDITION' status.
+	//
+	// The request will be closed with an `INVALID_ARGUMENT` status if `ground_station_id`,
+	// `start_time`, or `end_time` are missing, or 'end_time' is not after 'start_time'.
+	AddUnavailabilityWindow(ctx context.Context, in *AddUnavailabilityWindowRequest, opts ...grpc.CallOption) (*AddUnavailabilityWindowResponse, error)
+	// Deletes an existing unavailability window of the requested ground station.
+	//
+	// The request will be closed with an `INVALID_ARGUMENT` status if `window_id` is missing
+	// or invalid.
+	DeleteUnavailabilityWindow(ctx context.Context, in *DeleteUnavailabilityWindowRequest, opts ...grpc.CallOption) (*DeleteUnavailabilityWindowResponse, error)
 	// Lists the plans for a particular ground station.
 	//
 	// The request will be closed with an `INVALID_ARGUMENT` status if `ground_station_id`,
 	// `aos_after`, or `aos_before` are missing, or the duration between the two times is longer than
 	// 31 days.
 	ListPlans(ctx context.Context, in *ListPlansRequest, opts ...grpc.CallOption) (*ListPlansResponse, error)
+	// Returns a list of unavailability windows for the requested ground station.
+	//
+	// The request will be closed with an `INVALID_ARGUMENT` status if `ground_station_id`,
+	// `start_time`, or `end_time` are missing, or 'end_time' is not after 'start_time'.
+	ListUnavailabilityWindows(ctx context.Context, in *ListUnavailabilityWindowsRequest, opts ...grpc.CallOption) (*ListUnavailabilityWindowsResponse, error)
 }
 
 type groundStationServiceClient struct {
@@ -340,6 +703,24 @@ type groundStationServiceClient struct {
 
 func NewGroundStationServiceClient(cc *grpc.ClientConn) GroundStationServiceClient {
 	return &groundStationServiceClient{cc}
+}
+
+func (c *groundStationServiceClient) AddUnavailabilityWindow(ctx context.Context, in *AddUnavailabilityWindowRequest, opts ...grpc.CallOption) (*AddUnavailabilityWindowResponse, error) {
+	out := new(AddUnavailabilityWindowResponse)
+	err := c.cc.Invoke(ctx, "/stellarstation.api.v1.groundstation.GroundStationService/AddUnavailabilityWindow", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *groundStationServiceClient) DeleteUnavailabilityWindow(ctx context.Context, in *DeleteUnavailabilityWindowRequest, opts ...grpc.CallOption) (*DeleteUnavailabilityWindowResponse, error) {
+	out := new(DeleteUnavailabilityWindowResponse)
+	err := c.cc.Invoke(ctx, "/stellarstation.api.v1.groundstation.GroundStationService/DeleteUnavailabilityWindow", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *groundStationServiceClient) ListPlans(ctx context.Context, in *ListPlansRequest, opts ...grpc.CallOption) (*ListPlansResponse, error) {
@@ -351,18 +732,82 @@ func (c *groundStationServiceClient) ListPlans(ctx context.Context, in *ListPlan
 	return out, nil
 }
 
+func (c *groundStationServiceClient) ListUnavailabilityWindows(ctx context.Context, in *ListUnavailabilityWindowsRequest, opts ...grpc.CallOption) (*ListUnavailabilityWindowsResponse, error) {
+	out := new(ListUnavailabilityWindowsResponse)
+	err := c.cc.Invoke(ctx, "/stellarstation.api.v1.groundstation.GroundStationService/ListUnavailabilityWindows", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GroundStationServiceServer is the server API for GroundStationService service.
 type GroundStationServiceServer interface {
+	// Adds a new unavailability window to the requested ground station.
+	//
+	// Existing plans that overlap the unavailability window will be canceled. However, there
+	// are cases when the plan cannot be canceled. When this happens, the request will be closed
+	// with a 'FAILED_PRECONDITION' status.
+	//
+	// The request will be closed with an `INVALID_ARGUMENT` status if `ground_station_id`,
+	// `start_time`, or `end_time` are missing, or 'end_time' is not after 'start_time'.
+	AddUnavailabilityWindow(context.Context, *AddUnavailabilityWindowRequest) (*AddUnavailabilityWindowResponse, error)
+	// Deletes an existing unavailability window of the requested ground station.
+	//
+	// The request will be closed with an `INVALID_ARGUMENT` status if `window_id` is missing
+	// or invalid.
+	DeleteUnavailabilityWindow(context.Context, *DeleteUnavailabilityWindowRequest) (*DeleteUnavailabilityWindowResponse, error)
 	// Lists the plans for a particular ground station.
 	//
 	// The request will be closed with an `INVALID_ARGUMENT` status if `ground_station_id`,
 	// `aos_after`, or `aos_before` are missing, or the duration between the two times is longer than
 	// 31 days.
 	ListPlans(context.Context, *ListPlansRequest) (*ListPlansResponse, error)
+	// Returns a list of unavailability windows for the requested ground station.
+	//
+	// The request will be closed with an `INVALID_ARGUMENT` status if `ground_station_id`,
+	// `start_time`, or `end_time` are missing, or 'end_time' is not after 'start_time'.
+	ListUnavailabilityWindows(context.Context, *ListUnavailabilityWindowsRequest) (*ListUnavailabilityWindowsResponse, error)
 }
 
 func RegisterGroundStationServiceServer(s *grpc.Server, srv GroundStationServiceServer) {
 	s.RegisterService(&_GroundStationService_serviceDesc, srv)
+}
+
+func _GroundStationService_AddUnavailabilityWindow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddUnavailabilityWindowRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GroundStationServiceServer).AddUnavailabilityWindow(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stellarstation.api.v1.groundstation.GroundStationService/AddUnavailabilityWindow",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GroundStationServiceServer).AddUnavailabilityWindow(ctx, req.(*AddUnavailabilityWindowRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GroundStationService_DeleteUnavailabilityWindow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteUnavailabilityWindowRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GroundStationServiceServer).DeleteUnavailabilityWindow(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stellarstation.api.v1.groundstation.GroundStationService/DeleteUnavailabilityWindow",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GroundStationServiceServer).DeleteUnavailabilityWindow(ctx, req.(*DeleteUnavailabilityWindowRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _GroundStationService_ListPlans_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -383,13 +828,43 @@ func _GroundStationService_ListPlans_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _GroundStationService_ListUnavailabilityWindows_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListUnavailabilityWindowsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GroundStationServiceServer).ListUnavailabilityWindows(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stellarstation.api.v1.groundstation.GroundStationService/ListUnavailabilityWindows",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GroundStationServiceServer).ListUnavailabilityWindows(ctx, req.(*ListUnavailabilityWindowsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _GroundStationService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "stellarstation.api.v1.groundstation.GroundStationService",
 	HandlerType: (*GroundStationServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+			MethodName: "AddUnavailabilityWindow",
+			Handler:    _GroundStationService_AddUnavailabilityWindow_Handler,
+		},
+		{
+			MethodName: "DeleteUnavailabilityWindow",
+			Handler:    _GroundStationService_DeleteUnavailabilityWindow_Handler,
+		},
+		{
 			MethodName: "ListPlans",
 			Handler:    _GroundStationService_ListPlans_Handler,
+		},
+		{
+			MethodName: "ListUnavailabilityWindows",
+			Handler:    _GroundStationService_ListUnavailabilityWindows_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
