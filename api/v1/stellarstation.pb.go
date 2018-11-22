@@ -59,7 +59,7 @@ func (x Framing) String() string {
 	return proto.EnumName(Framing_name, int32(x))
 }
 func (Framing) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{0}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{0}
 }
 
 // The type of data available at the above URL.
@@ -89,7 +89,7 @@ func (x TelemetryMetadata_DataType) String() string {
 	return proto.EnumName(TelemetryMetadata_DataType_name, int32(x))
 }
 func (TelemetryMetadata_DataType) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{16, 0}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{16, 0}
 }
 
 // A description of the status of a plan.
@@ -132,7 +132,7 @@ func (x Plan_Status) String() string {
 	return proto.EnumName(Plan_Status_name, int32(x))
 }
 func (Plan_Status) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{17, 0}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{17, 0}
 }
 
 // Request for the `OpenSatelliteStream` method.
@@ -174,7 +174,7 @@ func (m *SatelliteStreamRequest) Reset()         { *m = SatelliteStreamRequest{}
 func (m *SatelliteStreamRequest) String() string { return proto.CompactTextString(m) }
 func (*SatelliteStreamRequest) ProtoMessage()    {}
 func (*SatelliteStreamRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{0}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{0}
 }
 func (m *SatelliteStreamRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SatelliteStreamRequest.Unmarshal(m, b)
@@ -327,7 +327,7 @@ func (m *SendSatelliteCommandsRequest) Reset()         { *m = SendSatelliteComma
 func (m *SendSatelliteCommandsRequest) String() string { return proto.CompactTextString(m) }
 func (*SendSatelliteCommandsRequest) ProtoMessage()    {}
 func (*SendSatelliteCommandsRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{1}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{1}
 }
 func (m *SendSatelliteCommandsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SendSatelliteCommandsRequest.Unmarshal(m, b)
@@ -379,7 +379,7 @@ func (m *SatelliteStreamResponse) Reset()         { *m = SatelliteStreamResponse
 func (m *SatelliteStreamResponse) String() string { return proto.CompactTextString(m) }
 func (*SatelliteStreamResponse) ProtoMessage()    {}
 func (*SatelliteStreamResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{2}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{2}
 }
 func (m *SatelliteStreamResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SatelliteStreamResponse.Unmarshal(m, b)
@@ -530,7 +530,7 @@ func (m *ReceiveTelemetryResponse) Reset()         { *m = ReceiveTelemetryRespon
 func (m *ReceiveTelemetryResponse) String() string { return proto.CompactTextString(m) }
 func (*ReceiveTelemetryResponse) ProtoMessage()    {}
 func (*ReceiveTelemetryResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{3}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{3}
 }
 func (m *ReceiveTelemetryResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ReceiveTelemetryResponse.Unmarshal(m, b)
@@ -585,7 +585,7 @@ func (m *Telemetry) Reset()         { *m = Telemetry{} }
 func (m *Telemetry) String() string { return proto.CompactTextString(m) }
 func (*Telemetry) ProtoMessage()    {}
 func (*Telemetry) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{4}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{4}
 }
 func (m *Telemetry) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Telemetry.Unmarshal(m, b)
@@ -668,7 +668,7 @@ func (m *PlanMonitoringEvent) Reset()         { *m = PlanMonitoringEvent{} }
 func (m *PlanMonitoringEvent) String() string { return proto.CompactTextString(m) }
 func (*PlanMonitoringEvent) ProtoMessage()    {}
 func (*PlanMonitoringEvent) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{5}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{5}
 }
 func (m *PlanMonitoringEvent) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PlanMonitoringEvent.Unmarshal(m, b)
@@ -831,7 +831,7 @@ func (m *StreamEvent) Reset()         { *m = StreamEvent{} }
 func (m *StreamEvent) String() string { return proto.CompactTextString(m) }
 func (*StreamEvent) ProtoMessage()    {}
 func (*StreamEvent) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{6}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{6}
 }
 func (m *StreamEvent) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_StreamEvent.Unmarshal(m, b)
@@ -983,7 +983,7 @@ func (m *StreamEvent_CommandSentFromGroundStation) Reset() {
 func (m *StreamEvent_CommandSentFromGroundStation) String() string { return proto.CompactTextString(m) }
 func (*StreamEvent_CommandSentFromGroundStation) ProtoMessage()    {}
 func (*StreamEvent_CommandSentFromGroundStation) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{6, 0}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{6, 0}
 }
 func (m *StreamEvent_CommandSentFromGroundStation) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_StreamEvent_CommandSentFromGroundStation.Unmarshal(m, b)
@@ -1016,7 +1016,7 @@ func (m *CancelPlanRequest) Reset()         { *m = CancelPlanRequest{} }
 func (m *CancelPlanRequest) String() string { return proto.CompactTextString(m) }
 func (*CancelPlanRequest) ProtoMessage()    {}
 func (*CancelPlanRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{7}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{7}
 }
 func (m *CancelPlanRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CancelPlanRequest.Unmarshal(m, b)
@@ -1054,7 +1054,7 @@ func (m *CancelPlanResponse) Reset()         { *m = CancelPlanResponse{} }
 func (m *CancelPlanResponse) String() string { return proto.CompactTextString(m) }
 func (*CancelPlanResponse) ProtoMessage()    {}
 func (*CancelPlanResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{8}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{8}
 }
 func (m *CancelPlanResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CancelPlanResponse.Unmarshal(m, b)
@@ -1088,7 +1088,7 @@ func (m *ListUpcomingAvailablePassesRequest) Reset()         { *m = ListUpcoming
 func (m *ListUpcomingAvailablePassesRequest) String() string { return proto.CompactTextString(m) }
 func (*ListUpcomingAvailablePassesRequest) ProtoMessage()    {}
 func (*ListUpcomingAvailablePassesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{9}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{9}
 }
 func (m *ListUpcomingAvailablePassesRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ListUpcomingAvailablePassesRequest.Unmarshal(m, b)
@@ -1128,7 +1128,7 @@ func (m *ListUpcomingAvailablePassesResponse) Reset()         { *m = ListUpcomin
 func (m *ListUpcomingAvailablePassesResponse) String() string { return proto.CompactTextString(m) }
 func (*ListUpcomingAvailablePassesResponse) ProtoMessage()    {}
 func (*ListUpcomingAvailablePassesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{10}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{10}
 }
 func (m *ListUpcomingAvailablePassesResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ListUpcomingAvailablePassesResponse.Unmarshal(m, b)
@@ -1168,7 +1168,7 @@ func (m *ReservePassRequest) Reset()         { *m = ReservePassRequest{} }
 func (m *ReservePassRequest) String() string { return proto.CompactTextString(m) }
 func (*ReservePassRequest) ProtoMessage()    {}
 func (*ReservePassRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{11}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{11}
 }
 func (m *ReservePassRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ReservePassRequest.Unmarshal(m, b)
@@ -1208,7 +1208,7 @@ func (m *ReservePassResponse) Reset()         { *m = ReservePassResponse{} }
 func (m *ReservePassResponse) String() string { return proto.CompactTextString(m) }
 func (*ReservePassResponse) ProtoMessage()    {}
 func (*ReservePassResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{12}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{12}
 }
 func (m *ReservePassResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ReservePassResponse.Unmarshal(m, b)
@@ -1257,7 +1257,7 @@ func (m *ListPlansRequest) Reset()         { *m = ListPlansRequest{} }
 func (m *ListPlansRequest) String() string { return proto.CompactTextString(m) }
 func (*ListPlansRequest) ProtoMessage()    {}
 func (*ListPlansRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{13}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{13}
 }
 func (m *ListPlansRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ListPlansRequest.Unmarshal(m, b)
@@ -1311,7 +1311,7 @@ func (m *ListPlansResponse) Reset()         { *m = ListPlansResponse{} }
 func (m *ListPlansResponse) String() string { return proto.CompactTextString(m) }
 func (*ListPlansResponse) ProtoMessage()    {}
 func (*ListPlansResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{14}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{14}
 }
 func (m *ListPlansResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ListPlansResponse.Unmarshal(m, b)
@@ -1372,7 +1372,7 @@ func (m *Pass) Reset()         { *m = Pass{} }
 func (m *Pass) String() string { return proto.CompactTextString(m) }
 func (*Pass) ProtoMessage()    {}
 func (*Pass) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{15}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{15}
 }
 func (m *Pass) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Pass.Unmarshal(m, b)
@@ -1477,7 +1477,7 @@ func (m *TelemetryMetadata) Reset()         { *m = TelemetryMetadata{} }
 func (m *TelemetryMetadata) String() string { return proto.CompactTextString(m) }
 func (*TelemetryMetadata) ProtoMessage()    {}
 func (*TelemetryMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{16}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{16}
 }
 func (m *TelemetryMetadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TelemetryMetadata.Unmarshal(m, b)
@@ -1552,7 +1552,7 @@ func (m *Plan) Reset()         { *m = Plan{} }
 func (m *Plan) String() string { return proto.CompactTextString(m) }
 func (*Plan) ProtoMessage()    {}
 func (*Plan) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{17}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{17}
 }
 func (m *Plan) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Plan.Unmarshal(m, b)
@@ -1679,7 +1679,7 @@ func (m *AddTleRequest) Reset()         { *m = AddTleRequest{} }
 func (m *AddTleRequest) String() string { return proto.CompactTextString(m) }
 func (*AddTleRequest) ProtoMessage()    {}
 func (*AddTleRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{18}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{18}
 }
 func (m *AddTleRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddTleRequest.Unmarshal(m, b)
@@ -1724,7 +1724,7 @@ func (m *AddTleResponse) Reset()         { *m = AddTleResponse{} }
 func (m *AddTleResponse) String() string { return proto.CompactTextString(m) }
 func (*AddTleResponse) ProtoMessage()    {}
 func (*AddTleResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{19}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{19}
 }
 func (m *AddTleResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddTleResponse.Unmarshal(m, b)
@@ -1758,7 +1758,7 @@ func (m *GetTleRequest) Reset()         { *m = GetTleRequest{} }
 func (m *GetTleRequest) String() string { return proto.CompactTextString(m) }
 func (*GetTleRequest) ProtoMessage()    {}
 func (*GetTleRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{20}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{20}
 }
 func (m *GetTleRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetTleRequest.Unmarshal(m, b)
@@ -1798,7 +1798,7 @@ func (m *GetTleResponse) Reset()         { *m = GetTleResponse{} }
 func (m *GetTleResponse) String() string { return proto.CompactTextString(m) }
 func (*GetTleResponse) ProtoMessage()    {}
 func (*GetTleResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_stellarstation_e42f55a0046b62b1, []int{21}
+	return fileDescriptor_stellarstation_e9ef1f86616d673d, []int{21}
 }
 func (m *GetTleResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetTleResponse.Unmarshal(m, b)
@@ -1942,6 +1942,7 @@ type StellarStationServiceClient interface {
 	//
 	// An 'INVALID_ARGUMENT' error will be returned in the following conditions:
 	// - the TLE cannot be parsed
+	// - the TLE epoch is in the future
 	// - the TLE epoch is older than the most recent TLE known to StellarStation
 	// - the TLE norad ID does not correspond to the requested satellite.
 	//
@@ -2129,6 +2130,7 @@ type StellarStationServiceServer interface {
 	//
 	// An 'INVALID_ARGUMENT' error will be returned in the following conditions:
 	// - the TLE cannot be parsed
+	// - the TLE epoch is in the future
 	// - the TLE epoch is older than the most recent TLE known to StellarStation
 	// - the TLE norad ID does not correspond to the requested satellite.
 	//
@@ -2324,10 +2326,10 @@ var _StellarStationService_serviceDesc = grpc.ServiceDesc{
 }
 
 func init() {
-	proto.RegisterFile("stellarstation/api/v1/stellarstation.proto", fileDescriptor_stellarstation_e42f55a0046b62b1)
+	proto.RegisterFile("stellarstation/api/v1/stellarstation.proto", fileDescriptor_stellarstation_e9ef1f86616d673d)
 }
 
-var fileDescriptor_stellarstation_e42f55a0046b62b1 = []byte{
+var fileDescriptor_stellarstation_e9ef1f86616d673d = []byte{
 	// 1694 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x58, 0x4b, 0x73, 0xdb, 0xc8,
 	0x11, 0x26, 0x48, 0x8a, 0x8f, 0x26, 0xa5, 0x85, 0x46, 0xd6, 0x8a, 0x4b, 0x29, 0xbb, 0x32, 0x9c,
