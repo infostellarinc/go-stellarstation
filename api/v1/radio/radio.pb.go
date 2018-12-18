@@ -130,7 +130,7 @@ func (x Modulation) String() string {
 	return proto.EnumName(Modulation_name, int32(x))
 }
 func (Modulation) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_radio_d3dfbf7d55b3299a, []int{0}
+	return fileDescriptor_radio_b13b6b274c2602c1, []int{0}
 }
 
 // Line coding applied during modulation. Line coding is the technique for modeling binary 0 and 1
@@ -183,7 +183,7 @@ func (x LineCoding) String() string {
 	return proto.EnumName(LineCoding_name, int32(x))
 }
 func (LineCoding) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_radio_d3dfbf7d55b3299a, []int{1}
+	return fileDescriptor_radio_b13b6b274c2602c1, []int{1}
 }
 
 // A type of scrambling.
@@ -209,7 +209,7 @@ func (x ScramblingParams_Type) String() string {
 	return proto.EnumName(ScramblingParams_Type_name, int32(x))
 }
 func (ScramblingParams_Type) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_radio_d3dfbf7d55b3299a, []int{5, 0}
+	return fileDescriptor_radio_b13b6b274c2602c1, []int{5, 0}
 }
 
 // A radio device for RF communication. Usually, a satellite will have one or more radio devices for
@@ -235,7 +235,7 @@ func (m *RadioDeviceConfiguration) Reset()         { *m = RadioDeviceConfigurati
 func (m *RadioDeviceConfiguration) String() string { return proto.CompactTextString(m) }
 func (*RadioDeviceConfiguration) ProtoMessage()    {}
 func (*RadioDeviceConfiguration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_d3dfbf7d55b3299a, []int{0}
+	return fileDescriptor_radio_b13b6b274c2602c1, []int{0}
 }
 func (m *RadioDeviceConfiguration) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RadioDeviceConfiguration.Unmarshal(m, b)
@@ -286,9 +286,6 @@ func (m *RadioDeviceConfiguration) GetProtocol() *CommunicationProtocol {
 // A communication protocol used with a radio device. These must contain all the parameters
 // needed to configure the device for use either in transmission or reception.
 type CommunicationProtocol struct {
-	// The type of framing used for communication on the device. If `bitstream`, the device is only
-	// demodulating / modulating without applying any higher-level framing (i.e., packeting) protocol.
-	//
 	// Types that are valid to be assigned to Framing:
 	//	*CommunicationProtocol_Ax25
 	Framing              isCommunicationProtocol_Framing `protobuf_oneof:"Framing"`
@@ -301,7 +298,7 @@ func (m *CommunicationProtocol) Reset()         { *m = CommunicationProtocol{} }
 func (m *CommunicationProtocol) String() string { return proto.CompactTextString(m) }
 func (*CommunicationProtocol) ProtoMessage()    {}
 func (*CommunicationProtocol) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_d3dfbf7d55b3299a, []int{1}
+	return fileDescriptor_radio_b13b6b274c2602c1, []int{1}
 }
 func (m *CommunicationProtocol) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CommunicationProtocol.Unmarshal(m, b)
@@ -411,7 +408,7 @@ func (m *BitStream) Reset()         { *m = BitStream{} }
 func (m *BitStream) String() string { return proto.CompactTextString(m) }
 func (*BitStream) ProtoMessage()    {}
 func (*BitStream) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_d3dfbf7d55b3299a, []int{2}
+	return fileDescriptor_radio_b13b6b274c2602c1, []int{2}
 }
 func (m *BitStream) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BitStream.Unmarshal(m, b)
@@ -452,7 +449,7 @@ func (m *AX25) Reset()         { *m = AX25{} }
 func (m *AX25) String() string { return proto.CompactTextString(m) }
 func (*AX25) ProtoMessage()    {}
 func (*AX25) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_d3dfbf7d55b3299a, []int{3}
+	return fileDescriptor_radio_b13b6b274c2602c1, []int{3}
 }
 func (m *AX25) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AX25.Unmarshal(m, b)
@@ -526,7 +523,7 @@ func (m *ConvolutionalCodingParams) Reset()         { *m = ConvolutionalCodingPa
 func (m *ConvolutionalCodingParams) String() string { return proto.CompactTextString(m) }
 func (*ConvolutionalCodingParams) ProtoMessage()    {}
 func (*ConvolutionalCodingParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_d3dfbf7d55b3299a, []int{4}
+	return fileDescriptor_radio_b13b6b274c2602c1, []int{4}
 }
 func (m *ConvolutionalCodingParams) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConvolutionalCodingParams.Unmarshal(m, b)
@@ -588,7 +585,7 @@ func (m *ScramblingParams) Reset()         { *m = ScramblingParams{} }
 func (m *ScramblingParams) String() string { return proto.CompactTextString(m) }
 func (*ScramblingParams) ProtoMessage()    {}
 func (*ScramblingParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_d3dfbf7d55b3299a, []int{5}
+	return fileDescriptor_radio_b13b6b274c2602c1, []int{5}
 }
 func (m *ScramblingParams) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ScramblingParams.Unmarshal(m, b)
@@ -649,10 +646,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("stellarstation/api/v1/radio/radio.proto", fileDescriptor_radio_d3dfbf7d55b3299a)
+	proto.RegisterFile("stellarstation/api/v1/radio/radio.proto", fileDescriptor_radio_b13b6b274c2602c1)
 }
 
-var fileDescriptor_radio_d3dfbf7d55b3299a = []byte{
+var fileDescriptor_radio_b13b6b274c2602c1 = []byte{
 	// 783 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x84, 0x54, 0x5d, 0x6f, 0xe2, 0x46,
 	0x14, 0x8d, 0xc1, 0xe1, 0xe3, 0x42, 0xc8, 0xec, 0x24, 0xdb, 0xb2, 0xaa, 0xd4, 0xcd, 0xf2, 0x12,
