@@ -130,7 +130,7 @@ func (x Modulation) String() string {
 	return proto.EnumName(Modulation_name, int32(x))
 }
 func (Modulation) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_radio_b13b6b274c2602c1, []int{0}
+	return fileDescriptor_radio_797d67ab77d76928, []int{0}
 }
 
 // Line coding applied during modulation. Line coding is the technique for modeling binary 0 and 1
@@ -183,7 +183,113 @@ func (x LineCoding) String() string {
 	return proto.EnumName(LineCoding_name, int32(x))
 }
 func (LineCoding) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_radio_b13b6b274c2602c1, []int{1}
+	return fileDescriptor_radio_797d67ab77d76928, []int{1}
+}
+
+// Polynomial inversion.
+type CCSDSConvolutionalCodingParams_PolynomialInversion int32
+
+const (
+	// CCSDS transfer frame with normal phase rotation.
+	CCSDSConvolutionalCodingParams_G1_G2 CCSDSConvolutionalCodingParams_PolynomialInversion = 0
+	// CCSDS transfer frame with inverted phase rotation.
+	CCSDSConvolutionalCodingParams_G1_G2_INVERTED CCSDSConvolutionalCodingParams_PolynomialInversion = 1
+	// G2-inverted G1.
+	CCSDSConvolutionalCodingParams_G2_INVERTED_G1 CCSDSConvolutionalCodingParams_PolynomialInversion = 2
+	// G2-G1.
+	CCSDSConvolutionalCodingParams_G2_G1 CCSDSConvolutionalCodingParams_PolynomialInversion = 3
+)
+
+var CCSDSConvolutionalCodingParams_PolynomialInversion_name = map[int32]string{
+	0: "G1_G2",
+	1: "G1_G2_INVERTED",
+	2: "G2_INVERTED_G1",
+	3: "G2_G1",
+}
+var CCSDSConvolutionalCodingParams_PolynomialInversion_value = map[string]int32{
+	"G1_G2":          0,
+	"G1_G2_INVERTED": 1,
+	"G2_INVERTED_G1": 2,
+	"G2_G1":          3,
+}
+
+func (x CCSDSConvolutionalCodingParams_PolynomialInversion) String() string {
+	return proto.EnumName(CCSDSConvolutionalCodingParams_PolynomialInversion_name, int32(x))
+}
+func (CCSDSConvolutionalCodingParams_PolynomialInversion) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_radio_797d67ab77d76928, []int{2, 0}
+}
+
+// Enum describing different rates for puncturing.
+type CCSDSConvolutionalCodingParams_Puncturing int32
+
+const (
+	// No puncturing.
+	CCSDSConvolutionalCodingParams_OFF CCSDSConvolutionalCodingParams_Puncturing = 0
+	// Puncturing rate 2/3.
+	CCSDSConvolutionalCodingParams_PUNCTURE_2_3 CCSDSConvolutionalCodingParams_Puncturing = 1
+	// Puncturing rate 3/4.
+	CCSDSConvolutionalCodingParams_PUNCTURE_3_4 CCSDSConvolutionalCodingParams_Puncturing = 2
+	// Puncturing rate 4/5.
+	CCSDSConvolutionalCodingParams_PUNCTURE_4_5 CCSDSConvolutionalCodingParams_Puncturing = 3
+	// Puncturing rate 5/6.
+	CCSDSConvolutionalCodingParams_PUNCTURE_5_6 CCSDSConvolutionalCodingParams_Puncturing = 4
+	// Puncturing rate 6/7.
+	CCSDSConvolutionalCodingParams_PUNCTURE_6_7 CCSDSConvolutionalCodingParams_Puncturing = 5
+	// Puncturing rate 7/8.
+	CCSDSConvolutionalCodingParams_PUNCTURE_7_8 CCSDSConvolutionalCodingParams_Puncturing = 6
+)
+
+var CCSDSConvolutionalCodingParams_Puncturing_name = map[int32]string{
+	0: "OFF",
+	1: "PUNCTURE_2_3",
+	2: "PUNCTURE_3_4",
+	3: "PUNCTURE_4_5",
+	4: "PUNCTURE_5_6",
+	5: "PUNCTURE_6_7",
+	6: "PUNCTURE_7_8",
+}
+var CCSDSConvolutionalCodingParams_Puncturing_value = map[string]int32{
+	"OFF":          0,
+	"PUNCTURE_2_3": 1,
+	"PUNCTURE_3_4": 2,
+	"PUNCTURE_4_5": 3,
+	"PUNCTURE_5_6": 4,
+	"PUNCTURE_6_7": 5,
+	"PUNCTURE_7_8": 6,
+}
+
+func (x CCSDSConvolutionalCodingParams_Puncturing) String() string {
+	return proto.EnumName(CCSDSConvolutionalCodingParams_Puncturing_name, int32(x))
+}
+func (CCSDSConvolutionalCodingParams_Puncturing) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_radio_797d67ab77d76928, []int{2, 1}
+}
+
+// Enum defining RS Code block length.
+type CCSDSReedSolomonParams_BlockLengthType int32
+
+const (
+	// (255, 223, 16) RS code.
+	CCSDSReedSolomonParams_RS_223_255 CCSDSReedSolomonParams_BlockLengthType = 0
+	// (255, 239, 8) RS code.
+	CCSDSReedSolomonParams_RS_239_255 CCSDSReedSolomonParams_BlockLengthType = 1
+)
+
+var CCSDSReedSolomonParams_BlockLengthType_name = map[int32]string{
+	0: "RS_223_255",
+	1: "RS_239_255",
+}
+var CCSDSReedSolomonParams_BlockLengthType_value = map[string]int32{
+	"RS_223_255": 0,
+	"RS_239_255": 1,
+}
+
+func (x CCSDSReedSolomonParams_BlockLengthType) String() string {
+	return proto.EnumName(CCSDSReedSolomonParams_BlockLengthType_name, int32(x))
+}
+func (CCSDSReedSolomonParams_BlockLengthType) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_radio_797d67ab77d76928, []int{4, 0}
 }
 
 // A type of scrambling.
@@ -209,7 +315,7 @@ func (x ScramblingParams_Type) String() string {
 	return proto.EnumName(ScramblingParams_Type_name, int32(x))
 }
 func (ScramblingParams_Type) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_radio_b13b6b274c2602c1, []int{5, 0}
+	return fileDescriptor_radio_797d67ab77d76928, []int{10, 0}
 }
 
 // A radio device for RF communication. Usually, a satellite will have one or more radio devices for
@@ -235,7 +341,7 @@ func (m *RadioDeviceConfiguration) Reset()         { *m = RadioDeviceConfigurati
 func (m *RadioDeviceConfiguration) String() string { return proto.CompactTextString(m) }
 func (*RadioDeviceConfiguration) ProtoMessage()    {}
 func (*RadioDeviceConfiguration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_b13b6b274c2602c1, []int{0}
+	return fileDescriptor_radio_797d67ab77d76928, []int{0}
 }
 func (m *RadioDeviceConfiguration) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RadioDeviceConfiguration.Unmarshal(m, b)
@@ -288,6 +394,8 @@ func (m *RadioDeviceConfiguration) GetProtocol() *CommunicationProtocol {
 type CommunicationProtocol struct {
 	// Types that are valid to be assigned to Framing:
 	//	*CommunicationProtocol_Ax25
+	//	*CommunicationProtocol_Ccsds
+	//	*CommunicationProtocol_Bitstream
 	Framing              isCommunicationProtocol_Framing `protobuf_oneof:"Framing"`
 	XXX_NoUnkeyedLiteral struct{}                        `json:"-"`
 	XXX_unrecognized     []byte                          `json:"-"`
@@ -298,7 +406,7 @@ func (m *CommunicationProtocol) Reset()         { *m = CommunicationProtocol{} }
 func (m *CommunicationProtocol) String() string { return proto.CompactTextString(m) }
 func (*CommunicationProtocol) ProtoMessage()    {}
 func (*CommunicationProtocol) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_b13b6b274c2602c1, []int{1}
+	return fileDescriptor_radio_797d67ab77d76928, []int{1}
 }
 func (m *CommunicationProtocol) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CommunicationProtocol.Unmarshal(m, b)
@@ -326,7 +434,19 @@ type CommunicationProtocol_Ax25 struct {
 	Ax25 *AX25 `protobuf:"bytes,1,opt,name=ax25,proto3,oneof"`
 }
 
+type CommunicationProtocol_Ccsds struct {
+	Ccsds *CCSDSTransferFrame `protobuf:"bytes,2,opt,name=ccsds,proto3,oneof"`
+}
+
+type CommunicationProtocol_Bitstream struct {
+	Bitstream *Bitstream `protobuf:"bytes,3,opt,name=bitstream,proto3,oneof"`
+}
+
 func (*CommunicationProtocol_Ax25) isCommunicationProtocol_Framing() {}
+
+func (*CommunicationProtocol_Ccsds) isCommunicationProtocol_Framing() {}
+
+func (*CommunicationProtocol_Bitstream) isCommunicationProtocol_Framing() {}
 
 func (m *CommunicationProtocol) GetFraming() isCommunicationProtocol_Framing {
 	if m != nil {
@@ -342,10 +462,26 @@ func (m *CommunicationProtocol) GetAx25() *AX25 {
 	return nil
 }
 
+func (m *CommunicationProtocol) GetCcsds() *CCSDSTransferFrame {
+	if x, ok := m.GetFraming().(*CommunicationProtocol_Ccsds); ok {
+		return x.Ccsds
+	}
+	return nil
+}
+
+func (m *CommunicationProtocol) GetBitstream() *Bitstream {
+	if x, ok := m.GetFraming().(*CommunicationProtocol_Bitstream); ok {
+		return x.Bitstream
+	}
+	return nil
+}
+
 // XXX_OneofFuncs is for the internal use of the proto package.
 func (*CommunicationProtocol) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
 	return _CommunicationProtocol_OneofMarshaler, _CommunicationProtocol_OneofUnmarshaler, _CommunicationProtocol_OneofSizer, []interface{}{
 		(*CommunicationProtocol_Ax25)(nil),
+		(*CommunicationProtocol_Ccsds)(nil),
+		(*CommunicationProtocol_Bitstream)(nil),
 	}
 }
 
@@ -356,6 +492,16 @@ func _CommunicationProtocol_OneofMarshaler(msg proto.Message, b *proto.Buffer) e
 	case *CommunicationProtocol_Ax25:
 		b.EncodeVarint(1<<3 | proto.WireBytes)
 		if err := b.EncodeMessage(x.Ax25); err != nil {
+			return err
+		}
+	case *CommunicationProtocol_Ccsds:
+		b.EncodeVarint(2<<3 | proto.WireBytes)
+		if err := b.EncodeMessage(x.Ccsds); err != nil {
+			return err
+		}
+	case *CommunicationProtocol_Bitstream:
+		b.EncodeVarint(3<<3 | proto.WireBytes)
+		if err := b.EncodeMessage(x.Bitstream); err != nil {
 			return err
 		}
 	case nil:
@@ -376,6 +522,22 @@ func _CommunicationProtocol_OneofUnmarshaler(msg proto.Message, tag, wire int, b
 		err := b.DecodeMessage(msg)
 		m.Framing = &CommunicationProtocol_Ax25{msg}
 		return true, err
+	case 2: // Framing.ccsds
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		msg := new(CCSDSTransferFrame)
+		err := b.DecodeMessage(msg)
+		m.Framing = &CommunicationProtocol_Ccsds{msg}
+		return true, err
+	case 3: // Framing.bitstream
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		msg := new(Bitstream)
+		err := b.DecodeMessage(msg)
+		m.Framing = &CommunicationProtocol_Bitstream{msg}
+		return true, err
 	default:
 		return false, nil
 	}
@@ -390,6 +552,16 @@ func _CommunicationProtocol_OneofSizer(msg proto.Message) (n int) {
 		n += 1 // tag and wire
 		n += proto.SizeVarint(uint64(s))
 		n += s
+	case *CommunicationProtocol_Ccsds:
+		s := proto.Size(x.Ccsds)
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(s))
+		n += s
+	case *CommunicationProtocol_Bitstream:
+		s := proto.Size(x.Bitstream)
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(s))
+		n += s
 	case nil:
 	default:
 		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
@@ -397,36 +569,333 @@ func _CommunicationProtocol_OneofSizer(msg proto.Message) (n int) {
 	return n
 }
 
-// Communication of a stream of bits with no framing defined.
-type BitStream struct {
+// CCSDS-specific convolutional coding parameters.
+// Code rate (r): 1/2
+// Constraint length (K): 7
+// Connection vectors:
+//   G1 = 1111001
+//   G2 = 1011011
+type CCSDSConvolutionalCodingParams struct {
+	PolynomialInversion CCSDSConvolutionalCodingParams_PolynomialInversion `protobuf:"varint,1,opt,name=polynomial_inversion,json=polynomialInversion,proto3,enum=stellarstation.api.v1.radio.CCSDSConvolutionalCodingParams_PolynomialInversion" json:"polynomial_inversion,omitempty"`
+	// Optional puncturing for convolutional code.
+	Puncturing           CCSDSConvolutionalCodingParams_Puncturing `protobuf:"varint,2,opt,name=puncturing,proto3,enum=stellarstation.api.v1.radio.CCSDSConvolutionalCodingParams_Puncturing" json:"puncturing,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                  `json:"-"`
+	XXX_unrecognized     []byte                                    `json:"-"`
+	XXX_sizecache        int32                                     `json:"-"`
+}
+
+func (m *CCSDSConvolutionalCodingParams) Reset()         { *m = CCSDSConvolutionalCodingParams{} }
+func (m *CCSDSConvolutionalCodingParams) String() string { return proto.CompactTextString(m) }
+func (*CCSDSConvolutionalCodingParams) ProtoMessage()    {}
+func (*CCSDSConvolutionalCodingParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_radio_797d67ab77d76928, []int{2}
+}
+func (m *CCSDSConvolutionalCodingParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CCSDSConvolutionalCodingParams.Unmarshal(m, b)
+}
+func (m *CCSDSConvolutionalCodingParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CCSDSConvolutionalCodingParams.Marshal(b, m, deterministic)
+}
+func (dst *CCSDSConvolutionalCodingParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CCSDSConvolutionalCodingParams.Merge(dst, src)
+}
+func (m *CCSDSConvolutionalCodingParams) XXX_Size() int {
+	return xxx_messageInfo_CCSDSConvolutionalCodingParams.Size(m)
+}
+func (m *CCSDSConvolutionalCodingParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_CCSDSConvolutionalCodingParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CCSDSConvolutionalCodingParams proto.InternalMessageInfo
+
+func (m *CCSDSConvolutionalCodingParams) GetPolynomialInversion() CCSDSConvolutionalCodingParams_PolynomialInversion {
+	if m != nil {
+		return m.PolynomialInversion
+	}
+	return CCSDSConvolutionalCodingParams_G1_G2
+}
+
+func (m *CCSDSConvolutionalCodingParams) GetPuncturing() CCSDSConvolutionalCodingParams_Puncturing {
+	if m != nil {
+		return m.Puncturing
+	}
+	return CCSDSConvolutionalCodingParams_OFF
+}
+
+// CCSDS-specific scrambling parameters.
+// Additive scrambler with pseudo-random sequence generated by the polynomial:
+// h(x) = x^8 + x^7 + x^5 + x^3 + 1
+type CCSDSScramblingParams struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *BitStream) Reset()         { *m = BitStream{} }
-func (m *BitStream) String() string { return proto.CompactTextString(m) }
-func (*BitStream) ProtoMessage()    {}
-func (*BitStream) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_b13b6b274c2602c1, []int{2}
+func (m *CCSDSScramblingParams) Reset()         { *m = CCSDSScramblingParams{} }
+func (m *CCSDSScramblingParams) String() string { return proto.CompactTextString(m) }
+func (*CCSDSScramblingParams) ProtoMessage()    {}
+func (*CCSDSScramblingParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_radio_797d67ab77d76928, []int{3}
 }
-func (m *BitStream) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_BitStream.Unmarshal(m, b)
+func (m *CCSDSScramblingParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CCSDSScramblingParams.Unmarshal(m, b)
 }
-func (m *BitStream) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_BitStream.Marshal(b, m, deterministic)
+func (m *CCSDSScramblingParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CCSDSScramblingParams.Marshal(b, m, deterministic)
 }
-func (dst *BitStream) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_BitStream.Merge(dst, src)
+func (dst *CCSDSScramblingParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CCSDSScramblingParams.Merge(dst, src)
 }
-func (m *BitStream) XXX_Size() int {
-	return xxx_messageInfo_BitStream.Size(m)
+func (m *CCSDSScramblingParams) XXX_Size() int {
+	return xxx_messageInfo_CCSDSScramblingParams.Size(m)
 }
-func (m *BitStream) XXX_DiscardUnknown() {
-	xxx_messageInfo_BitStream.DiscardUnknown(m)
+func (m *CCSDSScramblingParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_CCSDSScramblingParams.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_BitStream proto.InternalMessageInfo
+var xxx_messageInfo_CCSDSScramblingParams proto.InternalMessageInfo
+
+// CCSDS-specific Reed-Solomon parameters.
+type CCSDSReedSolomonParams struct {
+	// Block length type for RS code.
+	BlockLengthType      CCSDSReedSolomonParams_BlockLengthType `protobuf:"varint,1,opt,name=block_length_type,json=blockLengthType,proto3,enum=stellarstation.api.v1.radio.CCSDSReedSolomonParams_BlockLengthType" json:"block_length_type,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                               `json:"-"`
+	XXX_unrecognized     []byte                                 `json:"-"`
+	XXX_sizecache        int32                                  `json:"-"`
+}
+
+func (m *CCSDSReedSolomonParams) Reset()         { *m = CCSDSReedSolomonParams{} }
+func (m *CCSDSReedSolomonParams) String() string { return proto.CompactTextString(m) }
+func (*CCSDSReedSolomonParams) ProtoMessage()    {}
+func (*CCSDSReedSolomonParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_radio_797d67ab77d76928, []int{4}
+}
+func (m *CCSDSReedSolomonParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CCSDSReedSolomonParams.Unmarshal(m, b)
+}
+func (m *CCSDSReedSolomonParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CCSDSReedSolomonParams.Marshal(b, m, deterministic)
+}
+func (dst *CCSDSReedSolomonParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CCSDSReedSolomonParams.Merge(dst, src)
+}
+func (m *CCSDSReedSolomonParams) XXX_Size() int {
+	return xxx_messageInfo_CCSDSReedSolomonParams.Size(m)
+}
+func (m *CCSDSReedSolomonParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_CCSDSReedSolomonParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CCSDSReedSolomonParams proto.InternalMessageInfo
+
+func (m *CCSDSReedSolomonParams) GetBlockLengthType() CCSDSReedSolomonParams_BlockLengthType {
+	if m != nil {
+		return m.BlockLengthType
+	}
+	return CCSDSReedSolomonParams_RS_223_255
+}
+
+// https://public.ccsds.org/Pubs/131x0b3e1.pdf
+//
+// CCSDS transfer frames allow for a few common variations satellites use such as setting a
+// custom synchronization word, inverting the convolutional coding polynomials,
+// etc. The sequence of error-correcting codes will be applied as they are
+// defined in the CCSDS standard.
+type CCSDSTransferFrame struct {
+	// Synchronization word parameters. If unset, synchronization will be enabled
+	// using the default CCSDS transfer frame standard synchronization word as in
+	// 9.3.5 (Page 9-3) in the specification.
+	SynchronizationParams *SynchronizationParams `protobuf:"bytes,1,opt,name=synchronization_params,json=synchronizationParams,proto3" json:"synchronization_params,omitempty"`
+	// Convolutional coding parameters. If unset, convolutional coding is disabled.
+	ConvolutionalCodingParams *CCSDSConvolutionalCodingParams `protobuf:"bytes,2,opt,name=convolutional_coding_params,json=convolutionalCodingParams,proto3" json:"convolutional_coding_params,omitempty"`
+	// Scrambling parameters. If unset, scrambling is disabled.
+	ScramblingParams *CCSDSScramblingParams `protobuf:"bytes,3,opt,name=scrambling_params,json=scramblingParams,proto3" json:"scrambling_params,omitempty"`
+	// Reed-Solomon parameters. If unset, Reed-Solomon is disabled.
+	ReedSolomonParams *CCSDSReedSolomonParams `protobuf:"bytes,4,opt,name=reed_solomon_params,json=reedSolomonParams,proto3" json:"reed_solomon_params,omitempty"`
+	// Frame length, in bytes.
+	FrameLengthBytes uint32 `protobuf:"varint,5,opt,name=frame_length_bytes,json=frameLengthBytes,proto3" json:"frame_length_bytes,omitempty"`
+	// Line coding used.
+	LineCoding           LineCoding `protobuf:"varint,6,opt,name=line_coding,json=lineCoding,proto3,enum=stellarstation.api.v1.radio.LineCoding" json:"line_coding,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_unrecognized     []byte     `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+
+func (m *CCSDSTransferFrame) Reset()         { *m = CCSDSTransferFrame{} }
+func (m *CCSDSTransferFrame) String() string { return proto.CompactTextString(m) }
+func (*CCSDSTransferFrame) ProtoMessage()    {}
+func (*CCSDSTransferFrame) Descriptor() ([]byte, []int) {
+	return fileDescriptor_radio_797d67ab77d76928, []int{5}
+}
+func (m *CCSDSTransferFrame) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CCSDSTransferFrame.Unmarshal(m, b)
+}
+func (m *CCSDSTransferFrame) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CCSDSTransferFrame.Marshal(b, m, deterministic)
+}
+func (dst *CCSDSTransferFrame) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CCSDSTransferFrame.Merge(dst, src)
+}
+func (m *CCSDSTransferFrame) XXX_Size() int {
+	return xxx_messageInfo_CCSDSTransferFrame.Size(m)
+}
+func (m *CCSDSTransferFrame) XXX_DiscardUnknown() {
+	xxx_messageInfo_CCSDSTransferFrame.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CCSDSTransferFrame proto.InternalMessageInfo
+
+func (m *CCSDSTransferFrame) GetSynchronizationParams() *SynchronizationParams {
+	if m != nil {
+		return m.SynchronizationParams
+	}
+	return nil
+}
+
+func (m *CCSDSTransferFrame) GetConvolutionalCodingParams() *CCSDSConvolutionalCodingParams {
+	if m != nil {
+		return m.ConvolutionalCodingParams
+	}
+	return nil
+}
+
+func (m *CCSDSTransferFrame) GetScramblingParams() *CCSDSScramblingParams {
+	if m != nil {
+		return m.ScramblingParams
+	}
+	return nil
+}
+
+func (m *CCSDSTransferFrame) GetReedSolomonParams() *CCSDSReedSolomonParams {
+	if m != nil {
+		return m.ReedSolomonParams
+	}
+	return nil
+}
+
+func (m *CCSDSTransferFrame) GetFrameLengthBytes() uint32 {
+	if m != nil {
+		return m.FrameLengthBytes
+	}
+	return 0
+}
+
+func (m *CCSDSTransferFrame) GetLineCoding() LineCoding {
+	if m != nil {
+		return m.LineCoding
+	}
+	return LineCoding_NRZ_L
+}
+
+// Framing for satellites that don't conform to a particular standard. Usually, only
+// a synchronization word and expected frame length can be set.
+type Bitstream struct {
+	// Synchronization word parameters. If unset, synchronization is disabled.
+	SynchronizationParams *SynchronizationParams `protobuf:"bytes,1,opt,name=synchronization_params,json=synchronizationParams,proto3" json:"synchronization_params,omitempty"`
+	// Frame length, in bytes.
+	FrameLengthBytes uint32 `protobuf:"varint,2,opt,name=frame_length_bytes,json=frameLengthBytes,proto3" json:"frame_length_bytes,omitempty"`
+	// Line coding used.
+	LineCoding           LineCoding `protobuf:"varint,3,opt,name=line_coding,json=lineCoding,proto3,enum=stellarstation.api.v1.radio.LineCoding" json:"line_coding,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_unrecognized     []byte     `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+
+func (m *Bitstream) Reset()         { *m = Bitstream{} }
+func (m *Bitstream) String() string { return proto.CompactTextString(m) }
+func (*Bitstream) ProtoMessage()    {}
+func (*Bitstream) Descriptor() ([]byte, []int) {
+	return fileDescriptor_radio_797d67ab77d76928, []int{6}
+}
+func (m *Bitstream) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Bitstream.Unmarshal(m, b)
+}
+func (m *Bitstream) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Bitstream.Marshal(b, m, deterministic)
+}
+func (dst *Bitstream) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Bitstream.Merge(dst, src)
+}
+func (m *Bitstream) XXX_Size() int {
+	return xxx_messageInfo_Bitstream.Size(m)
+}
+func (m *Bitstream) XXX_DiscardUnknown() {
+	xxx_messageInfo_Bitstream.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Bitstream proto.InternalMessageInfo
+
+func (m *Bitstream) GetSynchronizationParams() *SynchronizationParams {
+	if m != nil {
+		return m.SynchronizationParams
+	}
+	return nil
+}
+
+func (m *Bitstream) GetFrameLengthBytes() uint32 {
+	if m != nil {
+		return m.FrameLengthBytes
+	}
+	return 0
+}
+
+func (m *Bitstream) GetLineCoding() LineCoding {
+	if m != nil {
+		return m.LineCoding
+	}
+	return LineCoding_NRZ_L
+}
+
+// Parameters for frame synchronization.
+type SynchronizationParams struct {
+	// The actual bytes of the synchronization word. Least significant bit aligned
+	// E.g.
+	// 15-bit sync word of 0x7fff should be represented as 0111 1111 1111 1111 or [0x7f, 0xff]
+	SynchronizationWord []byte `protobuf:"bytes,1,opt,name=synchronization_word,json=synchronizationWord,proto3" json:"synchronization_word,omitempty"`
+	// The length in bits of the synchronization word.
+	LengthBits           uint32   `protobuf:"varint,2,opt,name=length_bits,json=lengthBits,proto3" json:"length_bits,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *SynchronizationParams) Reset()         { *m = SynchronizationParams{} }
+func (m *SynchronizationParams) String() string { return proto.CompactTextString(m) }
+func (*SynchronizationParams) ProtoMessage()    {}
+func (*SynchronizationParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_radio_797d67ab77d76928, []int{7}
+}
+func (m *SynchronizationParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SynchronizationParams.Unmarshal(m, b)
+}
+func (m *SynchronizationParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SynchronizationParams.Marshal(b, m, deterministic)
+}
+func (dst *SynchronizationParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SynchronizationParams.Merge(dst, src)
+}
+func (m *SynchronizationParams) XXX_Size() int {
+	return xxx_messageInfo_SynchronizationParams.Size(m)
+}
+func (m *SynchronizationParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_SynchronizationParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SynchronizationParams proto.InternalMessageInfo
+
+func (m *SynchronizationParams) GetSynchronizationWord() []byte {
+	if m != nil {
+		return m.SynchronizationWord
+	}
+	return nil
+}
+
+func (m *SynchronizationParams) GetLengthBits() uint32 {
+	if m != nil {
+		return m.LengthBits
+	}
+	return 0
+}
 
 // PACKET communication based on AX.25. https://www.sigidwiki.com/wiki/PACKET.
 type AX25 struct {
@@ -449,7 +918,7 @@ func (m *AX25) Reset()         { *m = AX25{} }
 func (m *AX25) String() string { return proto.CompactTextString(m) }
 func (*AX25) ProtoMessage()    {}
 func (*AX25) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_b13b6b274c2602c1, []int{3}
+	return fileDescriptor_radio_797d67ab77d76928, []int{8}
 }
 func (m *AX25) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AX25.Unmarshal(m, b)
@@ -523,7 +992,7 @@ func (m *ConvolutionalCodingParams) Reset()         { *m = ConvolutionalCodingPa
 func (m *ConvolutionalCodingParams) String() string { return proto.CompactTextString(m) }
 func (*ConvolutionalCodingParams) ProtoMessage()    {}
 func (*ConvolutionalCodingParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_b13b6b274c2602c1, []int{4}
+	return fileDescriptor_radio_797d67ab77d76928, []int{9}
 }
 func (m *ConvolutionalCodingParams) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ConvolutionalCodingParams.Unmarshal(m, b)
@@ -585,7 +1054,7 @@ func (m *ScramblingParams) Reset()         { *m = ScramblingParams{} }
 func (m *ScramblingParams) String() string { return proto.CompactTextString(m) }
 func (*ScramblingParams) ProtoMessage()    {}
 func (*ScramblingParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_radio_b13b6b274c2602c1, []int{5}
+	return fileDescriptor_radio_797d67ab77d76928, []int{10}
 }
 func (m *ScramblingParams) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ScramblingParams.Unmarshal(m, b)
@@ -636,68 +1105,108 @@ func (m *ScramblingParams) GetSeed() []byte {
 func init() {
 	proto.RegisterType((*RadioDeviceConfiguration)(nil), "stellarstation.api.v1.radio.RadioDeviceConfiguration")
 	proto.RegisterType((*CommunicationProtocol)(nil), "stellarstation.api.v1.radio.CommunicationProtocol")
-	proto.RegisterType((*BitStream)(nil), "stellarstation.api.v1.radio.BitStream")
+	proto.RegisterType((*CCSDSConvolutionalCodingParams)(nil), "stellarstation.api.v1.radio.CCSDSConvolutionalCodingParams")
+	proto.RegisterType((*CCSDSScramblingParams)(nil), "stellarstation.api.v1.radio.CCSDSScramblingParams")
+	proto.RegisterType((*CCSDSReedSolomonParams)(nil), "stellarstation.api.v1.radio.CCSDSReedSolomonParams")
+	proto.RegisterType((*CCSDSTransferFrame)(nil), "stellarstation.api.v1.radio.CCSDSTransferFrame")
+	proto.RegisterType((*Bitstream)(nil), "stellarstation.api.v1.radio.Bitstream")
+	proto.RegisterType((*SynchronizationParams)(nil), "stellarstation.api.v1.radio.SynchronizationParams")
 	proto.RegisterType((*AX25)(nil), "stellarstation.api.v1.radio.AX25")
 	proto.RegisterType((*ConvolutionalCodingParams)(nil), "stellarstation.api.v1.radio.ConvolutionalCodingParams")
 	proto.RegisterType((*ScramblingParams)(nil), "stellarstation.api.v1.radio.ScramblingParams")
 	proto.RegisterEnum("stellarstation.api.v1.radio.Modulation", Modulation_name, Modulation_value)
 	proto.RegisterEnum("stellarstation.api.v1.radio.LineCoding", LineCoding_name, LineCoding_value)
+	proto.RegisterEnum("stellarstation.api.v1.radio.CCSDSConvolutionalCodingParams_PolynomialInversion", CCSDSConvolutionalCodingParams_PolynomialInversion_name, CCSDSConvolutionalCodingParams_PolynomialInversion_value)
+	proto.RegisterEnum("stellarstation.api.v1.radio.CCSDSConvolutionalCodingParams_Puncturing", CCSDSConvolutionalCodingParams_Puncturing_name, CCSDSConvolutionalCodingParams_Puncturing_value)
+	proto.RegisterEnum("stellarstation.api.v1.radio.CCSDSReedSolomonParams_BlockLengthType", CCSDSReedSolomonParams_BlockLengthType_name, CCSDSReedSolomonParams_BlockLengthType_value)
 	proto.RegisterEnum("stellarstation.api.v1.radio.ScramblingParams_Type", ScramblingParams_Type_name, ScramblingParams_Type_value)
 }
 
 func init() {
-	proto.RegisterFile("stellarstation/api/v1/radio/radio.proto", fileDescriptor_radio_b13b6b274c2602c1)
+	proto.RegisterFile("stellarstation/api/v1/radio/radio.proto", fileDescriptor_radio_797d67ab77d76928)
 }
 
-var fileDescriptor_radio_b13b6b274c2602c1 = []byte{
-	// 783 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x84, 0x54, 0x5d, 0x6f, 0xe2, 0x46,
-	0x14, 0x8d, 0xc1, 0xe1, 0xe3, 0x42, 0xc8, 0xec, 0x24, 0xdb, 0xb2, 0xaa, 0xd4, 0xcd, 0xf2, 0x12,
-	0xba, 0x52, 0x8d, 0x70, 0x36, 0x94, 0x57, 0x0c, 0xcb, 0x2e, 0x02, 0x6f, 0xbd, 0x76, 0x5a, 0x55,
-	0xe9, 0x83, 0x35, 0x98, 0x09, 0x19, 0xc5, 0x9e, 0xa1, 0xfe, 0x40, 0x4d, 0xfe, 0x40, 0xff, 0x58,
-	0xa5, 0xfe, 0xaa, 0x4a, 0xd5, 0x8c, 0x9d, 0x84, 0x56, 0x15, 0xfb, 0x82, 0x8f, 0xcf, 0x3d, 0xe7,
-	0x5c, 0xe6, 0xce, 0x78, 0xe0, 0x3c, 0x49, 0x69, 0x18, 0x92, 0x38, 0x49, 0x49, 0xca, 0x04, 0xef,
-	0x91, 0x0d, 0xeb, 0x6d, 0xfb, 0xbd, 0x98, 0xac, 0x98, 0xc8, 0x7f, 0x8d, 0x4d, 0x2c, 0x52, 0x81,
-	0xbf, 0xf9, 0xb7, 0xd0, 0x20, 0x1b, 0x66, 0x6c, 0xfb, 0x86, 0x92, 0x74, 0xfe, 0xd6, 0xa0, 0xed,
-	0x4a, 0x34, 0xa1, 0x5b, 0x16, 0xd0, 0xb1, 0xe0, 0x37, 0x6c, 0x9d, 0xc5, 0x4a, 0x89, 0x0d, 0x38,
-	0x09, 0x28, 0x4f, 0x69, 0xec, 0xdf, 0xc4, 0xf4, 0xb7, 0x8c, 0xf2, 0xe0, 0xde, 0xbf, 0x7d, 0x68,
-	0x6b, 0x67, 0x5a, 0x57, 0x77, 0x5f, 0xe4, 0xa5, 0xe9, 0x63, 0xe5, 0xe3, 0x03, 0xfe, 0x00, 0x10,
-	0x89, 0x55, 0x16, 0x2a, 0x77, 0xbb, 0x74, 0xa6, 0x75, 0x5b, 0xe6, 0xb9, 0xb1, 0xa7, 0xbd, 0x61,
-	0x3f, 0xc9, 0xdd, 0x1d, 0x2b, 0x6e, 0x43, 0x75, 0xc9, 0xd2, 0x98, 0xa4, 0xb4, 0x5d, 0x56, 0xcd,
-	0x1e, 0x5f, 0xf1, 0x27, 0xa8, 0xa9, 0x55, 0x05, 0x22, 0x6c, 0xeb, 0x67, 0x5a, 0xb7, 0x61, 0x9a,
-	0x7b, 0x1b, 0x8c, 0x45, 0x14, 0x65, 0x9c, 0x05, 0xaa, 0xe4, 0x14, 0x4e, 0xf7, 0x29, 0xa3, 0xf3,
-	0x2b, 0xbc, 0xfc, 0x5f, 0x09, 0xfe, 0x01, 0x74, 0xf2, 0xbb, 0x79, 0xa9, 0x16, 0xdb, 0x30, 0xdf,
-	0xec, 0x6d, 0x32, 0xfa, 0xc5, 0xbc, 0xfc, 0x78, 0xe0, 0x2a, 0x83, 0x55, 0x87, 0xea, 0x34, 0x26,
-	0x11, 0xe3, 0xeb, 0x4e, 0x03, 0xea, 0x16, 0x4b, 0xbd, 0x34, 0xa6, 0x24, 0xea, 0xfc, 0xa9, 0x81,
-	0x2e, 0x85, 0xf8, 0x14, 0x0e, 0xd7, 0x17, 0x71, 0x76, 0xab, 0xa2, 0x6b, 0x6e, 0xfe, 0x82, 0xfb,
-	0x70, 0xba, 0xa2, 0x49, 0xca, 0xb8, 0xca, 0xf7, 0x03, 0x12, 0x86, 0x09, 0x5b, 0xe7, 0x53, 0xac,
-	0xbb, 0x27, 0x3b, 0xb5, 0x71, 0x51, 0xc2, 0xdf, 0x01, 0xda, 0xb5, 0x24, 0x09, 0x5b, 0xa9, 0x71,
-	0x1d, 0xb9, 0xc7, 0x3b, 0xbc, 0x97, 0xb0, 0x15, 0x3e, 0x87, 0xe3, 0x44, 0x64, 0x71, 0x40, 0x9f,
-	0x83, 0x75, 0x15, 0xdc, 0xca, 0xe9, 0xa7, 0xcc, 0xd7, 0xd0, 0x28, 0x84, 0x2a, 0xee, 0x50, 0xc5,
-	0x41, 0x4e, 0xc9, 0xa4, 0x4e, 0x08, 0xaf, 0xc6, 0x82, 0x6f, 0x45, 0x98, 0xc9, 0x70, 0x12, 0x8e,
-	0xc5, 0x8a, 0xf1, 0xb5, 0x43, 0x62, 0x12, 0x25, 0xb8, 0x09, 0xda, 0x9d, 0x5a, 0xd6, 0x91, 0xab,
-	0xdd, 0xe1, 0x37, 0xd0, 0x64, 0x7c, 0x4b, 0xe3, 0x84, 0xfa, 0x6a, 0x2b, 0x4b, 0xaa, 0xd0, 0x28,
-	0x38, 0x57, 0x6e, 0xe7, 0xb7, 0x00, 0x1b, 0x11, 0xde, 0x73, 0x11, 0x31, 0x12, 0xb6, 0xcb, 0x67,
-	0xe5, 0x6e, 0xd3, 0xdd, 0x61, 0x3a, 0x7f, 0x69, 0x80, 0xbc, 0x20, 0x26, 0xd1, 0x32, 0x7c, 0xee,
-	0x32, 0x05, 0x3d, 0xbd, 0xdf, 0x50, 0xd5, 0xa8, 0xf5, 0x85, 0xfd, 0xff, 0xaf, 0xd9, 0xb8, 0xba,
-	0xdf, 0x50, 0x57, 0xf9, 0xf1, 0x2b, 0xa8, 0xf1, 0x2c, 0xf2, 0x97, 0x2c, 0x4d, 0x8a, 0xff, 0x56,
-	0xe5, 0x59, 0x64, 0xb1, 0x34, 0xc1, 0x18, 0xf4, 0x88, 0x24, 0x77, 0x6a, 0x9c, 0x4d, 0x57, 0x61,
-	0xc9, 0x25, 0x94, 0xae, 0xd4, 0xe0, 0x9a, 0xae, 0xc2, 0x9d, 0x2e, 0xe8, 0x32, 0x10, 0x37, 0xa1,
-	0x36, 0x9a, 0x4c, 0x66, 0x57, 0xb3, 0x9f, 0xdf, 0xa3, 0x03, 0x8c, 0xa1, 0x65, 0xff, 0xb4, 0xb8,
-	0x9a, 0x39, 0x8b, 0xd9, 0x78, 0xa4, 0x38, 0xed, 0xed, 0x1f, 0x25, 0x80, 0xe7, 0xd3, 0x2e, 0x0d,
-	0x93, 0x99, 0x37, 0xb2, 0x16, 0xef, 0x27, 0xe8, 0x00, 0x57, 0xa1, 0x3c, 0xf5, 0xe6, 0x48, 0xc3,
-	0x35, 0xd0, 0x47, 0x12, 0x95, 0x24, 0xb2, 0x1c, 0x6f, 0x8e, 0xca, 0x12, 0xd9, 0x92, 0xd3, 0x25,
-	0xfa, 0x2c, 0xb9, 0x43, 0x89, 0x1c, 0x6f, 0x3e, 0x44, 0x15, 0x5c, 0x87, 0x43, 0xc7, 0x9b, 0xf7,
-	0x07, 0xa8, 0x5a, 0xc0, 0x0b, 0x13, 0xd5, 0x0a, 0x38, 0x78, 0x87, 0xea, 0x18, 0xa0, 0x22, 0x05,
-	0xe6, 0x10, 0x41, 0x81, 0xcd, 0xcb, 0x01, 0x6a, 0x48, 0xc9, 0x8f, 0x2a, 0xad, 0xa9, 0x72, 0x47,
-	0xf6, 0x10, 0x1d, 0x49, 0xf2, 0xf3, 0xc8, 0xee, 0x0f, 0x50, 0xab, 0x80, 0x17, 0x26, 0x3a, 0x2e,
-	0xe0, 0xe0, 0x1d, 0x42, 0x32, 0x41, 0x0a, 0xcc, 0x21, 0x7a, 0x51, 0x60, 0x99, 0x86, 0xe5, 0x0a,
-	0x6c, 0x6f, 0x8e, 0x4e, 0x64, 0xd6, 0x07, 0x89, 0x4e, 0x71, 0x05, 0x4a, 0x23, 0x1b, 0xbd, 0x94,
-	0xcf, 0xa9, 0x8d, 0xbe, 0x92, 0x4f, 0xc7, 0x46, 0x5f, 0xbf, 0xf5, 0x00, 0x16, 0x8c, 0xd3, 0xfc,
-	0xe0, 0xc8, 0xec, 0x4f, 0xee, 0xb5, 0xbf, 0x40, 0x07, 0x8f, 0xd0, 0x46, 0xda, 0x23, 0xf4, 0x50,
-	0x49, 0xda, 0xdc, 0xeb, 0x7c, 0x0c, 0x96, 0xe3, 0x2f, 0xf2, 0x31, 0x58, 0x8e, 0x6f, 0xe7, 0x63,
-	0xb0, 0x1c, 0xdf, 0x43, 0x15, 0x8b, 0xc1, 0xeb, 0x40, 0x44, 0xfb, 0x8e, 0x82, 0x05, 0xea, 0x9e,
-	0x53, 0x1f, 0xb8, 0xa3, 0x5d, 0x0f, 0xd7, 0x2c, 0xbd, 0xcd, 0x96, 0x46, 0x20, 0xa2, 0x1e, 0xe3,
-	0x37, 0xa2, 0x70, 0x32, 0x1e, 0xf4, 0xd6, 0xe2, 0xfb, 0x3d, 0x77, 0xeb, 0xb2, 0xa2, 0x2e, 0x8f,
-	0x8b, 0x7f, 0x02, 0x00, 0x00, 0xff, 0xff, 0x9e, 0x16, 0x72, 0x4b, 0x81, 0x05, 0x00, 0x00,
+var fileDescriptor_radio_797d67ab77d76928 = []byte{
+	// 1287 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x57, 0x5d, 0x4f, 0x1b, 0x47,
+	0x17, 0xf6, 0xda, 0xc6, 0xc0, 0xb1, 0x81, 0x61, 0x0c, 0x89, 0xa3, 0x48, 0x09, 0xd9, 0x8b, 0x37,
+	0xbc, 0x51, 0x6b, 0xe4, 0x35, 0x76, 0xa8, 0x7a, 0xe5, 0x0f, 0x0c, 0x16, 0x36, 0x71, 0x66, 0x49,
+	0x5a, 0xe5, 0x66, 0xb5, 0x5e, 0x0f, 0x66, 0xc4, 0xee, 0x8e, 0xbb, 0xbb, 0xa6, 0x25, 0xbd, 0x6a,
+	0x6f, 0xfa, 0x9f, 0xaa, 0x5e, 0x56, 0xea, 0x3f, 0xe9, 0x55, 0xd5, 0x7f, 0x50, 0xa9, 0x9a, 0xd9,
+	0x5d, 0x7f, 0x00, 0x71, 0x50, 0x22, 0xf5, 0x06, 0x3f, 0xfb, 0xcc, 0x39, 0xcf, 0x99, 0x73, 0xe6,
+	0xcc, 0x07, 0xf0, 0xdc, 0x0f, 0xa8, 0x6d, 0x9b, 0x9e, 0x1f, 0x98, 0x01, 0xe3, 0xee, 0x9e, 0x39,
+	0x62, 0x7b, 0x57, 0xa5, 0x3d, 0xcf, 0x1c, 0x30, 0x1e, 0xfe, 0x2d, 0x8e, 0x3c, 0x1e, 0x70, 0xfc,
+	0x78, 0xde, 0xb0, 0x68, 0x8e, 0x58, 0xf1, 0xaa, 0x54, 0x94, 0x26, 0xea, 0x3f, 0x0a, 0x14, 0x88,
+	0x40, 0x4d, 0x7a, 0xc5, 0x2c, 0xda, 0xe0, 0xee, 0x39, 0x1b, 0x8e, 0x3d, 0x69, 0x89, 0x8b, 0x90,
+	0xb7, 0xa8, 0x1b, 0x50, 0xcf, 0x38, 0xf7, 0xe8, 0x77, 0x63, 0xea, 0x5a, 0xd7, 0xc6, 0xc5, 0xfb,
+	0x82, 0xb2, 0xa3, 0xec, 0xa6, 0xc9, 0x66, 0x38, 0xd4, 0x8a, 0x47, 0x8e, 0xdf, 0xe3, 0x23, 0x00,
+	0x87, 0x0f, 0xc6, 0xb6, 0xf4, 0x2e, 0x24, 0x77, 0x94, 0xdd, 0x75, 0xed, 0x79, 0x71, 0x41, 0xf8,
+	0x62, 0x77, 0x62, 0x4e, 0x66, 0x5c, 0x71, 0x01, 0x96, 0xfb, 0x2c, 0xf0, 0xcc, 0x80, 0x16, 0x52,
+	0x32, 0x58, 0xfc, 0x89, 0x4f, 0x61, 0x45, 0x66, 0x65, 0x71, 0xbb, 0x90, 0xde, 0x51, 0x76, 0xb3,
+	0x9a, 0xb6, 0x30, 0x40, 0x83, 0x3b, 0xce, 0xd8, 0x65, 0x96, 0x1c, 0xea, 0x45, 0x9e, 0x64, 0xa2,
+	0xa1, 0xfe, 0xa5, 0xc0, 0xf6, 0x9d, 0x36, 0xf8, 0x25, 0xa4, 0xcd, 0x1f, 0xb4, 0x8a, 0xcc, 0x36,
+	0xab, 0x3d, 0x5b, 0x18, 0xa5, 0xf6, 0xad, 0x56, 0x39, 0x4e, 0x10, 0xe9, 0x80, 0x8f, 0x60, 0xc9,
+	0xb2, 0xfc, 0x81, 0x2f, 0x0b, 0x90, 0xd5, 0xf6, 0x16, 0xcf, 0xaf, 0xa1, 0x37, 0xf5, 0x33, 0xcf,
+	0x74, 0xfd, 0x73, 0x51, 0x4b, 0xd3, 0xa1, 0xc7, 0x09, 0x12, 0xfa, 0xe3, 0x16, 0xac, 0xf6, 0x59,
+	0xe0, 0x07, 0x1e, 0x35, 0x1d, 0x59, 0x87, 0xac, 0xf6, 0xbf, 0x85, 0x62, 0xf5, 0xd8, 0xfa, 0x38,
+	0x41, 0xa6, 0xae, 0xf5, 0x55, 0x58, 0x16, 0xca, 0xcc, 0x1d, 0xaa, 0x7f, 0xa6, 0xe0, 0x89, 0x0c,
+	0xd9, 0xe0, 0xee, 0x15, 0xb7, 0xc7, 0x42, 0xc3, 0xb4, 0x1b, 0x7c, 0xc0, 0xdc, 0x61, 0xcf, 0xf4,
+	0x4c, 0xc7, 0xc7, 0x3f, 0x2b, 0xb0, 0x35, 0xe2, 0xf6, 0xb5, 0xcb, 0x1d, 0x66, 0xda, 0x06, 0x73,
+	0xaf, 0xa8, 0xe7, 0x8b, 0xf5, 0x54, 0xe4, 0x7a, 0xbe, 0xfa, 0x78, 0x3a, 0x1f, 0xd4, 0x2e, 0xf6,
+	0x26, 0xba, 0xed, 0x58, 0x96, 0xe4, 0x47, 0xb7, 0x49, 0x7c, 0x0e, 0x30, 0x1a, 0xbb, 0x56, 0x30,
+	0xf6, 0x98, 0x3b, 0x8c, 0x3a, 0xa9, 0xf5, 0x59, 0x91, 0x27, 0x6a, 0x64, 0x46, 0x59, 0xd5, 0x21,
+	0x7f, 0xc7, 0x9c, 0xf0, 0x2a, 0x2c, 0x1d, 0x95, 0x8c, 0x23, 0x0d, 0x25, 0x30, 0x86, 0x75, 0x09,
+	0x8d, 0xf6, 0xe9, 0xdb, 0x43, 0x72, 0x76, 0xd8, 0x44, 0x8a, 0xe4, 0xa6, 0x84, 0x71, 0x54, 0x42,
+	0x49, 0xe9, 0xa2, 0x09, 0x98, 0x52, 0x7f, 0x52, 0x00, 0xa6, 0xf1, 0xf0, 0x32, 0xa4, 0x5e, 0xb5,
+	0x5a, 0x28, 0x81, 0x11, 0xe4, 0x7a, 0x6f, 0x4e, 0x1b, 0x67, 0x6f, 0xc8, 0xa1, 0xa1, 0x19, 0x65,
+	0xa4, 0xcc, 0x31, 0x65, 0x63, 0x1f, 0x25, 0xe7, 0x98, 0x7d, 0xa3, 0x82, 0x52, 0x73, 0x4c, 0xc5,
+	0xa8, 0xa2, 0xf4, 0x1c, 0x53, 0x35, 0x5e, 0xa2, 0xa5, 0x39, 0xe6, 0xa5, 0x71, 0x80, 0x32, 0xea,
+	0x43, 0xd8, 0x96, 0x15, 0xd1, 0x2d, 0xcf, 0x74, 0xfa, 0xf6, 0xa4, 0x10, 0xea, 0x6f, 0x0a, 0x3c,
+	0x90, 0x23, 0x84, 0xd2, 0x81, 0xce, 0x6d, 0xee, 0x70, 0x37, 0x5a, 0x79, 0x0e, 0x9b, 0x7d, 0x9b,
+	0x5b, 0x97, 0x86, 0x4d, 0xdd, 0x61, 0x70, 0x61, 0x04, 0xd7, 0x23, 0x1a, 0xad, 0x7a, 0xe3, 0xe3,
+	0xb5, 0xbf, 0xa5, 0x57, 0xac, 0x0b, 0xb1, 0x8e, 0xd4, 0x3a, 0xbb, 0x1e, 0x51, 0xb2, 0xd1, 0x9f,
+	0x27, 0xd4, 0x12, 0x6c, 0xdc, 0xb0, 0xc1, 0xeb, 0x00, 0x44, 0x37, 0x34, 0xad, 0x6c, 0x68, 0x95,
+	0x0a, 0x4a, 0xc4, 0xdf, 0xe5, 0xaf, 0xe4, 0xb7, 0xa2, 0xfe, 0x9a, 0x06, 0x7c, 0x7b, 0xcf, 0x60,
+	0x06, 0x0f, 0xfc, 0x6b, 0xd7, 0xba, 0xf0, 0xb8, 0xcb, 0xde, 0xcb, 0x19, 0x1a, 0x23, 0x39, 0x89,
+	0x68, 0xfb, 0x2e, 0x3e, 0x24, 0xf4, 0x79, 0xd7, 0x70, 0xfa, 0x64, 0xdb, 0xbf, 0x8b, 0xc6, 0x3f,
+	0xc2, 0x63, 0x6b, 0xb6, 0xcd, 0x0c, 0x4b, 0xf6, 0x59, 0x1c, 0x2f, 0xdc, 0xf4, 0x5f, 0x7f, 0x46,
+	0xaf, 0x92, 0x47, 0xd6, 0x07, 0x37, 0xa7, 0x01, 0x9b, 0xfe, 0x64, 0x45, 0xe3, 0x90, 0xa9, 0xfb,
+	0x9c, 0x83, 0x77, 0x35, 0x03, 0x41, 0xfe, 0x0d, 0x06, 0x5b, 0x90, 0xf7, 0x28, 0x1d, 0x18, 0x7e,
+	0xb8, 0x92, 0x71, 0x88, 0xf0, 0xa8, 0x2d, 0x7f, 0x42, 0x17, 0x90, 0x4d, 0xef, 0x56, 0xa3, 0x7d,
+	0x01, 0xf8, 0x5c, 0x2c, 0x5b, 0xdc, 0x68, 0xfd, 0xeb, 0x80, 0xfa, 0x85, 0xa5, 0x1d, 0x65, 0x77,
+	0x8d, 0x20, 0x39, 0x12, 0x76, 0x44, 0x5d, 0xf0, 0xf8, 0x18, 0xb2, 0x36, 0x73, 0x69, 0x54, 0xe7,
+	0x42, 0xe6, 0x1e, 0xd7, 0x4a, 0x87, 0xb9, 0x34, 0xac, 0x1b, 0x01, 0x7b, 0x82, 0xd5, 0xbf, 0x15,
+	0x58, 0x9d, 0x9c, 0x91, 0xff, 0x65, 0xcf, 0xdc, 0x9d, 0x70, 0xf2, 0x7e, 0x09, 0xa7, 0x3e, 0x3d,
+	0xe1, 0x4b, 0xd8, 0xbe, 0x73, 0x9e, 0xb8, 0x04, 0x5b, 0x37, 0x73, 0xff, 0x9e, 0x7b, 0x03, 0x99,
+	0x79, 0x8e, 0xe4, 0x6f, 0x8c, 0x7d, 0xc3, 0xbd, 0x01, 0x7e, 0x0a, 0xd9, 0x78, 0xf6, 0x2c, 0x88,
+	0x27, 0x0f, 0x21, 0x25, 0x8a, 0xaa, 0xfe, 0xae, 0x40, 0x5a, 0x5c, 0x84, 0x78, 0x0b, 0x96, 0x86,
+	0x65, 0x6f, 0x7c, 0x21, 0xd5, 0x56, 0x48, 0xf8, 0x21, 0x42, 0x0e, 0xa8, 0x1f, 0x30, 0x37, 0x0c,
+	0x67, 0x99, 0xb6, 0xed, 0xb3, 0x61, 0xf8, 0x4c, 0x58, 0x25, 0xf9, 0x99, 0xb1, 0x46, 0x34, 0x84,
+	0xff, 0x0f, 0x68, 0xd6, 0xc5, 0xf7, 0xd9, 0x40, 0x56, 0x63, 0x8d, 0x6c, 0xcc, 0xf0, 0xba, 0xcf,
+	0x06, 0xf8, 0x39, 0x6c, 0xf8, 0x7c, 0xec, 0x59, 0x74, 0x2a, 0x9c, 0x96, 0xc2, 0xeb, 0x21, 0x3d,
+	0xd1, 0x7c, 0x0a, 0xd9, 0xc8, 0x50, 0xca, 0x85, 0x4d, 0x07, 0x21, 0x25, 0x94, 0x54, 0x1b, 0x1e,
+	0x7d, 0xf8, 0x72, 0xcc, 0x81, 0x72, 0x29, 0xd3, 0x5a, 0x23, 0xca, 0x25, 0x7e, 0x06, 0xb9, 0xf0,
+	0x7a, 0xa4, 0x86, 0x7c, 0xab, 0x84, 0x35, 0xc9, 0x46, 0x1c, 0x11, 0xef, 0x95, 0x27, 0x00, 0xd3,
+	0xfb, 0xad, 0x90, 0xda, 0x49, 0xed, 0xe6, 0xc8, 0x0c, 0xa3, 0xfe, 0xa1, 0x00, 0xba, 0xb9, 0x2d,
+	0x71, 0x0b, 0xd2, 0x33, 0x67, 0xef, 0x47, 0xfa, 0xf0, 0x86, 0x73, 0x51, 0x1e, 0xb5, 0xd2, 0x1f,
+	0x3f, 0x82, 0x15, 0x77, 0xec, 0xcc, 0xae, 0xd7, 0xb2, 0x3b, 0x76, 0xc4, 0x62, 0x61, 0x0c, 0x69,
+	0xc7, 0xf4, 0x2f, 0x65, 0x39, 0x73, 0x44, 0x62, 0xc1, 0xf9, 0x94, 0x0e, 0x64, 0xe1, 0x72, 0x44,
+	0x62, 0x75, 0x17, 0xd2, 0xf2, 0x5c, 0xce, 0xc1, 0x4a, 0xad, 0xd9, 0x6c, 0x9f, 0xb5, 0xdf, 0x1e,
+	0x86, 0x97, 0x62, 0xf7, 0x4d, 0xe7, 0xac, 0xdd, 0xeb, 0xb4, 0x1b, 0x35, 0xc9, 0x29, 0x2f, 0x7e,
+	0x49, 0x02, 0x4c, 0x9f, 0x73, 0xc2, 0xa1, 0xd9, 0xd6, 0x6b, 0xf5, 0xce, 0x61, 0x13, 0x25, 0xc4,
+	0x1d, 0xd8, 0xd2, 0x4f, 0x90, 0x82, 0x57, 0x20, 0x5d, 0x13, 0x28, 0x29, 0x50, 0xbd, 0xa7, 0x9f,
+	0xa0, 0x94, 0x40, 0x5d, 0xc1, 0xa5, 0x05, 0x7a, 0x2d, 0xb8, 0x25, 0x81, 0x7a, 0xfa, 0xc9, 0x01,
+	0xca, 0x88, 0x8b, 0xb5, 0xa7, 0x9f, 0x94, 0xaa, 0x68, 0x39, 0x82, 0x65, 0x0d, 0xad, 0x44, 0xb0,
+	0xba, 0x8f, 0x56, 0x31, 0x40, 0x46, 0x18, 0x68, 0x07, 0x08, 0x22, 0xac, 0x55, 0xaa, 0x28, 0x2b,
+	0x4c, 0x5e, 0x49, 0xb5, 0x9c, 0xd4, 0xad, 0x75, 0x0f, 0xd0, 0x9a, 0x20, 0x5f, 0xd7, 0xba, 0xa5,
+	0x2a, 0x5a, 0x8f, 0x60, 0x59, 0x43, 0x1b, 0x11, 0xac, 0xee, 0x23, 0x24, 0x14, 0x84, 0x81, 0x76,
+	0x80, 0x36, 0x23, 0x2c, 0xd4, 0xb0, 0xc8, 0xa0, 0xab, 0x9f, 0xa0, 0xbc, 0xd0, 0x3a, 0x12, 0x68,
+	0x0b, 0x67, 0x20, 0x59, 0xeb, 0xa2, 0x6d, 0xf1, 0xdb, 0xea, 0xa2, 0x07, 0xe2, 0xb7, 0xd7, 0x45,
+	0x0f, 0x5f, 0xe8, 0x00, 0xd3, 0xfd, 0x28, 0xb4, 0x4f, 0xc9, 0x3b, 0xa3, 0x83, 0x12, 0x31, 0xec,
+	0x22, 0x25, 0x86, 0x3a, 0x4a, 0x0a, 0x37, 0xf2, 0x2e, 0x2c, 0x43, 0xbd, 0x67, 0x74, 0xc2, 0x32,
+	0xd4, 0x7b, 0x46, 0x37, 0x2c, 0x43, 0xbd, 0x67, 0xe8, 0x28, 0x53, 0x67, 0xf0, 0xd4, 0xe2, 0xce,
+	0xa2, 0x56, 0xa8, 0x83, 0x7c, 0xc8, 0xcb, 0x07, 0x6c, 0x4f, 0x79, 0x77, 0x30, 0x64, 0xc1, 0xc5,
+	0xb8, 0x5f, 0xb4, 0xb8, 0xb3, 0xc7, 0xdc, 0x73, 0x1e, 0x79, 0x32, 0xd7, 0xda, 0x1b, 0xf2, 0x2f,
+	0x17, 0xfc, 0xf3, 0xd0, 0xcf, 0xc8, 0xd7, 0x71, 0xf9, 0xdf, 0x00, 0x00, 0x00, 0xff, 0xff, 0xc1,
+	0x3d, 0xdf, 0x3b, 0x62, 0x0c, 0x00, 0x00,
 }
