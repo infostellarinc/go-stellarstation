@@ -7,6 +7,7 @@ import proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
 import math "math"
 import timestamp "github.com/golang/protobuf/ptypes/timestamp"
+import v1 "github.com/infostellarinc/go-stellarstation/api/v1"
 import radio "github.com/infostellarinc/go-stellarstation/api/v1/radio"
 
 import (
@@ -47,7 +48,7 @@ func (m *ListPlansRequest) Reset()         { *m = ListPlansRequest{} }
 func (m *ListPlansRequest) String() string { return proto.CompactTextString(m) }
 func (*ListPlansRequest) ProtoMessage()    {}
 func (*ListPlansRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_0e82115f51d40ef9, []int{0}
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{0}
 }
 func (m *ListPlansRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ListPlansRequest.Unmarshal(m, b)
@@ -101,7 +102,7 @@ func (m *ListPlansResponse) Reset()         { *m = ListPlansResponse{} }
 func (m *ListPlansResponse) String() string { return proto.CompactTextString(m) }
 func (*ListPlansResponse) ProtoMessage()    {}
 func (*ListPlansResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_0e82115f51d40ef9, []int{1}
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{1}
 }
 func (m *ListPlansResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ListPlansResponse.Unmarshal(m, b)
@@ -172,7 +173,7 @@ func (m *Plan) Reset()         { *m = Plan{} }
 func (m *Plan) String() string { return proto.CompactTextString(m) }
 func (*Plan) ProtoMessage()    {}
 func (*Plan) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_0e82115f51d40ef9, []int{2}
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{2}
 }
 func (m *Plan) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Plan.Unmarshal(m, b)
@@ -263,7 +264,7 @@ func (m *Tle) Reset()         { *m = Tle{} }
 func (m *Tle) String() string { return proto.CompactTextString(m) }
 func (*Tle) ProtoMessage()    {}
 func (*Tle) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_0e82115f51d40ef9, []int{3}
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{3}
 }
 func (m *Tle) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Tle.Unmarshal(m, b)
@@ -314,7 +315,7 @@ func (m *UnavailabilityWindow) Reset()         { *m = UnavailabilityWindow{} }
 func (m *UnavailabilityWindow) String() string { return proto.CompactTextString(m) }
 func (*UnavailabilityWindow) ProtoMessage()    {}
 func (*UnavailabilityWindow) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_0e82115f51d40ef9, []int{4}
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{4}
 }
 func (m *UnavailabilityWindow) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UnavailabilityWindow.Unmarshal(m, b)
@@ -373,7 +374,7 @@ func (m *ListUnavailabilityWindowsRequest) Reset()         { *m = ListUnavailabi
 func (m *ListUnavailabilityWindowsRequest) String() string { return proto.CompactTextString(m) }
 func (*ListUnavailabilityWindowsRequest) ProtoMessage()    {}
 func (*ListUnavailabilityWindowsRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_0e82115f51d40ef9, []int{5}
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{5}
 }
 func (m *ListUnavailabilityWindowsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ListUnavailabilityWindowsRequest.Unmarshal(m, b)
@@ -427,7 +428,7 @@ func (m *ListUnavailabilityWindowsResponse) Reset()         { *m = ListUnavailab
 func (m *ListUnavailabilityWindowsResponse) String() string { return proto.CompactTextString(m) }
 func (*ListUnavailabilityWindowsResponse) ProtoMessage()    {}
 func (*ListUnavailabilityWindowsResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_0e82115f51d40ef9, []int{6}
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{6}
 }
 func (m *ListUnavailabilityWindowsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ListUnavailabilityWindowsResponse.Unmarshal(m, b)
@@ -471,7 +472,7 @@ func (m *AddUnavailabilityWindowRequest) Reset()         { *m = AddUnavailabilit
 func (m *AddUnavailabilityWindowRequest) String() string { return proto.CompactTextString(m) }
 func (*AddUnavailabilityWindowRequest) ProtoMessage()    {}
 func (*AddUnavailabilityWindowRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_0e82115f51d40ef9, []int{7}
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{7}
 }
 func (m *AddUnavailabilityWindowRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddUnavailabilityWindowRequest.Unmarshal(m, b)
@@ -525,7 +526,7 @@ func (m *AddUnavailabilityWindowResponse) Reset()         { *m = AddUnavailabili
 func (m *AddUnavailabilityWindowResponse) String() string { return proto.CompactTextString(m) }
 func (*AddUnavailabilityWindowResponse) ProtoMessage()    {}
 func (*AddUnavailabilityWindowResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_0e82115f51d40ef9, []int{8}
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{8}
 }
 func (m *AddUnavailabilityWindowResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddUnavailabilityWindowResponse.Unmarshal(m, b)
@@ -565,7 +566,7 @@ func (m *DeleteUnavailabilityWindowRequest) Reset()         { *m = DeleteUnavail
 func (m *DeleteUnavailabilityWindowRequest) String() string { return proto.CompactTextString(m) }
 func (*DeleteUnavailabilityWindowRequest) ProtoMessage()    {}
 func (*DeleteUnavailabilityWindowRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_0e82115f51d40ef9, []int{9}
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{9}
 }
 func (m *DeleteUnavailabilityWindowRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteUnavailabilityWindowRequest.Unmarshal(m, b)
@@ -603,7 +604,7 @@ func (m *DeleteUnavailabilityWindowResponse) Reset()         { *m = DeleteUnavai
 func (m *DeleteUnavailabilityWindowResponse) String() string { return proto.CompactTextString(m) }
 func (*DeleteUnavailabilityWindowResponse) ProtoMessage()    {}
 func (*DeleteUnavailabilityWindowResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_groundstation_0e82115f51d40ef9, []int{10}
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{10}
 }
 func (m *DeleteUnavailabilityWindowResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteUnavailabilityWindowResponse.Unmarshal(m, b)
@@ -623,6 +624,410 @@ func (m *DeleteUnavailabilityWindowResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DeleteUnavailabilityWindowResponse proto.InternalMessageInfo
 
+// A request for the `OpenGroundStationStream` method.
+type GroundStationStreamRequest struct {
+	// The ID of the ground station that is opening a stream. The ID of a ground station can be found
+	// on the StellarStation Console page for the ground station.
+	GroundStationId string `protobuf:"bytes,1,opt,name=ground_station_id,json=groundStationId,proto3" json:"ground_station_id,omitempty"`
+	// A tag to identify this stream. This tag is not used semantically and is only for logging,
+	// monitoring, and debugging. This does not need to be set if there will only ever be one stream
+	// for a particular `ground_station_id` open at a time. If multiple streams will be open, this
+	// should be set to identify the stream. Some examples include 'uplink', 'downlink', 'uhf',
+	// 's-band'.
+	StreamTag string `protobuf:"bytes,2,opt,name=stream_tag,json=streamTag,proto3" json:"stream_tag,omitempty"`
+	// A payload to send on the ground station stream. The payload does not need to be filled on the
+	// first request to `OpenGroundStationStream`.
+	//
+	// Types that are valid to be assigned to Request:
+	//	*GroundStationStreamRequest_SatelliteTelemetry
+	//	*GroundStationStreamRequest_StreamEvent
+	Request              isGroundStationStreamRequest_Request `protobuf_oneof:"Request"`
+	XXX_NoUnkeyedLiteral struct{}                             `json:"-"`
+	XXX_unrecognized     []byte                               `json:"-"`
+	XXX_sizecache        int32                                `json:"-"`
+}
+
+func (m *GroundStationStreamRequest) Reset()         { *m = GroundStationStreamRequest{} }
+func (m *GroundStationStreamRequest) String() string { return proto.CompactTextString(m) }
+func (*GroundStationStreamRequest) ProtoMessage()    {}
+func (*GroundStationStreamRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{11}
+}
+func (m *GroundStationStreamRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GroundStationStreamRequest.Unmarshal(m, b)
+}
+func (m *GroundStationStreamRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GroundStationStreamRequest.Marshal(b, m, deterministic)
+}
+func (dst *GroundStationStreamRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GroundStationStreamRequest.Merge(dst, src)
+}
+func (m *GroundStationStreamRequest) XXX_Size() int {
+	return xxx_messageInfo_GroundStationStreamRequest.Size(m)
+}
+func (m *GroundStationStreamRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GroundStationStreamRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GroundStationStreamRequest proto.InternalMessageInfo
+
+func (m *GroundStationStreamRequest) GetGroundStationId() string {
+	if m != nil {
+		return m.GroundStationId
+	}
+	return ""
+}
+
+func (m *GroundStationStreamRequest) GetStreamTag() string {
+	if m != nil {
+		return m.StreamTag
+	}
+	return ""
+}
+
+type isGroundStationStreamRequest_Request interface {
+	isGroundStationStreamRequest_Request()
+}
+
+type GroundStationStreamRequest_SatelliteTelemetry struct {
+	SatelliteTelemetry *SatelliteTelemetry `protobuf:"bytes,3,opt,name=satellite_telemetry,json=satelliteTelemetry,proto3,oneof"`
+}
+
+type GroundStationStreamRequest_StreamEvent struct {
+	StreamEvent *v1.StreamEvent `protobuf:"bytes,4,opt,name=stream_event,json=streamEvent,proto3,oneof"`
+}
+
+func (*GroundStationStreamRequest_SatelliteTelemetry) isGroundStationStreamRequest_Request() {}
+
+func (*GroundStationStreamRequest_StreamEvent) isGroundStationStreamRequest_Request() {}
+
+func (m *GroundStationStreamRequest) GetRequest() isGroundStationStreamRequest_Request {
+	if m != nil {
+		return m.Request
+	}
+	return nil
+}
+
+func (m *GroundStationStreamRequest) GetSatelliteTelemetry() *SatelliteTelemetry {
+	if x, ok := m.GetRequest().(*GroundStationStreamRequest_SatelliteTelemetry); ok {
+		return x.SatelliteTelemetry
+	}
+	return nil
+}
+
+func (m *GroundStationStreamRequest) GetStreamEvent() *v1.StreamEvent {
+	if x, ok := m.GetRequest().(*GroundStationStreamRequest_StreamEvent); ok {
+		return x.StreamEvent
+	}
+	return nil
+}
+
+// XXX_OneofFuncs is for the internal use of the proto package.
+func (*GroundStationStreamRequest) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
+	return _GroundStationStreamRequest_OneofMarshaler, _GroundStationStreamRequest_OneofUnmarshaler, _GroundStationStreamRequest_OneofSizer, []interface{}{
+		(*GroundStationStreamRequest_SatelliteTelemetry)(nil),
+		(*GroundStationStreamRequest_StreamEvent)(nil),
+	}
+}
+
+func _GroundStationStreamRequest_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
+	m := msg.(*GroundStationStreamRequest)
+	// Request
+	switch x := m.Request.(type) {
+	case *GroundStationStreamRequest_SatelliteTelemetry:
+		b.EncodeVarint(3<<3 | proto.WireBytes)
+		if err := b.EncodeMessage(x.SatelliteTelemetry); err != nil {
+			return err
+		}
+	case *GroundStationStreamRequest_StreamEvent:
+		b.EncodeVarint(4<<3 | proto.WireBytes)
+		if err := b.EncodeMessage(x.StreamEvent); err != nil {
+			return err
+		}
+	case nil:
+	default:
+		return fmt.Errorf("GroundStationStreamRequest.Request has unexpected type %T", x)
+	}
+	return nil
+}
+
+func _GroundStationStreamRequest_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
+	m := msg.(*GroundStationStreamRequest)
+	switch tag {
+	case 3: // Request.satellite_telemetry
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		msg := new(SatelliteTelemetry)
+		err := b.DecodeMessage(msg)
+		m.Request = &GroundStationStreamRequest_SatelliteTelemetry{msg}
+		return true, err
+	case 4: // Request.stream_event
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		msg := new(v1.StreamEvent)
+		err := b.DecodeMessage(msg)
+		m.Request = &GroundStationStreamRequest_StreamEvent{msg}
+		return true, err
+	default:
+		return false, nil
+	}
+}
+
+func _GroundStationStreamRequest_OneofSizer(msg proto.Message) (n int) {
+	m := msg.(*GroundStationStreamRequest)
+	// Request
+	switch x := m.Request.(type) {
+	case *GroundStationStreamRequest_SatelliteTelemetry:
+		s := proto.Size(x.SatelliteTelemetry)
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(s))
+		n += s
+	case *GroundStationStreamRequest_StreamEvent:
+		s := proto.Size(x.StreamEvent)
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(s))
+		n += s
+	case nil:
+	default:
+		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
+	}
+	return n
+}
+
+// Telemetry received from a satellite to send to a satellite operator.
+type SatelliteTelemetry struct {
+	// The ID of the plan the telemetry is being sent for.
+	PlanId string `protobuf:"bytes,1,opt,name=plan_id,json=planId,proto3" json:"plan_id,omitempty"`
+	// The telemetry being sent.
+	Telemetry            *v1.Telemetry `protobuf:"bytes,2,opt,name=telemetry,proto3" json:"telemetry,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
+	XXX_unrecognized     []byte        `json:"-"`
+	XXX_sizecache        int32         `json:"-"`
+}
+
+func (m *SatelliteTelemetry) Reset()         { *m = SatelliteTelemetry{} }
+func (m *SatelliteTelemetry) String() string { return proto.CompactTextString(m) }
+func (*SatelliteTelemetry) ProtoMessage()    {}
+func (*SatelliteTelemetry) Descriptor() ([]byte, []int) {
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{12}
+}
+func (m *SatelliteTelemetry) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SatelliteTelemetry.Unmarshal(m, b)
+}
+func (m *SatelliteTelemetry) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SatelliteTelemetry.Marshal(b, m, deterministic)
+}
+func (dst *SatelliteTelemetry) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SatelliteTelemetry.Merge(dst, src)
+}
+func (m *SatelliteTelemetry) XXX_Size() int {
+	return xxx_messageInfo_SatelliteTelemetry.Size(m)
+}
+func (m *SatelliteTelemetry) XXX_DiscardUnknown() {
+	xxx_messageInfo_SatelliteTelemetry.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SatelliteTelemetry proto.InternalMessageInfo
+
+func (m *SatelliteTelemetry) GetPlanId() string {
+	if m != nil {
+		return m.PlanId
+	}
+	return ""
+}
+
+func (m *SatelliteTelemetry) GetTelemetry() *v1.Telemetry {
+	if m != nil {
+		return m.Telemetry
+	}
+	return nil
+}
+
+// A response for the `OpenGroundStationStream` method. The ground station must process a response
+// immediately when received on the stream.
+type GroundStationStreamResponse struct {
+	// The ID of the plan this response corresponds to. Unfilled if this response does not correspond
+	// to a plan.
+	PlanId string `protobuf:"bytes,1,opt,name=plan_id,json=planId,proto3" json:"plan_id,omitempty"`
+	// A unique ID identifying this response. If filled, any `StreamEvent` generated when handling
+	// this GroundStationStreamResponse` must have this value copied into
+	// `StreamEvent.request_id`. Currently, this includes
+	//
+	// - Returning `CommandSentFromGroundStation` after completing transmission of the commands in a
+	//   `SendSatelliteCommandsResponse`.
+	ResponseId string `protobuf:"bytes,2,opt,name=response_id,json=responseId,proto3" json:"response_id,omitempty"`
+	// A payload sent on the stream to be processed by the ground station. Currently only commands to
+	// send to a satellite will be returned to the ground station.
+	//
+	// Types that are valid to be assigned to Response:
+	//	*GroundStationStreamResponse_SatelliteCommands
+	Response             isGroundStationStreamResponse_Response `protobuf_oneof:"Response"`
+	XXX_NoUnkeyedLiteral struct{}                               `json:"-"`
+	XXX_unrecognized     []byte                                 `json:"-"`
+	XXX_sizecache        int32                                  `json:"-"`
+}
+
+func (m *GroundStationStreamResponse) Reset()         { *m = GroundStationStreamResponse{} }
+func (m *GroundStationStreamResponse) String() string { return proto.CompactTextString(m) }
+func (*GroundStationStreamResponse) ProtoMessage()    {}
+func (*GroundStationStreamResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{13}
+}
+func (m *GroundStationStreamResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GroundStationStreamResponse.Unmarshal(m, b)
+}
+func (m *GroundStationStreamResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GroundStationStreamResponse.Marshal(b, m, deterministic)
+}
+func (dst *GroundStationStreamResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GroundStationStreamResponse.Merge(dst, src)
+}
+func (m *GroundStationStreamResponse) XXX_Size() int {
+	return xxx_messageInfo_GroundStationStreamResponse.Size(m)
+}
+func (m *GroundStationStreamResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GroundStationStreamResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GroundStationStreamResponse proto.InternalMessageInfo
+
+func (m *GroundStationStreamResponse) GetPlanId() string {
+	if m != nil {
+		return m.PlanId
+	}
+	return ""
+}
+
+func (m *GroundStationStreamResponse) GetResponseId() string {
+	if m != nil {
+		return m.ResponseId
+	}
+	return ""
+}
+
+type isGroundStationStreamResponse_Response interface {
+	isGroundStationStreamResponse_Response()
+}
+
+type GroundStationStreamResponse_SatelliteCommands struct {
+	SatelliteCommands *SatelliteCommands `protobuf:"bytes,3,opt,name=satellite_commands,json=satelliteCommands,proto3,oneof"`
+}
+
+func (*GroundStationStreamResponse_SatelliteCommands) isGroundStationStreamResponse_Response() {}
+
+func (m *GroundStationStreamResponse) GetResponse() isGroundStationStreamResponse_Response {
+	if m != nil {
+		return m.Response
+	}
+	return nil
+}
+
+func (m *GroundStationStreamResponse) GetSatelliteCommands() *SatelliteCommands {
+	if x, ok := m.GetResponse().(*GroundStationStreamResponse_SatelliteCommands); ok {
+		return x.SatelliteCommands
+	}
+	return nil
+}
+
+// XXX_OneofFuncs is for the internal use of the proto package.
+func (*GroundStationStreamResponse) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
+	return _GroundStationStreamResponse_OneofMarshaler, _GroundStationStreamResponse_OneofUnmarshaler, _GroundStationStreamResponse_OneofSizer, []interface{}{
+		(*GroundStationStreamResponse_SatelliteCommands)(nil),
+	}
+}
+
+func _GroundStationStreamResponse_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
+	m := msg.(*GroundStationStreamResponse)
+	// Response
+	switch x := m.Response.(type) {
+	case *GroundStationStreamResponse_SatelliteCommands:
+		b.EncodeVarint(3<<3 | proto.WireBytes)
+		if err := b.EncodeMessage(x.SatelliteCommands); err != nil {
+			return err
+		}
+	case nil:
+	default:
+		return fmt.Errorf("GroundStationStreamResponse.Response has unexpected type %T", x)
+	}
+	return nil
+}
+
+func _GroundStationStreamResponse_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
+	m := msg.(*GroundStationStreamResponse)
+	switch tag {
+	case 3: // Response.satellite_commands
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		msg := new(SatelliteCommands)
+		err := b.DecodeMessage(msg)
+		m.Response = &GroundStationStreamResponse_SatelliteCommands{msg}
+		return true, err
+	default:
+		return false, nil
+	}
+}
+
+func _GroundStationStreamResponse_OneofSizer(msg proto.Message) (n int) {
+	m := msg.(*GroundStationStreamResponse)
+	// Response
+	switch x := m.Response.(type) {
+	case *GroundStationStreamResponse_SatelliteCommands:
+		s := proto.Size(x.SatelliteCommands)
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(s))
+		n += s
+	case nil:
+	default:
+		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
+	}
+	return n
+}
+
+// Command to transmit to the satellite.
+type SatelliteCommands struct {
+	// The command frames to send to the satellite. All commands must be transmitted in sequence
+	// immediately. After all commands have been transmitted, telemetry receive must be immediately
+	// enabled again.
+	Command              [][]byte `protobuf:"bytes,1,rep,name=command,proto3" json:"command,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *SatelliteCommands) Reset()         { *m = SatelliteCommands{} }
+func (m *SatelliteCommands) String() string { return proto.CompactTextString(m) }
+func (*SatelliteCommands) ProtoMessage()    {}
+func (*SatelliteCommands) Descriptor() ([]byte, []int) {
+	return fileDescriptor_groundstation_941bbd5284b66780, []int{14}
+}
+func (m *SatelliteCommands) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SatelliteCommands.Unmarshal(m, b)
+}
+func (m *SatelliteCommands) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SatelliteCommands.Marshal(b, m, deterministic)
+}
+func (dst *SatelliteCommands) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SatelliteCommands.Merge(dst, src)
+}
+func (m *SatelliteCommands) XXX_Size() int {
+	return xxx_messageInfo_SatelliteCommands.Size(m)
+}
+func (m *SatelliteCommands) XXX_DiscardUnknown() {
+	xxx_messageInfo_SatelliteCommands.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SatelliteCommands proto.InternalMessageInfo
+
+func (m *SatelliteCommands) GetCommand() [][]byte {
+	if m != nil {
+		return m.Command
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterType((*ListPlansRequest)(nil), "stellarstation.api.v1.groundstation.ListPlansRequest")
 	proto.RegisterType((*ListPlansResponse)(nil), "stellarstation.api.v1.groundstation.ListPlansResponse")
@@ -635,6 +1040,10 @@ func init() {
 	proto.RegisterType((*AddUnavailabilityWindowResponse)(nil), "stellarstation.api.v1.groundstation.AddUnavailabilityWindowResponse")
 	proto.RegisterType((*DeleteUnavailabilityWindowRequest)(nil), "stellarstation.api.v1.groundstation.DeleteUnavailabilityWindowRequest")
 	proto.RegisterType((*DeleteUnavailabilityWindowResponse)(nil), "stellarstation.api.v1.groundstation.DeleteUnavailabilityWindowResponse")
+	proto.RegisterType((*GroundStationStreamRequest)(nil), "stellarstation.api.v1.groundstation.GroundStationStreamRequest")
+	proto.RegisterType((*SatelliteTelemetry)(nil), "stellarstation.api.v1.groundstation.SatelliteTelemetry")
+	proto.RegisterType((*GroundStationStreamResponse)(nil), "stellarstation.api.v1.groundstation.GroundStationStreamResponse")
+	proto.RegisterType((*SatelliteCommands)(nil), "stellarstation.api.v1.groundstation.SatelliteCommands")
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -674,6 +1083,30 @@ type GroundStationServiceClient interface {
 	// The request will be closed with an `INVALID_ARGUMENT` status if `ground_station_id`,
 	// `start_time`, or `end_time` are missing, or 'end_time' is not after 'start_time'.
 	ListUnavailabilityWindows(ctx context.Context, in *ListUnavailabilityWindowsRequest, opts ...grpc.CallOption) (*ListUnavailabilityWindowsResponse, error)
+	// Open a stream from a ground station. The returned stream is bi-directional - it is used by
+	// the ground station to send telemetry received from a satellite and receive commands to send to
+	// the satellite. The ground station must keep this stream open while it is connected to the
+	// StellarStation network for use in executing plans - if the stream is cut, it must be
+	// reconnected with exponential backoff.
+	//
+	// The first `GroundStationStreamRequest` sent on the stream is used for configuring the stream.
+	// Unless otherwise specified, all configuration is taken from the first request and configuration
+	// values in subsequent requests will be ignored.
+	//
+	// There is no restriction on the number of active streams from a ground station (i.e., streams
+	// opened with the same `ground_station_id`). Most ground stations will issue a single stream to
+	// receive commands and send telemetry, but in certain cases, such as if uplink and downlink are
+	// handled by different computers, it can be appropriate to have multiple processes with their
+	// own stream. If opening multiple streams for a single ground station, it is the client's
+	// responsibility to handle the streams appropriately, for example by ensuring only one stream
+	// sends commands so they are not duplicated.
+	//
+	// If the ground station is not found or the API client is not authorized for it, the stream will
+	// be closed with a `NOT_FOUND` error.
+	//
+	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
+	//         incompatible ways in the future.
+	OpenGroundStationStream(ctx context.Context, opts ...grpc.CallOption) (GroundStationService_OpenGroundStationStreamClient, error)
 }
 
 type groundStationServiceClient struct {
@@ -720,6 +1153,37 @@ func (c *groundStationServiceClient) ListUnavailabilityWindows(ctx context.Conte
 	return out, nil
 }
 
+func (c *groundStationServiceClient) OpenGroundStationStream(ctx context.Context, opts ...grpc.CallOption) (GroundStationService_OpenGroundStationStreamClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_GroundStationService_serviceDesc.Streams[0], "/stellarstation.api.v1.groundstation.GroundStationService/OpenGroundStationStream", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &groundStationServiceOpenGroundStationStreamClient{stream}
+	return x, nil
+}
+
+type GroundStationService_OpenGroundStationStreamClient interface {
+	Send(*GroundStationStreamRequest) error
+	Recv() (*GroundStationStreamResponse, error)
+	grpc.ClientStream
+}
+
+type groundStationServiceOpenGroundStationStreamClient struct {
+	grpc.ClientStream
+}
+
+func (x *groundStationServiceOpenGroundStationStreamClient) Send(m *GroundStationStreamRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *groundStationServiceOpenGroundStationStreamClient) Recv() (*GroundStationStreamResponse, error) {
+	m := new(GroundStationStreamResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // GroundStationServiceServer is the server API for GroundStationService service.
 type GroundStationServiceServer interface {
 	// Adds a new unavailability window to the requested ground station.
@@ -747,6 +1211,30 @@ type GroundStationServiceServer interface {
 	// The request will be closed with an `INVALID_ARGUMENT` status if `ground_station_id`,
 	// `start_time`, or `end_time` are missing, or 'end_time' is not after 'start_time'.
 	ListUnavailabilityWindows(context.Context, *ListUnavailabilityWindowsRequest) (*ListUnavailabilityWindowsResponse, error)
+	// Open a stream from a ground station. The returned stream is bi-directional - it is used by
+	// the ground station to send telemetry received from a satellite and receive commands to send to
+	// the satellite. The ground station must keep this stream open while it is connected to the
+	// StellarStation network for use in executing plans - if the stream is cut, it must be
+	// reconnected with exponential backoff.
+	//
+	// The first `GroundStationStreamRequest` sent on the stream is used for configuring the stream.
+	// Unless otherwise specified, all configuration is taken from the first request and configuration
+	// values in subsequent requests will be ignored.
+	//
+	// There is no restriction on the number of active streams from a ground station (i.e., streams
+	// opened with the same `ground_station_id`). Most ground stations will issue a single stream to
+	// receive commands and send telemetry, but in certain cases, such as if uplink and downlink are
+	// handled by different computers, it can be appropriate to have multiple processes with their
+	// own stream. If opening multiple streams for a single ground station, it is the client's
+	// responsibility to handle the streams appropriately, for example by ensuring only one stream
+	// sends commands so they are not duplicated.
+	//
+	// If the ground station is not found or the API client is not authorized for it, the stream will
+	// be closed with a `NOT_FOUND` error.
+	//
+	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
+	//         incompatible ways in the future.
+	OpenGroundStationStream(GroundStationService_OpenGroundStationStreamServer) error
 }
 
 func RegisterGroundStationServiceServer(s *grpc.Server, srv GroundStationServiceServer) {
@@ -825,6 +1313,32 @@ func _GroundStationService_ListUnavailabilityWindows_Handler(srv interface{}, ct
 	return interceptor(ctx, in, info, handler)
 }
 
+func _GroundStationService_OpenGroundStationStream_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(GroundStationServiceServer).OpenGroundStationStream(&groundStationServiceOpenGroundStationStreamServer{stream})
+}
+
+type GroundStationService_OpenGroundStationStreamServer interface {
+	Send(*GroundStationStreamResponse) error
+	Recv() (*GroundStationStreamRequest, error)
+	grpc.ServerStream
+}
+
+type groundStationServiceOpenGroundStationStreamServer struct {
+	grpc.ServerStream
+}
+
+func (x *groundStationServiceOpenGroundStationStreamServer) Send(m *GroundStationStreamResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *groundStationServiceOpenGroundStationStreamServer) Recv() (*GroundStationStreamRequest, error) {
+	m := new(GroundStationStreamRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _GroundStationService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "stellarstation.api.v1.groundstation.GroundStationService",
 	HandlerType: (*GroundStationServiceServer)(nil),
@@ -846,59 +1360,80 @@ var _GroundStationService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _GroundStationService_ListUnavailabilityWindows_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "OpenGroundStationStream",
+			Handler:       _GroundStationService_OpenGroundStationStream_Handler,
+			ServerStreams: true,
+			ClientStreams: true,
+		},
+	},
 	Metadata: "stellarstation/api/v1/groundstation/groundstation.proto",
 }
 
 func init() {
-	proto.RegisterFile("stellarstation/api/v1/groundstation/groundstation.proto", fileDescriptor_groundstation_0e82115f51d40ef9)
+	proto.RegisterFile("stellarstation/api/v1/groundstation/groundstation.proto", fileDescriptor_groundstation_941bbd5284b66780)
 }
 
-var fileDescriptor_groundstation_0e82115f51d40ef9 = []byte{
-	// 711 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x56, 0xcd, 0x6e, 0xd3, 0x4a,
-	0x14, 0x96, 0x9b, 0x34, 0x3f, 0xa7, 0x8b, 0x7b, 0x3b, 0x6d, 0xd5, 0x5c, 0x5f, 0x89, 0xa6, 0x06,
-	0xa9, 0x01, 0x09, 0x47, 0x49, 0x55, 0xaa, 0x22, 0x81, 0xfa, 0x47, 0xab, 0x4a, 0x2c, 0x8a, 0x5b,
-	0x84, 0xc4, 0xc6, 0x9a, 0xc4, 0x93, 0x30, 0x62, 0x32, 0x63, 0xec, 0x49, 0x2a, 0xd8, 0xf1, 0x00,
-	0x6c, 0x79, 0x02, 0xd8, 0x20, 0xb1, 0xe1, 0x01, 0x10, 0x8f, 0x86, 0xc6, 0x63, 0xb7, 0x49, 0x49,
-	0x1c, 0xd3, 0x48, 0x48, 0x6c, 0xac, 0xcc, 0xf1, 0xf9, 0xbe, 0x73, 0xce, 0x37, 0xdf, 0x4c, 0x0c,
-	0xdb, 0xa1, 0x24, 0x8c, 0xe1, 0x20, 0x94, 0x58, 0x52, 0xc1, 0xeb, 0xd8, 0xa7, 0xf5, 0x41, 0xa3,
-	0xde, 0x0d, 0x44, 0x9f, 0x7b, 0x49, 0x70, 0x64, 0x65, 0xfb, 0x81, 0x90, 0x02, 0xdd, 0x1e, 0x05,
-	0xda, 0xd8, 0xa7, 0xf6, 0xa0, 0x61, 0x8f, 0xa4, 0x9a, 0x6b, 0x5d, 0x21, 0xba, 0x8c, 0xd4, 0x23,
-	0x48, 0xab, 0xdf, 0xa9, 0x4b, 0xda, 0x23, 0xa1, 0xc4, 0x3d, 0x5f, 0xb3, 0x98, 0x1b, 0xe3, 0xcb,
-	0x07, 0xd8, 0xa3, 0x42, 0x3f, 0x75, 0xa2, 0xf5, 0xcd, 0x80, 0x7f, 0x9f, 0xd2, 0x50, 0x9e, 0x32,
-	0xcc, 0x43, 0x87, 0xbc, 0xe9, 0x93, 0x50, 0xa2, 0x7b, 0xb0, 0xa8, 0xeb, 0xb9, 0x31, 0xde, 0xa5,
-	0x5e, 0xc5, 0xa8, 0x1a, 0xb5, 0xb2, 0xf3, 0x8f, 0x7e, 0x71, 0xa6, 0xe3, 0x27, 0x1e, 0xda, 0x86,
-	0x32, 0x16, 0xa1, 0x8b, 0x3b, 0x92, 0x04, 0x95, 0xb9, 0xaa, 0x51, 0x5b, 0x68, 0x9a, 0xb6, 0x6e,
-	0xcf, 0x4e, 0xda, 0xb3, 0xcf, 0x93, 0xf6, 0x9c, 0x12, 0x16, 0xe1, 0x9e, 0xca, 0x45, 0x3b, 0x00,
-	0x0a, 0xd8, 0x22, 0x1d, 0x11, 0x90, 0x4a, 0x6e, 0x2a, 0x52, 0x95, 0xd9, 0x8f, 0x92, 0x2d, 0x07,
-	0x16, 0x87, 0x7a, 0x0e, 0x7d, 0xc1, 0x43, 0x82, 0x1e, 0x41, 0xde, 0x67, 0x98, 0x57, 0x8c, 0x6a,
-	0xae, 0xb6, 0xd0, 0xbc, 0x6b, 0x67, 0xd0, 0xd1, 0x56, 0x0c, 0x4e, 0x04, 0xb3, 0x3e, 0xe4, 0x21,
-	0xaf, 0x96, 0x68, 0x15, 0x8a, 0x2a, 0x70, 0x35, 0x72, 0x41, 0x2d, 0x4f, 0x3c, 0xf4, 0x10, 0x72,
-	0x92, 0x91, 0x78, 0xc6, 0x5a, 0x26, 0xfe, 0x73, 0x46, 0x1c, 0x05, 0x52, 0xc3, 0x86, 0x12, 0x07,
-	0xd2, 0x55, 0x1b, 0x55, 0x29, 0x4e, 0x1f, 0x36, 0xca, 0x56, 0x6b, 0xb4, 0x05, 0x25, 0xc2, 0x3d,
-	0x0d, 0x2c, 0x4d, 0x05, 0x16, 0x09, 0xf7, 0x12, 0x98, 0x92, 0x37, 0x82, 0x4d, 0x17, 0xb7, 0x88,
-	0x45, 0x98, 0xc0, 0x58, 0x02, 0xcb, 0x4f, 0x87, 0xb1, 0x18, 0x46, 0x61, 0xc5, 0x13, 0x17, 0x9c,
-	0x51, 0xfe, 0xda, 0x8d, 0xec, 0xe5, 0x7a, 0x64, 0x40, 0xdb, 0xa4, 0x32, 0x1f, 0x71, 0x6c, 0x4d,
-	0x50, 0x4b, 0x3b, 0xd1, 0x51, 0xcf, 0xc3, 0x28, 0xff, 0x40, 0xf0, 0x0e, 0xed, 0xf6, 0x83, 0x28,
-	0xcb, 0x59, 0x4a, 0x38, 0x87, 0x32, 0x10, 0x81, 0xa5, 0xbe, 0xff, 0x6b, 0xa1, 0xc2, 0x2c, 0x85,
-	0x16, 0x35, 0xe3, 0xd0, 0x7b, 0x6b, 0x13, 0x72, 0xe7, 0x8c, 0xa0, 0x15, 0x28, 0x30, 0xca, 0x89,
-	0xdb, 0x88, 0xcd, 0x30, 0xaf, 0x56, 0x8d, 0xcb, 0x70, 0x33, 0xb2, 0x43, 0x1c, 0x6e, 0x5a, 0x9f,
-	0x0d, 0x58, 0x7e, 0xce, 0xf1, 0x00, 0x53, 0x86, 0x5b, 0x94, 0x51, 0xf9, 0xf6, 0x05, 0xe5, 0x9e,
-	0xb8, 0x40, 0xff, 0x43, 0xf9, 0x22, 0xfa, 0x75, 0x65, 0xab, 0x92, 0x0e, 0x9c, 0x78, 0xd7, 0xcc,
-	0x31, 0x77, 0x53, 0x73, 0xe4, 0x32, 0x9b, 0xc3, 0xfa, 0x61, 0x40, 0x55, 0x9d, 0xa0, 0x71, 0xbd,
-	0xde, 0xe8, 0x16, 0xf8, 0xf3, 0x23, 0x0c, 0x60, 0x3d, 0x65, 0x82, 0xf8, 0x4e, 0x78, 0x06, 0x05,
-	0xad, 0x72, 0x7c, 0x2b, 0xec, 0x64, 0x3a, 0xb5, 0xe3, 0x38, 0x9d, 0x98, 0xc8, 0xfa, 0x6e, 0xc0,
-	0xad, 0x3d, 0xcf, 0x1b, 0x9b, 0xf3, 0x57, 0x08, 0xf7, 0x18, 0xd6, 0x26, 0xf6, 0x1f, 0xcb, 0x96,
-	0xe6, 0x56, 0x6b, 0x17, 0xd6, 0x0f, 0x09, 0x23, 0x92, 0xa4, 0x49, 0x90, 0xca, 0x70, 0x07, 0xac,
-	0x34, 0x06, 0xdd, 0x44, 0xf3, 0xe3, 0x3c, 0x2c, 0x1f, 0x0f, 0xab, 0x75, 0x46, 0x82, 0xe8, 0x02,
-	0xf8, 0x64, 0xc0, 0xea, 0x84, 0x09, 0xd0, 0x41, 0xa6, 0x0d, 0x4e, 0xdf, 0x3f, 0xf3, 0x70, 0x36,
-	0x92, 0x58, 0xc4, 0xaf, 0x06, 0x98, 0x93, 0xc7, 0x44, 0x47, 0x99, 0x8a, 0x4c, 0x55, 0xda, 0x3c,
-	0x9e, 0x99, 0x27, 0xee, 0xf7, 0x1d, 0x94, 0x2f, 0xff, 0x54, 0xd1, 0x56, 0x26, 0xd6, 0xeb, 0x1f,
-	0x0e, 0xe6, 0x83, 0xdf, 0x85, 0xc5, 0xb5, 0xbf, 0x18, 0xf0, 0xdf, 0xc4, 0xd3, 0x8c, 0x9e, 0x64,
-	0x66, 0x4d, 0xbb, 0xcf, 0xcc, 0xa3, 0x59, 0x69, 0x74, 0xb3, 0xfb, 0xef, 0x0d, 0xd8, 0x68, 0x8b,
-	0x5e, 0x16, 0xb6, 0x7d, 0x34, 0xe2, 0xe0, 0x53, 0x75, 0x2c, 0x4f, 0x8d, 0x97, 0xbb, 0x5d, 0x2a,
-	0x5f, 0xf5, 0x5b, 0x76, 0x5b, 0xf4, 0xea, 0x94, 0x77, 0x44, 0xcc, 0x44, 0x79, 0xbb, 0xde, 0x15,
-	0xf7, 0x33, 0x7c, 0x39, 0xb6, 0x0a, 0xd1, 0x09, 0xdf, 0xfc, 0x19, 0x00, 0x00, 0xff, 0xff, 0xe2,
-	0x1a, 0xb3, 0x2a, 0x67, 0x0a, 0x00, 0x00,
+var fileDescriptor_groundstation_941bbd5284b66780 = []byte{
+	// 941 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x57, 0xdd, 0x6e, 0x1b, 0x45,
+	0x14, 0xce, 0xc6, 0xa9, 0x7f, 0x4e, 0x2a, 0x81, 0x27, 0xad, 0x62, 0xb6, 0x82, 0xb8, 0x0b, 0xa8,
+	0x06, 0xa9, 0x6b, 0xe2, 0x2a, 0x8d, 0x8a, 0x44, 0x49, 0x9d, 0xb4, 0x49, 0x24, 0x24, 0xc2, 0xc6,
+	0x08, 0x89, 0x9b, 0xd5, 0xd8, 0x3b, 0x36, 0x03, 0xbb, 0x33, 0xcb, 0xce, 0xd8, 0x51, 0xb9, 0xe3,
+	0x01, 0x78, 0x07, 0x2e, 0x40, 0x48, 0x48, 0xdc, 0x70, 0xc7, 0x0d, 0xe2, 0x01, 0x78, 0x28, 0x34,
+	0x3b, 0xb3, 0x71, 0x9c, 0x78, 0xed, 0x6d, 0x22, 0x21, 0xf5, 0x66, 0xe5, 0x39, 0x7b, 0xbe, 0xef,
+	0xfc, 0xcc, 0x37, 0x67, 0xd6, 0xb0, 0x2b, 0x24, 0x09, 0x43, 0x9c, 0x08, 0x89, 0x25, 0xe5, 0xac,
+	0x8d, 0x63, 0xda, 0x9e, 0x6c, 0xb7, 0x47, 0x09, 0x1f, 0xb3, 0x20, 0x33, 0xce, 0xac, 0xdc, 0x38,
+	0xe1, 0x92, 0xa3, 0x77, 0x67, 0x81, 0x2e, 0x8e, 0xa9, 0x3b, 0xd9, 0x76, 0x67, 0x5c, 0xed, 0xad,
+	0x11, 0xe7, 0xa3, 0x90, 0xb4, 0x53, 0x48, 0x7f, 0x3c, 0x6c, 0x4b, 0x1a, 0x11, 0x21, 0x71, 0x14,
+	0x6b, 0x16, 0xfb, 0xc1, 0xfc, 0xf0, 0x09, 0x0e, 0x28, 0xd7, 0x4f, 0xe3, 0xf8, 0xfe, 0x7c, 0x47,
+	0x99, 0x60, 0x26, 0x62, 0x9e, 0x48, 0xed, 0xe6, 0xfc, 0x69, 0xc1, 0x9b, 0x9f, 0x51, 0x21, 0x4f,
+	0x42, 0xcc, 0x84, 0x47, 0xbe, 0x1f, 0x13, 0x21, 0xd1, 0x87, 0x50, 0xd7, 0x69, 0xf9, 0x06, 0xed,
+	0xd3, 0xa0, 0x61, 0x35, 0xad, 0x56, 0xcd, 0x7b, 0x43, 0xbf, 0x38, 0xd5, 0xf6, 0xe3, 0x00, 0xed,
+	0x42, 0x0d, 0x73, 0xe1, 0xe3, 0xa1, 0x24, 0x49, 0x63, 0xb5, 0x69, 0xb5, 0xd6, 0x3b, 0xb6, 0xab,
+	0xab, 0x70, 0xb3, 0x2a, 0xdc, 0x5e, 0x56, 0x85, 0x57, 0xc5, 0x5c, 0x3c, 0x53, 0xbe, 0xe8, 0x09,
+	0x80, 0x02, 0xf6, 0xc9, 0x90, 0x27, 0xa4, 0x51, 0x5a, 0x8a, 0x54, 0x61, 0xba, 0xa9, 0xb3, 0xe3,
+	0x41, 0xfd, 0x42, 0xce, 0x22, 0xe6, 0x4c, 0x10, 0xf4, 0x09, 0xac, 0xc5, 0x21, 0x66, 0x0d, 0xab,
+	0x59, 0x6a, 0xad, 0x77, 0x3e, 0x70, 0x0b, 0xb4, 0xdb, 0x55, 0x0c, 0x5e, 0x0a, 0x73, 0x7e, 0x5a,
+	0x83, 0x35, 0xb5, 0x44, 0x9b, 0x50, 0x51, 0x86, 0x69, 0xc9, 0x65, 0xb5, 0x3c, 0x0e, 0xd0, 0xc7,
+	0x50, 0x92, 0x21, 0x31, 0x35, 0xb6, 0x0a, 0xf1, 0xf7, 0x42, 0xe2, 0x29, 0x90, 0x2a, 0x56, 0x48,
+	0x9c, 0x48, 0x5f, 0xed, 0x67, 0xa3, 0xb2, 0xbc, 0xd8, 0xd4, 0x5b, 0xad, 0xd1, 0x0e, 0x54, 0x09,
+	0x0b, 0x34, 0xb0, 0xba, 0x14, 0x58, 0x21, 0x2c, 0xc8, 0x60, 0xaa, 0xbd, 0x29, 0x6c, 0x79, 0x73,
+	0x2b, 0x98, 0x8b, 0x0c, 0x16, 0x66, 0xb0, 0xb5, 0xe5, 0xb0, 0xd0, 0xc0, 0x28, 0xdc, 0x0d, 0xf8,
+	0x19, 0x0b, 0x29, 0xfb, 0xce, 0x4f, 0x55, 0xe8, 0x07, 0x64, 0x42, 0x07, 0xa4, 0x71, 0x2b, 0xe5,
+	0xd8, 0xc9, 0xe9, 0x96, 0x16, 0xac, 0xa7, 0x9e, 0x07, 0xa9, 0xff, 0x3e, 0x67, 0x43, 0x3a, 0x1a,
+	0x27, 0xa9, 0x97, 0xb7, 0x91, 0x71, 0x5e, 0xf0, 0x40, 0x04, 0x36, 0xc6, 0xf1, 0xd5, 0x40, 0xe5,
+	0x9b, 0x04, 0xaa, 0x6b, 0xc6, 0x0b, 0xef, 0x9d, 0x47, 0x50, 0xea, 0x85, 0x04, 0xdd, 0x85, 0x72,
+	0x48, 0x19, 0xf1, 0xb7, 0x8d, 0x18, 0x6e, 0xa9, 0xd5, 0xf6, 0xb9, 0xb9, 0x93, 0xca, 0xc1, 0x98,
+	0x3b, 0xce, 0xaf, 0x16, 0xdc, 0xf9, 0x92, 0xe1, 0x09, 0xa6, 0x21, 0xee, 0xd3, 0x90, 0xca, 0x97,
+	0x5f, 0x51, 0x16, 0xf0, 0x33, 0x74, 0x0f, 0x6a, 0x67, 0xe9, 0xaf, 0xa9, 0xac, 0xaa, 0xda, 0x70,
+	0x1c, 0x5c, 0x12, 0xc7, 0xea, 0x75, 0xc5, 0x51, 0x2a, 0x2c, 0x0e, 0xe7, 0x1f, 0x0b, 0x9a, 0xea,
+	0x04, 0xcd, 0xcb, 0xf5, 0x5a, 0x53, 0xe0, 0xff, 0x2f, 0x61, 0x02, 0xf7, 0x17, 0x54, 0x60, 0x66,
+	0xc2, 0x17, 0x50, 0xd6, 0x5d, 0x36, 0x53, 0xe1, 0x49, 0xa1, 0x53, 0x3b, 0x8f, 0xd3, 0x33, 0x44,
+	0xce, 0xdf, 0x16, 0xbc, 0xf3, 0x2c, 0x08, 0xe6, 0xfa, 0xbc, 0x16, 0x8d, 0x7b, 0x0a, 0x5b, 0xb9,
+	0xf9, 0x9b, 0xb6, 0x2d, 0x52, 0xab, 0xb3, 0x07, 0xf7, 0x0f, 0x48, 0x48, 0x24, 0x59, 0xd4, 0x82,
+	0x85, 0x0c, 0xef, 0x81, 0xb3, 0x88, 0x41, 0x27, 0xe1, 0xfc, 0xb6, 0x0a, 0xf6, 0xe1, 0xc5, 0x6e,
+	0x9d, 0xca, 0x84, 0xe0, 0xe8, 0x3a, 0x4d, 0x7e, 0x5b, 0x35, 0x59, 0x81, 0x7d, 0x89, 0x47, 0xe6,
+	0xc4, 0xd6, 0xb4, 0xa5, 0x87, 0x47, 0xe8, 0x5b, 0xd8, 0x10, 0x58, 0xe9, 0x82, 0x4a, 0xe2, 0x4b,
+	0x12, 0x92, 0x88, 0xc8, 0xe4, 0xa5, 0xe9, 0xe9, 0x6e, 0x21, 0xc9, 0x9c, 0x66, 0xf8, 0x5e, 0x06,
+	0x3f, 0x5a, 0xf1, 0x90, 0xb8, 0x62, 0x45, 0x87, 0x70, 0xdb, 0xa4, 0x42, 0x26, 0x84, 0x49, 0x33,
+	0x63, 0x9d, 0x9c, 0x20, 0xba, 0xe4, 0xe7, 0xca, 0xf3, 0x68, 0xc5, 0x5b, 0x17, 0xd3, 0x65, 0xb7,
+	0x06, 0x15, 0xd3, 0x0a, 0x27, 0x02, 0x74, 0x35, 0x7e, 0xfe, 0x3d, 0xf6, 0x14, 0x6a, 0xd3, 0x22,
+	0xb5, 0xe2, 0x9a, 0x39, 0xf1, 0xcf, 0xd9, 0xbc, 0x29, 0xc4, 0xf9, 0xd7, 0x82, 0x7b, 0x73, 0x37,
+	0xc6, 0xa8, 0x27, 0x37, 0xf0, 0x16, 0xac, 0x27, 0xc6, 0x49, 0xbd, 0xd4, 0xfb, 0x00, 0x99, 0xe9,
+	0x38, 0x40, 0x23, 0x98, 0xb6, 0xcc, 0x1f, 0xf0, 0x28, 0xc2, 0x2c, 0x10, 0x66, 0x1f, 0x1e, 0xbf,
+	0xda, 0x3e, 0xec, 0x1b, 0xf4, 0xd1, 0x8a, 0x57, 0x17, 0x97, 0x8d, 0x5d, 0x80, 0xea, 0xb9, 0xce,
+	0x1e, 0x42, 0xfd, 0x0a, 0x0a, 0x35, 0xa0, 0x62, 0xe2, 0xa7, 0x93, 0xe3, 0xb6, 0x97, 0x2d, 0x3b,
+	0x7f, 0x95, 0xe1, 0xce, 0x6c, 0xf5, 0x24, 0x49, 0xef, 0xa5, 0x5f, 0x2c, 0xd8, 0xcc, 0x39, 0x58,
+	0x68, 0xbf, 0x50, 0xf2, 0x8b, 0xc7, 0x8a, 0x7d, 0x70, 0x33, 0x12, 0xb3, 0x3b, 0x7f, 0x58, 0x60,
+	0xe7, 0x9f, 0x3e, 0xf4, 0xa2, 0x50, 0x90, 0xa5, 0x03, 0xc0, 0x3e, 0xbc, 0x31, 0x8f, 0xc9, 0xf7,
+	0x07, 0xa8, 0x9d, 0x7f, 0xeb, 0xa1, 0x9d, 0x42, 0xac, 0x97, 0xbf, 0x67, 0xed, 0xc7, 0xaf, 0x0a,
+	0x33, 0xb1, 0x7f, 0xb7, 0xe0, 0xad, 0xdc, 0x4b, 0x06, 0x3d, 0x2f, 0xcc, 0xba, 0xe8, 0x9a, 0xb5,
+	0x5f, 0xdc, 0x94, 0xc6, 0x24, 0xfb, 0xb3, 0x05, 0x9b, 0x9f, 0xc7, 0x84, 0xcd, 0x39, 0x9a, 0xe8,
+	0xd3, 0x42, 0x31, 0xf2, 0xa7, 0xad, 0xbd, 0x77, 0x7d, 0x02, 0x9d, 0x5e, 0xcb, 0xfa, 0xc8, 0xea,
+	0xfe, 0x68, 0xc1, 0x83, 0x01, 0x8f, 0x8a, 0x70, 0x75, 0xd1, 0x0c, 0xd9, 0x89, 0xba, 0xd0, 0x4e,
+	0xac, 0xaf, 0xf7, 0x46, 0x54, 0x7e, 0x33, 0xee, 0xbb, 0x03, 0x1e, 0xb5, 0x29, 0x1b, 0x72, 0xc3,
+	0x44, 0xd9, 0xa0, 0x3d, 0xe2, 0x0f, 0x0b, 0xfc, 0x35, 0xeb, 0x97, 0xd3, 0xbb, 0xf1, 0xd1, 0x7f,
+	0x01, 0x00, 0x00, 0xff, 0xff, 0x5b, 0x0f, 0x9d, 0x56, 0xc8, 0x0d, 0x00, 0x00,
 }
