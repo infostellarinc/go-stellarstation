@@ -1662,9 +1662,9 @@ type StellarStationServiceClient interface {
 	ReservePass(ctx context.Context, in *ReservePassRequest, opts ...grpc.CallOption) (*ReservePassResponse, error)
 	// Adds TLE for a satellite.
 	//
-	// The TLE will be used for satellite orbit calculation until it is superseded by a TLE with a
-	// more recent epoch. This happens automatically if StellarStation pulls new TLE data from
-	// external sources, or manually through this API etc.
+	// The TLE will be used for satellite orbit calculation until it is superseded by a newly
+	// added TLE. This happens automatically if StellarStation pulls new TLE data from external
+	// sources, or manually through this API etc.
 	//
 	// An 'INVALID_ARGUMENT' error will be returned in the following conditions:
 	// - the TLE cannot be parsed
@@ -1675,7 +1675,7 @@ type StellarStationServiceClient interface {
 	AddTle(ctx context.Context, in *AddTleRequest, opts ...grpc.CallOption) (*AddTleResponse, error)
 	// Gets the TLE for a satellite.
 	//
-	// The returned TLE will be the one that has the latest epoch known to StellarStation, and is
+	// The returned TLE will be the one that has most recently been added to StellarStation, and is
 	// used when calculating satellite orbits.
 	//
 	// If the satellite is not found or the client is not authorized for it, the request will return
@@ -1848,9 +1848,9 @@ type StellarStationServiceServer interface {
 	ReservePass(context.Context, *ReservePassRequest) (*ReservePassResponse, error)
 	// Adds TLE for a satellite.
 	//
-	// The TLE will be used for satellite orbit calculation until it is superseded by a TLE with a
-	// more recent epoch. This happens automatically if StellarStation pulls new TLE data from
-	// external sources, or manually through this API etc.
+	// The TLE will be used for satellite orbit calculation until it is superseded by a newly
+	// added TLE. This happens automatically if StellarStation pulls new TLE data from external
+	// sources, or manually through this API etc.
 	//
 	// An 'INVALID_ARGUMENT' error will be returned in the following conditions:
 	// - the TLE cannot be parsed
@@ -1861,7 +1861,7 @@ type StellarStationServiceServer interface {
 	AddTle(context.Context, *AddTleRequest) (*AddTleResponse, error)
 	// Gets the TLE for a satellite.
 	//
-	// The returned TLE will be the one that has the latest epoch known to StellarStation, and is
+	// The returned TLE will be the one that has most recently been added to StellarStation, and is
 	// used when calculating satellite orbits.
 	//
 	// If the satellite is not found or the client is not authorized for it, the request will return
