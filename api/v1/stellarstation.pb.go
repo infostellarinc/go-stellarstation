@@ -782,16 +782,10 @@ type ChannelSet struct {
 	// The radio device configuration used for uplinking.
 	//
 	// Optional if downlink is set.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	Uplink *radio.RadioDeviceConfiguration `protobuf:"bytes,3,opt,name=uplink,proto3" json:"uplink,omitempty"`
 	// The radio device configuration used for downlinking.
 	//
 	// Optional if uplink is set.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	Downlink             *radio.RadioDeviceConfiguration `protobuf:"bytes,4,opt,name=downlink,proto3" json:"downlink,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                        `json:"-"`
 	XXX_unrecognized     []byte                          `json:"-"`
@@ -880,9 +874,6 @@ type Pass struct {
 	UplinkCenterFrequencyHz uint64 `protobuf:"varint,10,opt,name=uplink_center_frequency_hz,json=uplinkCenterFrequencyHz,proto3" json:"uplink_center_frequency_hz,omitempty"`
 	// List of channel set and corresponding reservation token groupings. Only channel sets that are
 	// compatible with this pass's ground station will be present.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	ChannelSetToken      []*Pass_ChannelSetToken `protobuf:"bytes,11,rep,name=channel_set_token,json=channelSetToken,proto3" json:"channel_set_token,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                `json:"-"`
 	XXX_unrecognized     []byte                  `json:"-"`
@@ -1137,9 +1128,6 @@ type Plan struct {
 	// successfully and data processing is complete.
 	TelemetryMetadata []*TelemetryMetadata `protobuf:"bytes,13,rep,name=telemetry_metadata,json=telemetryMetadata,proto3" json:"telemetry_metadata,omitempty"`
 	// The channel set used to reserve this plan.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	ChannelSet           *ChannelSet `protobuf:"bytes,16,opt,name=channel_set,json=channelSet,proto3" json:"channel_set,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
 	XXX_unrecognized     []byte      `json:"-"`
