@@ -1211,9 +1211,6 @@ type GroundStationServiceClient interface {
 	//
 	// If the plan is ongoing or has already finished executing, the request will return a
 	// `OUT_OF_RANGE` error.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	CancelPlan(ctx context.Context, in *CancelPlanRequest, opts ...grpc.CallOption) (*CancelPlanResponse, error)
 	// Deletes an existing unavailability window of the requested ground station.
 	//
@@ -1366,9 +1363,6 @@ type GroundStationServiceServer interface {
 	//
 	// If the plan is ongoing or has already finished executing, the request will return a
 	// `OUT_OF_RANGE` error.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	CancelPlan(context.Context, *CancelPlanRequest) (*CancelPlanResponse, error)
 	// Deletes an existing unavailability window of the requested ground station.
 	//
