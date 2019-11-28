@@ -2043,10 +2043,11 @@ type StellarStationServiceClient interface {
 	// a `NOT_FOUND` error.
 	GetTle(ctx context.Context, in *GetTleRequest, opts ...grpc.CallOption) (*GetTleResponse, error)
 	// An 'INVALID_ARGUMENT' error will be returned in the following condition:
+	// - no satellite_id is provided.
 	// - the source provided is invalid.
 	//
 	// If the satellite is not found or the client is not authorized for it, the request will return
-	// a `PERMISSION_DENIED` error.
+	// a `NOT_FOUND` error.
 	//
 	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
 	//         incompatible ways in the future.
@@ -2247,10 +2248,11 @@ type StellarStationServiceServer interface {
 	// a `NOT_FOUND` error.
 	GetTle(context.Context, *GetTleRequest) (*GetTleResponse, error)
 	// An 'INVALID_ARGUMENT' error will be returned in the following condition:
+	// - no satellite_id is provided.
 	// - the source provided is invalid.
 	//
 	// If the satellite is not found or the client is not authorized for it, the request will return
-	// a `PERMISSION_DENIED` error.
+	// a `NOT_FOUND` error.
 	//
 	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
 	//         incompatible ways in the future.
