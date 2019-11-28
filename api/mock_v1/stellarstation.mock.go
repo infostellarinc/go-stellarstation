@@ -160,3 +160,21 @@ func (mr *MockStellarStationServiceClientMockRecorder) ReservePass(arg0, arg1 in
 	varargs := append([]interface{}{arg0, arg1}, arg2...)
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReservePass", reflect.TypeOf((*MockStellarStationServiceClient)(nil).ReservePass), varargs...)
 }
+
+// SetTleSource mocks base method
+func (m *MockStellarStationServiceClient) SetTleSource(arg0 context.Context, arg1 *v1.SetTleSourceRequest, arg2 ...grpc.CallOption) (*v1.SetTleSourceResponse, error) {
+	varargs := []interface{}{arg0, arg1}
+	for _, a := range arg2 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "SetTleSource", varargs...)
+	ret0, _ := ret[0].(*v1.SetTleSourceResponse)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// SetTleSource indicates an expected call of SetTleSource
+func (mr *MockStellarStationServiceClientMockRecorder) SetTleSource(arg0, arg1 interface{}, arg2 ...interface{}) *gomock.Call {
+	varargs := append([]interface{}{arg0, arg1}, arg2...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetTleSource", reflect.TypeOf((*MockStellarStationServiceClient)(nil).SetTleSource), varargs...)
+}
