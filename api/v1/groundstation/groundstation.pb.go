@@ -246,19 +246,10 @@ type Plan struct {
 	// This field is only populated for future plans.
 	SatelliteCoordinates []*SatelliteCoordinates `protobuf:"bytes,9,rep,name=satellite_coordinates,json=satelliteCoordinates,proto3" json:"satellite_coordinates,omitempty"`
 	// The organization name of the satellite to be tracked in the plan.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	SatelliteOrganizationName string `protobuf:"bytes,10,opt,name=satellite_organization_name,json=satelliteOrganizationName,proto3" json:"satellite_organization_name,omitempty"`
 	// The organization name of the ground station.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	GroundStationOrganizationName string `protobuf:"bytes,11,opt,name=ground_station_organization_name,json=groundStationOrganizationName,proto3" json:"ground_station_organization_name,omitempty"`
 	// The price per minute (USD) for this plan set by the ground station owner at the time of reservation.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	UnitPrice            float64  `protobuf:"fixed64,12,opt,name=unit_price,json=unitPrice,proto3" json:"unit_price,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

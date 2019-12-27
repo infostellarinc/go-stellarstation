@@ -1111,9 +1111,6 @@ type Pass struct {
 	// The longitude, in degrees, of the ground station's location.
 	GroundStationLongitude float64 `protobuf:"fixed64,5,opt,name=ground_station_longitude,json=groundStationLongitude,proto3" json:"ground_station_longitude,omitempty"`
 	// The organization name of the ground station.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	GroundStationOrganizationName string `protobuf:"bytes,12,opt,name=ground_station_organization_name,json=groundStationOrganizationName,proto3" json:"ground_station_organization_name,omitempty"`
 	// The ISO 3166-1 alpha-2 2-letter country code for the ground station's location.
 	// See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
@@ -1260,9 +1257,6 @@ type Pass_ChannelSetToken struct {
 	// be used for scheduling it by copying to ReservePassRequest.reservation_token.
 	ReservationToken string `protobuf:"bytes,2,opt,name=reservation_token,json=reservationToken,proto3" json:"reservation_token,omitempty"`
 	// The price per minute (USD) for this pass and channel set combination.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	UnitPrice            float64  `protobuf:"fixed64,3,opt,name=unit_price,json=unitPrice,proto3" json:"unit_price,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -1374,9 +1368,6 @@ type Plan struct {
 	// The id of the satellite to be tracked in the plan.
 	SatelliteId string `protobuf:"bytes,2,opt,name=satellite_id,json=satelliteId,proto3" json:"satellite_id,omitempty"`
 	// The organization name of the satellite to be tracked in the plan.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	SatelliteOrganizationName string `protobuf:"bytes,17,opt,name=satellite_organization_name,json=satelliteOrganizationName,proto3" json:"satellite_organization_name,omitempty"`
 	// The status of this plan.
 	Status Plan_Status `protobuf:"varint,3,opt,name=status,proto3,enum=stellarstation.api.v1.Plan_Status" json:"status,omitempty"`
@@ -1402,9 +1393,6 @@ type Plan struct {
 	// See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 	GroundStationCountryCode string `protobuf:"bytes,8,opt,name=ground_station_country_code,json=groundStationCountryCode,proto3" json:"ground_station_country_code,omitempty"`
 	// The organization name of the ground station.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	GroundStationOrganizationName string `protobuf:"bytes,18,opt,name=ground_station_organization_name,json=groundStationOrganizationName,proto3" json:"ground_station_organization_name,omitempty"`
 	// The max elevation during the plan, in degrees.
 	MaxElevationDegrees float64 `protobuf:"fixed64,9,opt,name=max_elevation_degrees,json=maxElevationDegrees,proto3" json:"max_elevation_degrees,omitempty"`
@@ -1426,9 +1414,6 @@ type Plan struct {
 	// The channel set used to reserve this plan.
 	ChannelSet *ChannelSet `protobuf:"bytes,16,opt,name=channel_set,json=channelSet,proto3" json:"channel_set,omitempty"`
 	// The price per minute (USD) for this plan set by the ground station owner at the time of reservation.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	UnitPrice            float64  `protobuf:"fixed64,19,opt,name=unit_price,json=unitPrice,proto3" json:"unit_price,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
