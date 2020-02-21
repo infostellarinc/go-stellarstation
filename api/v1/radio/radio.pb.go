@@ -358,6 +358,9 @@ type RadioDeviceConfiguration struct {
 	// demodulating / modulating without applying any higher-level communication protocol.
 	Protocol *CommunicationProtocol `protobuf:"bytes,4,opt,name=protocol,proto3" json:"protocol,omitempty"`
 	// The polarization of the antenna.
+	//
+	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
+	//         incompatible ways in the future.
 	Polarization         antenna.AntennaPolarization `protobuf:"varint,5,opt,name=polarization,proto3,enum=stellarstation.api.v1.antenna.AntennaPolarization" json:"polarization,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                    `json:"-"`
 	XXX_unrecognized     []byte                      `json:"-"`

@@ -250,6 +250,9 @@ type Plan struct {
 	// The organization name of the ground station.
 	GroundStationOrganizationName string `protobuf:"bytes,11,opt,name=ground_station_organization_name,json=groundStationOrganizationName,proto3" json:"ground_station_organization_name,omitempty"`
 	// The ID of the ground station.
+	//
+	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
+	//         incompatible ways in the future.
 	GroundStationId string `protobuf:"bytes,13,opt,name=ground_station_id,json=groundStationId,proto3" json:"ground_station_id,omitempty"`
 	// The price per minute (USD) for this plan set by the ground station owner at the time of reservation.
 	UnitPrice float64 `protobuf:"fixed64,12,opt,name=unit_price,json=unitPrice,proto3" json:"unit_price,omitempty"`
