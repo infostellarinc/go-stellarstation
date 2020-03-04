@@ -1113,9 +1113,6 @@ type Pass struct {
 	// The organization name of the ground station.
 	GroundStationOrganizationName string `protobuf:"bytes,12,opt,name=ground_station_organization_name,json=groundStationOrganizationName,proto3" json:"ground_station_organization_name,omitempty"`
 	// The ID of the ground station.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	GroundStationId string `protobuf:"bytes,13,opt,name=ground_station_id,json=groundStationId,proto3" json:"ground_station_id,omitempty"`
 	// The ISO 3166-1 alpha-2 2-letter country code for the ground station's location.
 	// See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
@@ -1407,9 +1404,6 @@ type Plan struct {
 	// The organization name of the ground station.
 	GroundStationOrganizationName string `protobuf:"bytes,18,opt,name=ground_station_organization_name,json=groundStationOrganizationName,proto3" json:"ground_station_organization_name,omitempty"`
 	// The ID of the ground station.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	GroundStationId string `protobuf:"bytes,20,opt,name=ground_station_id,json=groundStationId,proto3" json:"ground_station_id,omitempty"`
 	// The max elevation during the plan, in degrees.
 	MaxElevationDegrees float64 `protobuf:"fixed64,9,opt,name=max_elevation_degrees,json=maxElevationDegrees,proto3" json:"max_elevation_degrees,omitempty"`
@@ -2127,9 +2121,6 @@ type StellarStationServiceClient interface {
 	//
 	// If the satellite is not found or the client is not authorized for it, the request will return
 	// a `NOT_FOUND` error.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	SetTleSource(ctx context.Context, in *SetTleSourceRequest, opts ...grpc.CallOption) (*SetTleSourceResponse, error)
 }
 
@@ -2332,9 +2323,6 @@ type StellarStationServiceServer interface {
 	//
 	// If the satellite is not found or the client is not authorized for it, the request will return
 	// a `NOT_FOUND` error.
-	//
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	SetTleSource(context.Context, *SetTleSourceRequest) (*SetTleSourceResponse, error)
 }
 
