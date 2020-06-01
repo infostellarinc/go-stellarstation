@@ -235,9 +235,13 @@ type Plan struct {
 	LosTime *timestamp.Timestamp `protobuf:"bytes,4,opt,name=los_time,json=losTime,proto3" json:"los_time,omitempty"`
 	// Configuration of the radio device used for downlinking from the satellite. Ground stations will
 	// need to configure reception during the plan to match this device.
+	//
+	// Deprecated. Use channel_set.downlink.
 	DownlinkRadioDevice *radio.RadioDeviceConfiguration `protobuf:"bytes,5,opt,name=downlink_radio_device,json=downlinkRadioDevice,proto3" json:"downlink_radio_device,omitempty"`
 	// Configuration of the radio device used for uplinking to the satellite. Ground stations will
 	// need to configure transmission during the plan to match this device.
+	//
+	// Deprecated. Use channel_set.uplink.
 	UplinkRadioDevice *radio.RadioDeviceConfiguration `protobuf:"bytes,6,opt,name=uplink_radio_device,json=uplinkRadioDevice,proto3" json:"uplink_radio_device,omitempty"`
 	// Predicted coordinates of the tracked satellite for every second between AOS and LOS. This
 	// information is intended for calculating device states such as rotator angles and radio
@@ -256,8 +260,6 @@ type Plan struct {
 	// The id of the satellite to be tracked in the plan.
 	SatelliteId string `protobuf:"bytes,14,opt,name=satellite_id,json=satelliteId,proto3" json:"satellite_id,omitempty"`
 	// The channel set used to reserve this plan.
-	// Status: ALPHA This API is under development and may not work correctly or be changed in backwards
-	//         incompatible ways in the future.
 	ChannelSet           *v1.ChannelSet `protobuf:"bytes,15,opt,name=channel_set,json=channelSet,proto3" json:"channel_set,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_unrecognized     []byte         `json:"-"`
