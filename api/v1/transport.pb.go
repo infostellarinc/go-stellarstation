@@ -22,7 +22,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-// A type of framing of a binary payload used in satellite communicaation.
+// A type of framing of a binary payload used in satellite communication.
 type Framing int32
 
 const (
@@ -75,8 +75,7 @@ func (Framing) EnumDescriptor() ([]byte, []int) {
 
 // A chunk or frame of telemetry data that has been received from a satellite.
 type Telemetry struct {
-	// The framing of this telemetry data. If `RAW`, this telemetry will be an arbitrarily sized
-	// chunk of the bitstream.
+	// The framing of this telemetry data.
 	Framing Framing `protobuf:"varint,1,opt,name=framing,proto3,enum=stellarstation.api.v1.Framing" json:"framing,omitempty"`
 	// The payload of this telemetry.
 	Data []byte `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
@@ -87,10 +86,12 @@ type Telemetry struct {
 	TimeFirstByteReceived *timestamp.Timestamp `protobuf:"bytes,4,opt,name=time_first_byte_received,json=timeFirstByteReceived,proto3" json:"time_first_byte_received,omitempty"`
 	// Timestamp when the last byte of `data` was received.
 	TimeLastByteReceived *timestamp.Timestamp `protobuf:"bytes,5,opt,name=time_last_byte_received,json=timeLastByteReceived,proto3" json:"time_last_byte_received,omitempty"`
-	// The binary header of the telemetry frame, if `framing` is not `RAW`.
+	// The binary header of the telemetry frame available for certain framing types.
 	//
-	// * AX25 - This is either Address + Control, or Address + Control + PID. The checksum is not
-	//          returned.
+	// * AX25      - This is either Address + Control, or Address + Control + PID. The checksum is not
+	//               returned.
+	// * BITSTREAM - Streams for certain protocols such as CCSDS may contain frame headers according
+	//               to the applicable standards.
 	FrameHeader          []byte   `protobuf:"bytes,6,opt,name=frame_header,json=frameHeader,proto3" json:"frame_header,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
