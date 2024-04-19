@@ -14,12 +14,18 @@
 
 module github.com/infostellarinc/go-stellarstation
 
-go 1.12
+go 1.18
 
 require (
-	github.com/golang/mock v1.1.1 // indirect
-	github.com/golang/protobuf v1.3.1
-	github.com/square/goprotowrap v0.0.0-20190116012208-bb93590db2db // indirect
-	golang.org/x/net v0.0.0-20190424112056-4829fb13d2c6 // indirect
+	connectrpc.com/connect v1.16.1
 	google.golang.org/grpc v1.20.1
+	google.golang.org/protobuf v1.33.0
+)
+
+require (
+	github.com/golang/protobuf v1.5.0 // indirect
+	golang.org/x/net v0.21.0 // indirect
+	golang.org/x/sys v0.17.0 // indirect
+	golang.org/x/text v0.14.0 // indirect
+	google.golang.org/genproto v0.0.0-20180817151627-c66870c02cf8 // indirect
 )

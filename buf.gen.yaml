@@ -1,0 +1,23 @@
+version: v1
+managed:
+  enabled: true
+plugins:
+  # core protobuf messages
+  - plugin: go
+    out: tmp/gen/api
+    opt:
+      - paths=source_relative
+  # core grpc client and server implementations
+  - plugin: go-grpc
+    out: tmp/gen/api
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false
+  # buf.build's connect client and server implementations
+  # - better interoperability than grpc-web
+  # - also supports json codec by default
+  - plugin: connect-go
+    out: tmp/gen/api
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false
